@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CONTROL reference="" description="" process_dll="PROC_C0042_FORD"  version="0.0.0">
+  
+    <CONTROL path="./PROG_Common.xml" />
+    <CONTROL path="./002_MetrologExchange.xml" />
+    <CONTROL path="./STATOR_ED40_OP160.xml" />
+    
+    <PARAMETERS>
+        <PARAMETER name="MetrologProcess" value="true"/>
+        <PARAMETER name="PaperProcess" value="false"/>
+    </PARAMETERS>
+</CONTROL>

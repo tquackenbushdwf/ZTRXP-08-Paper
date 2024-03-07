@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CONTROL reference="" description="" process_dll="PROC_MetrologExchange"  version="1.0.0">
+
+    <PARAMETERS>
+        <PARAMETER name="b_save_only" value="false"/> <!-- If true, no processing is done -->
+        <PARAMETER name="s_ms3d_to_metrolog_folder_path" value="C:\DWFritzMetrology\Data\Metrolog\IN_DIR" />
+        <PARAMETER name="s_metrolog_to_ms3d_folder_path" value="C:\DWFritzMetrology\Data\Metrolog\OUT_DIR" />
+        <PARAMETER name="s_select_reference_filename" value="SelectReference.txt" />
+        <PARAMETER name="s_sensor_filename_prefix" value="SensorCloud_" />
+        <PARAMETER name="s_sensor_filename_suffix" value=".txt" />
+        <PARAMETER name="s_result_filename" value="Results.txt" />
+        <PARAMETER name="s_progName_filepath_prefix" value="..\programs_metrolog\" />
+        <PARAMETER name="s_progName_filepath_suffix" value=".MgProg" />
+        <PARAMETER name="s_cadName_filepath_prefix" value="..\programs_metrolog\" />
+        <PARAMETER name="s_cadName_filepath_suffix" value=".MgPart" />
+        <PARAMETER name="i_resultFile_tempo_ms" value="500" /> <!-- After resultFile is created, wait this time (in ms) before opening it -->
+        <PARAMETER name="b_check_refName" value="false" />
+        <PARAMETER name="b_check_cloudFilename" value="false" />
+        <PARAMETER name="b_check_verdict" value="false" />
+        <PARAMETER name="b_throw_error_if_metrolog_error" value="true" />
+        <PARAMETER name="s_metrolog_error_feature_name" value="metrolog_error" />
+        <PARAMETER name="b_wait_pdf_report" value="false" />
+        <PARAMETER name="i_reportFile_tempo_ms" value="2500" /> <!-- After pdf report file is created, wait this time (in ms) -->
+        <PARAMETER name="b_keep_result_file" value="false" />
+        <PARAMETER name="b_throw_error_if_file_exists" value="false" /> <!-- If false, a warning is logged and files are deleted -->
+        <PARAMETER name="i_timeout_seconds" value="60" />  <!-- if 0, infinite timeout -->
+		<PARAMETER name="b_metrolog_running_remotely" value="false" />  
+		<PARAMETER name="s_metrolog_remote_drive_letter_cloud_dir" value="C" />
+        <PARAMETER name="b_log_chrono" value="true" />
+    </PARAMETERS>
+
+</CONTROL>

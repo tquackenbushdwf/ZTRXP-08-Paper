@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CONTROL reference="213-0021-CalibV3" description="213-0021_GEAR_Calib_V3" process_dll="PROC_213_0021_GEAR_Calib_V3"  version="0.1.0">
+   
+    <CONTROL path="./PROG_Common.xml" />
+    <CONTROL path="./PROG_ZTGXE-01_2_Geometry_WesternMet.xml"/>
+    <CONTROL path="./PROG_ZTGXE-01_2_Alignment.xml"/>
+    <CONTROL path="./PROG_ZTGXE-01_2_Extraction.xml"/>
+    <CONTROL path="./PROG_ZTGXE-01_2_Calibration.xml"/>
+    <CONTROL path="./PROG_ZTGXE-01_2_CheckArtefact.xml"/>
+
+    <PARAMETERS>
+        <!-- Steps -->
+        <PARAMETER name="erase_current_calib" value="false"/>
+        <PARAMETER name="compute_alignement" value="true"/>
+        <PARAMETER name="coarse_calibration" value="false"/>
+        <PARAMETER name="neat_calibration" value="true"/>
+        <PARAMETER name="validate_calibration" value="false"/> <!-- Comparaison par rapport aux valeurs CAO -->
+        <PARAMETER name="check_artefact" value="false"/>
+        <PARAMETER name="simulate_cao" value="false"/> <!-- Création du nuage reconstruit à partir des valeurs de références du labo -->
+        <PARAMETER name="export_results" value="false"/>
+
+
+        <!-- Configuration -->
+        <PARAMETER name="sensor_number" value="12"/>
+        <PARAMETER name="save_main_clouds" value="false"/>
+        <PARAMETER name="save_sub_clouds" value="true"/>
+        <PARAMETER name="validate_artefact_throw_error" value="false"/>
+		<!--PARAMETER name="check_artefact_save_sub_clouds" value="false"/-->
+        <!--PARAMETER name="check_alignment_throw_error" value="true"/-->
+        <PARAMETER name="check_artefact_throw_error" value="false"/>
+		
+		<PARAMETER name="c1_clean_fix" value="false"/>
+        <PARAMETER name="c2_clean_fix" value="false"/>
+        <PARAMETER name="c3_clean_fix" value="false"/>
+        <PARAMETER name="c4_clean_fix" value="false"/>
+        <PARAMETER name="c5_clean_fix" value="false"/>
+        <PARAMETER name="c6_clean_fix" value="false"/>
+		<PARAMETER name="c7_clean_fix" value="false"/>
+        <PARAMETER name="c8_clean_fix" value="false"/>
+        <PARAMETER name="c9_clean_fix" value="false"/>
+        <PARAMETER name="c10_clean_fix" value="false"/>
+        <PARAMETER name="c11_clean_fix" value="false"/>
+        <PARAMETER name="c12_clean_fix" value="false"/>
+
+        <!-- <PARAMETER name="c3_fix_start_angle" value="72.50"/> -->
+        <!-- <PARAMETER name="c3_fix_offset_angle" value="15.0"/> -->
+        <!-- <PARAMETER name="c3_fix_number_of_base" value="3"/> -->
+		
+        <!-- <PARAMETER name="c4_fix_start_angle" value="72.50"/> -->
+        <!-- <PARAMETER name="c4_fix_offset_angle" value="15.0"/> -->
+        <!-- <PARAMETER name="c4_fix_number_of_base" value="3"/> -->
+		
+        <!-- <PARAMETER name="c6_fix_start_angle" value="72.50"/> -->
+        <!-- <PARAMETER name="c6_fix_offset_angle" value="15.0"/> -->
+        <!-- <PARAMETER name="c6_fix_number_of_base" value="3"/> -->
+    </PARAMETERS>
+</CONTROL>

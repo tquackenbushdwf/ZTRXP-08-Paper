@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CONTROL description="" version="0.0.0" reference="">
+  <FEATURES>
+    <FEATURE lower_bound="0.000000" activation="false" reverse="false" unit="" name="" visibility="false" major_id="0" type="" xmlfile_id="" showresult="false" sensor="" upper_bound="0.000000" minor_id="0" nominal="0.000000"/>
+  </FEATURES>
+</CONTROL>

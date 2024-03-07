@@ -1,0 +1,263 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CONFIG description="ZTR_Ford" version="1.0.0">
+    <INFO name="ZTR_Ford" major_id="1" minor_id="0" type="TM"/>
+
+    <INSPECTION_MODE mode="ring_inspection"/>
+
+    <MONITOR_MODE activation="false" thread_period="100"/>
+
+
+
+    <COMPONENTS>
+        <COMPONENT name="laser_line"    type="HW_KEYENCE_LJX8"          activated="true" config_file_path="hardware/ConfigKeyence.ini"/>
+        <COMPONENT name="msx"           type="HW_MSX_E17x1"             activated="true" config_file_path="hardware/ConfigMSX.ini"/>
+        <COMPONENT name="aerotech"      type="HW_AEROTECH_Soloist"      activated="true" config_file_path="hardware/ConfigAerotech.ini"/>
+    </COMPONENTS>
+
+
+
+    <ORGANS>
+        <ORGAN major_id="1" name="c1"            component_name="laser_line" organ_id="1" main_sensor="true" type="ACQUISITION_SENSOR_2D"/>
+        <ORGAN major_id="2" name="c2"            component_name="laser_line" organ_id="2" main_sensor="true" type="ACQUISITION_SENSOR_2D"/>
+        <ORGAN major_id="3" name="c3"            component_name="laser_line" organ_id="3" main_sensor="true" type="ACQUISITION_SENSOR_2D"/>
+        <ORGAN major_id="4" name="c4"            component_name="laser_line" organ_id="4" main_sensor="true" type="ACQUISITION_SENSOR_2D"/>
+        <ORGAN major_id="5" name="c5"            component_name="laser_line" organ_id="5" main_sensor="true" type="ACQUISITION_SENSOR_2D"/>
+        <ORGAN major_id="6" name="c6"            component_name="laser_line" organ_id="6" main_sensor="true" type="ACQUISITION_SENSOR_2D"/>
+        <ORGAN major_id="7" name="c7"            component_name="laser_line" organ_id="7" main_sensor="true" type="ACQUISITION_SENSOR_2D"/>
+        <ORGAN major_id="8" name="c8"            component_name="laser_line" organ_id="8" main_sensor="true" type="ACQUISITION_SENSOR_2D"/>
+        <ORGAN major_id="9" name="c9"            component_name="laser_line" organ_id="9" main_sensor="true" type="ACQUISITION_SENSOR_2D"/>
+        <ORGAN major_id="10" name="c10"            component_name="laser_line" organ_id="10" main_sensor="true" type="ACQUISITION_SENSOR_2D"/>
+        <ORGAN major_id="11" name="c11"            component_name="laser_line" organ_id="11" main_sensor="true" type="ACQUISITION_SENSOR_2D"/>
+        <ORGAN major_id="12" name="c12"            component_name="laser_line" organ_id="12" main_sensor="true" type="ACQUISITION_SENSOR_2D"/>
+    
+        <ORGAN major_id="13" name="msx_encoder_w" component_name="msx"        organ_id="0" main_sensor="false" type="ENCODER"/>
+        <ORGAN major_id="14" name="msx_pwm"       component_name="msx"        organ_id="3" main_sensor="false" type="SIGNAL_GENERATOR"/>
+ 
+        <ORGAN major_id="15" name="aerotech_axe_w"  component_name="aerotech" organ_id="1" main_sensor="false" type="ACTUATOR"/>
+    </ORGANS>
+
+    <AXES>
+        <AXIS name="rotation" encoder_name="msx_encoder_w" actuator_name="aerotech_axe_w"
+            display_name="W" icon="W.png" unit="deg" speed_unit="deg/s"
+            def_speed="60" max_speed="360" max_jog_speed="90" pom="38"
+            display_ratio="1" display_modulo="360"
+            position_accuracy="0.1"/>
+    </AXES>
+
+    <IO>
+	
+	
+        <SIGNAL name="pwm" organ_name="msx_pwm" def_frequency="100"/>
+	
+        <TEMPERATURE name="temperature_c1_CMOS" organ_name="c1" channel="0" unit=""/>
+        <TEMPERATURE name="temperature_c1_PROC" organ_name="c1" channel="1" unit=""/>
+        <TEMPERATURE name="temperature_c1_CASE" organ_name="c1" channel="2" unit=""/>
+        <TEMPERATURE name="temperature_c2_CMOS" organ_name="c2" channel="0" unit=""/>
+        <TEMPERATURE name="temperature_c2_PROC" organ_name="c2" channel="1" unit=""/>
+        <TEMPERATURE name="temperature_c2_CASE" organ_name="c2" channel="2" unit=""/>
+        <TEMPERATURE name="temperature_c3_CMOS" organ_name="c3" channel="0" unit=""/>
+        <TEMPERATURE name="temperature_c3_PROC" organ_name="c3" channel="1" unit=""/>
+        <TEMPERATURE name="temperature_c3_CASE" organ_name="c3" channel="2" unit=""/>
+        <TEMPERATURE name="temperature_c4_CMOS" organ_name="c4" channel="0" unit=""/>
+        <TEMPERATURE name="temperature_c4_PROC" organ_name="c4" channel="1" unit=""/>
+        <TEMPERATURE name="temperature_c4_CASE" organ_name="c4" channel="2" unit=""/>
+        <TEMPERATURE name="temperature_c5_CMOS" organ_name="c5" channel="0" unit=""/>
+        <TEMPERATURE name="temperature_c5_PROC" organ_name="c5" channel="1" unit=""/>
+        <TEMPERATURE name="temperature_c5_CASE" organ_name="c5" channel="2" unit=""/>
+        <TEMPERATURE name="temperature_c6_CMOS" organ_name="c6" channel="0" unit=""/>
+        <TEMPERATURE name="temperature_c6_PROC" organ_name="c6" channel="1" unit=""/>
+        <TEMPERATURE name="temperature_c6_CASE" organ_name="c6" channel="2" unit=""/>
+		<TEMPERATURE name="temperature_c7_CMOS" organ_name="c7" channel="0" unit=""/>
+        <TEMPERATURE name="temperature_c7_PROC" organ_name="c7" channel="1" unit=""/>
+        <TEMPERATURE name="temperature_c7_CASE" organ_name="c7" channel="2" unit=""/>
+		<TEMPERATURE name="temperature_c8_CMOS" organ_name="c8" channel="0" unit=""/>
+        <TEMPERATURE name="temperature_c8_PROC" organ_name="c8" channel="1" unit=""/>
+        <TEMPERATURE name="temperature_c8_CASE" organ_name="c8" channel="2" unit=""/>
+		<TEMPERATURE name="temperature_c9_CMOS" organ_name="c9" channel="0" unit=""/>
+        <TEMPERATURE name="temperature_c9_PROC" organ_name="c9" channel="1" unit=""/>
+        <TEMPERATURE name="temperature_c9_CASE" organ_name="c9" channel="2" unit=""/>
+		<TEMPERATURE name="temperature_c10_CMOS" organ_name="c10" channel="0" unit=""/>
+        <TEMPERATURE name="temperature_c10_PROC" organ_name="c10" channel="1" unit=""/>
+        <TEMPERATURE name="temperature_c10_CASE" organ_name="c10" channel="2" unit=""/>
+		<TEMPERATURE name="temperature_c11_CMOS" organ_name="c11" channel="0" unit=""/>
+        <TEMPERATURE name="temperature_c11_PROC" organ_name="c11" channel="1" unit=""/>
+        <TEMPERATURE name="temperature_c11_CASE" organ_name="c11" channel="2" unit=""/>
+		<TEMPERATURE name="temperature_c12_CMOS" organ_name="c12" channel="0" unit=""/>
+        <TEMPERATURE name="temperature_c12_PROC" organ_name="c12" channel="1" unit=""/>
+        <TEMPERATURE name="temperature_c12_CASE" organ_name="c12" channel="2" unit=""/>
+		
+        <!-- <TEMPERATURE name="temperature_c1" organ_name="c1" channel="0" unit="degC"/>		 -->
+        <!-- <TEMPERATURE name="temperature_c2" organ_name="c2" channel="0" unit="degC"/> -->
+        <!-- <TEMPERATURE name="temperature_c3" organ_name="c3" channel="0" unit="degC"/> -->
+        <!-- <TEMPERATURE name="temperature_c4" organ_name="c4" channel="0" unit="degC"/> -->
+        <!-- <TEMPERATURE name="temperature_c5" organ_name="c5" channel="0" unit="degC"/> -->
+        <!-- <TEMPERATURE name="temperature_c6" organ_name="c6" channel="0" unit="degC"/> -->
+        <!-- <TEMPERATURE name="temperature_c7" organ_name="c7" channel="0" unit="degC"/> -->
+        <!-- <TEMPERATURE name="temperature_c8" organ_name="c8" channel="0" unit="degC"/> -->
+        <!-- <TEMPERATURE name="temperature_c9" organ_name="c9" channel="0" unit="degC"/> -->
+        <!-- <TEMPERATURE name="temperature_c10" organ_name="c10" channel="0" unit="degC"/> -->
+        <!-- <TEMPERATURE name="temperature_c11" organ_name="c11" channel="0" unit="degC"/> -->
+        <!-- <TEMPERATURE name="temperature_c12" organ_name="c12" channel="0" unit="degC"/> -->
+		
+
+    </IO>
+
+
+    <COLLECT>
+        <VECTOR name="encRz"    organ_name="msx_encoder_w" meas_type="MSX_Encoder"/>
+        <VECTOR name="C1x"      organ_name="c1" meas_type="LJX8_X"/>
+        <VECTOR name="C1z"      organ_name="c1" meas_type="LJX8_Z"/>
+        <VECTOR name="C1i"      organ_name="c1" meas_type="LJX8_Intensity"/>
+        <VECTOR name="C2x"      organ_name="c2" meas_type="LJX8_X"/>
+        <VECTOR name="C2z"      organ_name="c2" meas_type="LJX8_Z"/>
+        <VECTOR name="C2i"      organ_name="c2" meas_type="LJX8_Intensity"/>
+        <VECTOR name="C3x"      organ_name="c3" meas_type="LJX8_X"/>
+        <VECTOR name="C3z"      organ_name="c3" meas_type="LJX8_Z"/>
+        <VECTOR name="C3i"      organ_name="c3" meas_type="LJX8_Intensity"/>
+        <VECTOR name="C4x"      organ_name="c4" meas_type="LJX8_X"/>
+        <VECTOR name="C4z"      organ_name="c4" meas_type="LJX8_Z"/>
+        <VECTOR name="C4i"      organ_name="c4" meas_type="LJX8_Intensity"/>
+        <VECTOR name="C5x"      organ_name="c5" meas_type="LJX8_X"/>
+        <VECTOR name="C5z"      organ_name="c5" meas_type="LJX8_Z"/>
+        <VECTOR name="C5i"      organ_name="c5" meas_type="LJX8_Intensity"/>
+        <VECTOR name="C6x"      organ_name="c6" meas_type="LJX8_X"/>
+        <VECTOR name="C6z"      organ_name="c6" meas_type="LJX8_Z"/>
+        <VECTOR name="C6i"      organ_name="c6" meas_type="LJX8_Intensity"/>
+        <VECTOR name="C7x"      organ_name="c7" meas_type="LJX8_X"/>
+        <VECTOR name="C7z"      organ_name="c7" meas_type="LJX8_Z"/>
+        <VECTOR name="C7i"      organ_name="c7" meas_type="LJX8_Intensity"/>
+        <VECTOR name="C8x"      organ_name="c8" meas_type="LJX8_X"/>
+        <VECTOR name="C8z"      organ_name="c8" meas_type="LJX8_Z"/>
+        <VECTOR name="C8i"      organ_name="c8" meas_type="LJX8_Intensity"/>
+        <VECTOR name="C9x"      organ_name="c9" meas_type="LJX8_X"/>
+        <VECTOR name="C9z"      organ_name="c9" meas_type="LJX8_Z"/>
+        <VECTOR name="C9i"      organ_name="c9" meas_type="LJX8_Intensity"/>
+        <VECTOR name="C10x"      organ_name="c10" meas_type="LJX8_X"/>
+        <VECTOR name="C10z"      organ_name="c10" meas_type="LJX8_Z"/>
+        <VECTOR name="C10i"      organ_name="c10" meas_type="LJX8_Intensity"/>
+        <VECTOR name="C11x"      organ_name="c11" meas_type="LJX8_X"/>
+        <VECTOR name="C11z"      organ_name="c11" meas_type="LJX8_Z"/>
+        <VECTOR name="C11i"      organ_name="c11" meas_type="LJX8_Intensity"/>
+        <VECTOR name="C12x"      organ_name="c12" meas_type="LJX8_X"/>
+        <VECTOR name="C12z"      organ_name="c12" meas_type="LJX8_Z"/>
+        <VECTOR name="C12i"      organ_name="c12" meas_type="LJX8_Intensity"/>
+    </COLLECT>
+
+
+    <BUILD large_cloud="true" sequential_build="true" sub_sampling_profile="1" sub_sampling_point="1">
+        <COPY_VECTOR vector_name="vectRz" vector_src="encRz"/>
+        <CROP type="range" vector_name="vectRz" range="360"/>
+        <CORRECTION type="modulo360" x="vectRz"/>
+		<!-- System 2-->
+		
+        <!-- LJX-8200 - #98221249 -->
+        <COPY_VECTOR vector_name="C1y" vector_src="C1x"/>
+        <CORRECTION type="keyence_linearity" x="C1x" y="C1y" z="C1z" polynomial_degree="2" coeff_0="-32.699e-06" coeff_1="-5.045e-08" coeff_2="-11.247e-10" />
+        <!-- <CORRECTION type="polynomial2D" x="C1x" z="C1z" dst_z="C1z_c" polynomial_degree="2" coeff_0_0="-0.000e+00" coeff_0_1="-0.000e+00" coeff_0_2="4.568e-06" coeff_1_0="8.599e-04" coeff_1_1="6.265e-06" coeff_1_2="1.293e-07" coeff_2_0="9.978e-07" coeff_2_1="5.101e-08" coeff_2_2="2.424e-09"/> -->
+
+        <!-- LJX-8200 - #A8220903 -->
+        <COPY_VECTOR vector_name="C2y" vector_src="C2x"/>
+        <CORRECTION type="keyence_linearity" x="C2x" y="C2y" z="C2z" polynomial_degree="2" coeff_0="-25.190e-06" coeff_1="-7.851e-08" coeff_2="-4.326e-10" />
+        <!-- <CORRECTION type="polynomial2D" x="C2x" z="C2z" dst_z="C2z_c" polynomial_degree="2" coeff_0_0="-0.000e+00" coeff_0_1="-0.000e+00" coeff_0_2="3.647e-06" coeff_1_0="2.725e-04" coeff_1_1="5.810e-06" coeff_1_2="4.921e-10" coeff_2_0="9.710e-07" coeff_2_1="2.566e-08" coeff_2_2="6.234e-10"/> -->
+
+        <!-- LJX-8200 - #68220214 -->
+        <COPY_VECTOR vector_name="C3y" vector_src="C3x"/>
+        <CORRECTION type="keyence_linearity" x="C3x" y="C3y" z="C3z" polynomial_degree="2" coeff_0="36.400e-06" coeff_1="4.268e-08" coeff_2="-10.090e-10" />
+        <!-- <CORRECTION type="polynomial2D" x="C3x" z="C3z" dst_z="C3z_c" polynomial_degree="2" coeff_0_0="0.000e+00" coeff_0_1="0.000e+00" coeff_0_2="2.090e-05" coeff_1_0="1.118e-03" coeff_1_1="7.883e-06" coeff_1_2="-1.411e-07" coeff_2_0="1.445e-05" coeff_2_1="3.237e-08" coeff_2_2="-7.230e-09"/> -->
+
+        <!-- LJX-8200 - #68220155 -->
+		        <COPY_VECTOR vector_name="C4y" vector_src="C4x"/>
+        <CORRECTION type="keyence_linearity" x="C4x" y="C4y" z="C4z" polynomial_degree="2" coeff_0="8.813e-06" coeff_1="0.272e-08" coeff_2="-46.900e-10" />
+        <!-- <CORRECTION type="polynomial2D" x="C4x" z="C4z" dst_z="C4z_c" polynomial_degree="2" coeff_0_0="0.000e+00" coeff_0_1="0.000e+00" coeff_0_2="1.361e-05" coeff_1_0="1.657e-03" coeff_1_1="5.890e-06" coeff_1_2="4.422e-08" coeff_2_0="-9.740e-06" coeff_2_1="6.003e-08" coeff_2_2="4.558e-09"/> -->
+
+        <!-- LJX-8200 - #78220165 -->
+        <COPY_VECTOR vector_name="C5y" vector_src="C5x"/>
+        <CORRECTION type="keyence_linearity" x="C5x" y="C5y" z="C5z" polynomial_degree="2" coeff_0="83.004e-06" coeff_1="20.762e-08" coeff_2="8.877e-10" />
+        <!-- <CORRECTION type="polynomial2D" x="C5x" z="C5z" dst_z="C5z_c" polynomial_degree="2" coeff_0_0="-0.000e+00" coeff_0_1="-0.000e+00" coeff_0_2="8.754e-06" coeff_1_0="3.985e-04" coeff_1_1="6.162e-06" coeff_1_2="7.078e-08" coeff_2_0="7.236e-06" coeff_2_1="-7.133e-08" coeff_2_2="-4.361e-09"/> -->
+
+        <!-- LJX-8400 - #18221031-US1 -->
+        <COPY_VECTOR vector_name="C6y" vector_src="C6x"/>
+        <CORRECTION type="keyence_linearity" x="C6x" y="C6y" z="C6z" polynomial_degree="2" coeff_0="-5.587e-06" coeff_1="-2.023e-08" coeff_2="-1.564e-10" />
+        <!-- <CORRECTION type="polynomial2D" x="C6x" z="C6z" dst_z="C6z_c" polynomial_degree="2" coeff_0_0="0.000e+00" coeff_0_1="0.000e+00" coeff_0_2="1.629e-06" coeff_1_0="5.237e-05" coeff_1_1="-3.748e-07" coeff_1_2="2.041e-08" coeff_2_0="8.030e-07" coeff_2_1="2.190e-08" coeff_2_2="-4.330e-10"/> -->
+
+        <!-- LJX-8200 - #98221237 -->
+        <COPY_VECTOR vector_name="C7y" vector_src="C7x"/>
+        <CORRECTION type="keyence_linearity" x="C7x" y="C7y" z="C7z" polynomial_degree="2" coeff_0="-14.177e-06" coeff_1="-2.640e-08" coeff_2="-22.511e-10" />
+        <!-- <CORRECTION type="polynomial2D" x="C7x" z="C7z" dst_z="C7z_c" polynomial_degree="2" coeff_0_0="-0.000e+00" coeff_0_1="-0.000e+00" coeff_0_2="6.508e-06" coeff_1_0="-2.053e-04" coeff_1_1="2.510e-06" coeff_1_2="5.512e-08" coeff_2_0="5.042e-06" coeff_2_1="2.564e-08" coeff_2_2="-2.633e-11"/> -->
+
+        <!-- LJX-8200 - #88220169 -->
+        <COPY_VECTOR vector_name="C8y" vector_src="C8x"/>
+        <CORRECTION type="keyence_linearity" x="C8x" y="C8y" z="C8z" polynomial_degree="2" coeff_0="43.928e-06" coeff_1="16.757e-08" coeff_2="-3.771e-10" />
+        <!-- <CORRECTION type="polynomial2D" x="C8x" z="C8z" dst_z="C8z_c" polynomial_degree="2" coeff_0_0="-0.000e+00" coeff_0_1="-0.000e+00" coeff_0_2="9.491e-06" coeff_1_0="6.165e-04" coeff_1_1="9.166e-07" coeff_1_2="2.215e-08" coeff_2_0="1.043e-06" coeff_2_1="3.871e-08" coeff_2_2="-1.119e-09"/> -->
+
+        <!-- LJX-8200 - #88220168 -->
+        <COPY_VECTOR vector_name="C9y" vector_src="C9x"/>
+        <CORRECTION type="keyence_linearity" x="C9x" y="C9y" z="C9z" polynomial_degree="2" coeff_0="62.046e-06" coeff_1="14.902e-08" coeff_2="-5.164e-10" />
+        <!-- <CORRECTION type="polynomial2D" x="C9x" z="C9z" dst_z="C9z_c" polynomial_degree="2" coeff_0_0="-0.000e+00" coeff_0_1="-0.000e+00" coeff_0_2="1.380e-05" coeff_1_0="2.970e-04" coeff_1_1="1.056e-06" coeff_1_2="2.515e-09" coeff_2_0="4.017e-07" coeff_2_1="3.245e-08" coeff_2_2="-1.725e-09"/> -->
+   
+           <!-- LJX-8400 - #A8221049 -->
+           <COPY_VECTOR vector_name="C10y" vector_src="C10x"/>
+        <CORRECTION type="keyence_linearity" x="C10x" y="C10y" z="C10z" polynomial_degree="2" coeff_0="-1.426e-06" coeff_1="-0.241e-08" coeff_2="-1.271e-10" />
+        <!-- <CORRECTION type="polynomial2D" x="C10x" z="C10z" dst_z="C10z_c" polynomial_degree="2" coeff_0_0="-0.000e+00" coeff_0_1="-0.000e+00" coeff_0_2="1.661e-06" coeff_1_0="2.767e-04" coeff_1_1="2.456e-07" coeff_1_2="-7.073e-10" coeff_2_0="-2.187e-06" coeff_2_1="-8.946e-09" coeff_2_2="-1.619e-10"/> -->
+
+        <!-- LJX-8200 - #58220345 -->
+        <COPY_VECTOR vector_name="C11y" vector_src="C11x"/>
+        <CORRECTION type="keyence_linearity" x="C11x" y="C11y" z="C11z" polynomial_degree="2" coeff_0="56.083e-06" coeff_1="18.149e-08" coeff_2="-23.299e-10" />
+        <!-- <CORRECTION type="polynomial2D" x="C11x" z="C11z" dst_z="C11z_c" polynomial_degree="2" coeff_0_0="-0.000e+00" coeff_0_1="-0.000e+00" coeff_0_2="1.355e-05" coeff_1_0="6.321e-04" coeff_1_1="9.480e-06" coeff_1_2="3.918e-08" coeff_2_0="9.789e-06" coeff_2_1="-4.786e-08" coeff_2_2="-6.869e-09"/> -->
+
+        <!-- LJX-8200 - #58220378 -->
+        <COPY_VECTOR vector_name="C12y" vector_src="C12x"/>
+        <CORRECTION type="keyence_linearity" x="C12x" y="C12y" z="C12z" polynomial_degree="2" coeff_0="24.954e-06" coeff_1="12.218e-08" coeff_2="2.628e-10" />
+        <!-- <CORRECTION type="polynomial2D" x="C12x" z="C12z" dst_z="C12z_c" polynomial_degree="2" coeff_0_0="-0.000e+00" coeff_0_1="-0.000e+00" coeff_0_2="1.951e-05" coeff_1_0="1.463e-03" coeff_1_1="7.083e-06" coeff_1_2="-3.524e-08" coeff_2_0="2.022e-06" coeff_2_1="-3.950e-08" coeff_2_2="-6.227e-09"/> -->
+
+
+        <BUILD_TO_CLOUD name="build_c1" calib_name="calib_c1" src_x="C1x" src_y="C1y" src_z="C1z" src_i="C1i" rz="vectRz" dst_name="cloud_c1"/>
+        <BUILD_TO_CLOUD name="build_c2" calib_name="calib_c2" src_x="C2x" src_y="C2y" src_z="C2z" src_i="C2i" rz="vectRz" dst_name="cloud_c2"/>
+        <BUILD_TO_CLOUD name="build_c3" calib_name="calib_c3" src_x="C3x" src_y="C3y" src_z="C3z" src_i="C3i" rz="vectRz" dst_name="cloud_c3"/>
+        <BUILD_TO_CLOUD name="build_c4" calib_name="calib_c4" src_x="C4x" src_y="C4y" src_z="C4z" src_i="C4i" rz="vectRz" dst_name="cloud_c4"/>
+        <BUILD_TO_CLOUD name="build_c5" calib_name="calib_c5" src_x="C5x" src_y="C5y" src_z="C5z" src_i="C5i" rz="vectRz" dst_name="cloud_c5"/>
+        <BUILD_TO_CLOUD name="build_c6" calib_name="calib_c6" src_x="C6x" src_y="C6y" src_z="C6z" src_i="C6i" rz="vectRz" dst_name="cloud_c6"/>
+		<BUILD_TO_CLOUD name="build_c7" calib_name="calib_c7" src_x="C7x" src_y="C7y" src_z="C7z" src_i="C7i" rz="vectRz" dst_name="cloud_c7"/>
+        <BUILD_TO_CLOUD name="build_c8" calib_name="calib_c8" src_x="C8x" src_y="C8y" src_z="C8z" src_i="C8i" rz="vectRz" dst_name="cloud_c8"/>
+        <BUILD_TO_CLOUD name="build_c9" calib_name="calib_c9" src_x="C9x" src_y="C9y" src_z="C9z" src_i="C9i" rz="vectRz" dst_name="cloud_c9"/>
+        <BUILD_TO_CLOUD name="build_c10" calib_name="calib_c10" src_x="C10x" src_y="C10y" src_z="C10z" src_i="C10i" rz="vectRz" dst_name="cloud_c10"/>
+        <BUILD_TO_CLOUD name="build_c11" calib_name="calib_c11" src_x="C11x" src_y="C11y" src_z="C11z" src_i="C11i" rz="vectRz" dst_name="cloud_c11"/>
+        <BUILD_TO_CLOUD name="build_c12" calib_name="calib_c12" src_x="C12x" src_y="C12y" src_z="C12z" src_i="C12i" rz="vectRz" dst_name="cloud_c12"/>
+
+    </BUILD>
+	
+
+	<BUILD_SEQUENCES>
+		<BUILD_SEQUENCE name="build_sequence_c1" sequence="#build_c1" />
+		<BUILD_SEQUENCE name="build_sequence_c2" sequence="#build_c2" />
+		<BUILD_SEQUENCE name="build_sequence_c3" sequence="#build_c3" />
+		<BUILD_SEQUENCE name="build_sequence_c4" sequence="#build_c4" />
+		<BUILD_SEQUENCE name="build_sequence_c5" sequence="#build_c5" />
+		<BUILD_SEQUENCE name="build_sequence_c6" sequence="#build_c6" />
+		<BUILD_SEQUENCE name="build_sequence_c7" sequence="#build_c7" />
+		<BUILD_SEQUENCE name="build_sequence_c8" sequence="#build_c8" />
+		<BUILD_SEQUENCE name="build_sequence_c9" sequence="#build_c9" />
+		<BUILD_SEQUENCE name="build_sequence_c10" sequence="#build_c10" />
+		<BUILD_SEQUENCE name="build_sequence_c11" sequence="#build_c11" />
+		<BUILD_SEQUENCE name="build_sequence_c12" sequence="#build_c12" />
+	</BUILD_SEQUENCES>
+
+	
+
+    <CALIBRATION>
+		<!-- From Calibration Taken on 11/8/2023 on system 2 In Detroit BJH -->
+        <CALIB name="calib_c1" tx="88.0830576969" ty="-32.7309014083" tz="111.872018124" rx="89.7718072032" ry="-80.1574991583" rz="71.5214339934" sx="1" sy="1" sz="1"/>
+        <CALIB name="calib_c2" tx="83.2483474808" ty="-49.6190893067" tz="-15.6443637732" rx="175.876722695" ry="89.804453493" rz="157.069443241" sx="1" sy="1" sz="1"/>
+        <CALIB name="calib_c3" tx="70.0856103357" ty="-41.2471603427" tz="183.218021974" rx="154.805960095" ry="-142.085126607" rz="173.78782942" sx="1" sy="1" sz="1"/>
+        <CALIB name="calib_c4" tx="-59.4893197263" ty="21.8331524904" tz="106.586474598" rx="156.02284339" ry="-142.880778822" rz="3.28672060567" sx="1" sy="1" sz="1"/>
+        <CALIB name="calib_c5" tx="12.4843527269" ty="-58.1304719917" tz="-10.7442268815" rx="-179.753449707" ry="-60.1057886455" rz="109.9884399" sx="1" sy="1" sz="1"/>
+        <CALIB name="calib_c6" tx="134.229171701" ty="18.5708794364" tz="55.6724589198" rx="-8.22127633046" ry="-138.641536394" rz="174.583773386" sx="1" sy="1" sz="1"/>
+        <CALIB name="calib_c7" tx="-74.7894435432" ty="-3.94887180038" tz="-9.97922849417" rx="-179.903175483" ry="-59.8532742586" rz="35.2034653041" sx="1" sy="1" sz="1"/>
+        <CALIB name="calib_c8" tx="106.757675271" ty="-3.39549226738" tz="170.438885063" rx="-173.318896234" ry="-140.092629134" rz="2.7055916935" sx="1" sy="1" sz="1"/>
+        <CALIB name="calib_c9" tx="108.976373257" ty="-71.058944654" tz="117.766737638" rx="0.377888679661" ry="-38.9884773083" rz="143.297606457" sx="1" sy="1" sz="1"/>
+        <CALIB name="calib_c10" tx="19.7007794521" ty="-62.6762362534" tz="64.2323428516" rx="179.532920024" ry="-150.005242323" rz="96.6801332807" sx="1" sy="1" sz="1"/>
+        <CALIB name="calib_c11" tx="88.0491781047" ty="-32.8867927832" tz="174.703448669" rx="89.7196098908" ry="-80.7662550507" rz="71.6651271064" sx="1" sy="1" sz="1"/>
+        <CALIB name="calib_c12" tx="5.08044619477" ty="131.584324077" tz="157.908531567" rx="179.436165343" ry="148.990733184" rz="94.2266330479" sx="1" sy="1" sz="1"/>
+    </CALIBRATION>
+
+</CONFIG>

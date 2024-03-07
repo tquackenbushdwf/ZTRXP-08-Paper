@@ -1,0 +1,56 @@
+' ------------ PositionCheck.ab -------------
+' -------------------------------------------------
+'
+' This program is used to check the if...
+'	1. The stage is enabled
+'	2. The position is at home (+38?)
+' If true to both, send ouput of 1 to Port 0 Bit 0
+' Else, send ouput 0
+'
+' -------------------------------------------------
+HEADER
+INCLUDE "AeroBasicInclude.abi"
+END HEADER
+
+
+PROGRAM
+
+DIM HomePos AS INTEGER
+DIM PosTolerance AS DOUBLE
+DIM ServoStatus	AS DOUBLE
+DIM EnableStatus AS DOUBLE
+DIM CurrentPos AS DOUBLE
+DIM FloorPos AS INTEGER
+DIM MinLim AS DOUBLE
+DIM MaxLim	AS DOUBLE
+
+' Initialize Variables
+HomePos = 0
+PosTolerance = 0.1
+MinLim = HomePos - PosTolerance
+MaxLim = HomePos + PosTolerance
+
+' Get stage's current status
+CurrentPos = PFBKPROG()/360' Get the current position
+FloorPos = FLOOR(CurrentPos)
+IF CurrentPos < 0 THEN
+	FloorPos = FloorPos + 1
+END IF
+CurrentPos = (CurrentPos-FloorPos)*360
+
+ServoStatus = AXISSTATUS()/2	' Get axis status, Enable = 0
+EnableStatus = (ServoStatus - FLOOR(ServoStatus))*2
+
+' Initialize output to a starting value.
+DOUT 0,0:0        ' Write 0 to Port 0 Bit 0.
+
+' Check if stage is enabled and in correct location
+IF ((MinLim < CurrentPos)  && (MaxLim > CurrentPos) && (EnableStatus == 1)) THEN
+	DOUT 0,0:1 ' Write 1 to Port 0 Bit 0.
+ELSE
+	DOUT 0,0:0	' Write 0 to Port 0 Bit 0.
+END IF
+
+HomePos = 0
+
+END PROGRAM 

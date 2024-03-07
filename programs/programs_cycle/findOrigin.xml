@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CYCLE nb_iter="30" description="origin search cycle using the home command">  
+	  
+	<!-- Stage parameters (gains) [part values]-->
+    <!-- Syntaxe: SET_GAIN_ADVANCED axisID gainKp gainKi gainKpos gainAff gainKd1 gainKpi gainKp1 gainVff gainPff -->
+    <COMMAND component_name="aerotech" value="MS3DCMD SET_GAIN_ADVANCED 1 2200 100 2 0 0 0 0 0 0"/>
+	 
+	<!-- Start Aerotech Clocking Program  -->
+	<COMMAND component_name="aerotech" value="MS3DCMD PROGRAM_RUN 1 1 PositionCheck_Orig.bco"/>
+	
+    <!-- Motor On -->
+    <MOVE type="start"/>
+    <WAIT type="stop" timeout="5000"/>
+
+    <!-- Home -->
+    <MOVE type="enable_index" axis="rotation" />
+
+    <COMMAND component_name="aerotech" value="MS3DCMD HOME 1"/>
+    <WAIT type="stop" timeout="10000"/>
+
+    <MOVE type="disable_index" axis="rotation" />
+
+    <!-- Go back home -->
+    <MOVE type="start"/>
+    <MOVE type="pom" axis="rotation" speed="30"/>
+    <WAIT type="stop" timeout="10000"/>
+	
+    <!-- Motor Off -->
+    <!-- MOVE type="stop"/ -->
+	
+	<!-- Stage parameters (gains) [part values]-->
+    <!-- Syntaxe: SET_GAIN_ADVANCED axisID gainKp gainKi gainKpos gainAff gainKd1 gainKpi gainKp1 gainVff gainPff -->
+    <!-- <COMMAND component_name="aerotech" value="MS3DCMD SET_GAIN_ADVANCED 1 2200 20 20 0 0 0 0 0 0"/> -->
+	
+</CYCLE>

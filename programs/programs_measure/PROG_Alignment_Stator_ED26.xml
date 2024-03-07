@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CONTROL reference="" description="Alignment for the stator." process_dll=""  version="1.0.0">
+
+    <!-- PARAMETERS -->
+    <PARAMETERS>
+        <!-- Align -->
+        <PARAMETER name="uiAlignStepMax" value="3"/>			<!-- for the loop on alignment -->
+        <PARAMETER name="bAlignOnRxRyTz" value="true"/>
+        <PARAMETER name="bAlignOnTxTy" value="true"/>
+        <PARAMETER name="bAlignOnTxTyTzRxRy" value="false"/>
+        <PARAMETER name="bAlignOnRz" value="true"/>
+        <!-- Rz -->
+        <PARAMETER name="dLugRefGap" value="70"/> 		        <!-- Approximate angular gap in degree between the C reference and the lug -->
+        <PARAMETER name="dRzTheoricalPos" value="132"/> 		<!-- Theoritical angular position of the C reference in degree -->      
+        <PARAMETER name="uiNbCylindersRefC" value="4"/> 	    <!-- Number of potential cylinders for the reference C -->
+        <!-- Limits -->
+        <PARAMETER name="dAlignLimitPosition" value="0.001"/>	<!-- Maximum limit for translation (Tx/Ty/Ty) in mm -->
+        <PARAMETER name="dAlignLimitRotation" value="0.001"/>	<!-- Maximum limit for rotation (Rx/Ry) in degree -->
+        <PARAMETER name="dAlignLimitTheta"    value="0.01"/> 	<!-- Maximum limit for theta (Rz) in degree -->
+
+        <ORIENTED_BOX name="OBox_External_RefC" width="100.0" length="200.0" height="101" >		<!-- Extraction Box for the external Ref C area -->
+            <CENTER x="125.0" y="0.0" z="-50.5"/>												<!-- Orientations will be updated in the process -->
+            <AXIS_U x="1" y="0" z="0"/>
+            <AXIS_V x="0" y="1" z="0"/>
+        </ORIENTED_BOX>
+    </PARAMETERS>
+
+    <PARAMETERS>
+        <!-- TxTy -->
+        <CYLINDER name="cylinder_align_ref" ref="cylinder_A_ref"/>        
+        <!-- TzRxRy -->
+        <PLANE name="plane_align_ref" ref="plane_B_ref"/>
+        <CYLINDER name="cylinder_plane_align_ref" ref="cylinder_B_ref"/>
+        <!-- Rz -->
+        <CYLINDER name="cylinder_Rz_align_ref" ref="cylinder_C_ref"/>
+    </PARAMETERS>
+        
+    <!-- ALIGNMENT TxTyTzRxRy -->
+    <EXTRACTIONS>
+        <ZONE_CYLINDER out_name="cloud_cylinder_align" cloud_ref="cloud_c6" cloud_min_size="10">
+            <CYLINDER reference="cylinder_A_ref"/>
+            <INTERVAL target="distance" type="min_max" min="-4" max="4"/>
+            <INTERVAL target="height" type="min_max" min="-2" max="2"/>
+        </ZONE_CYLINDER>
+        <ZONE_CYLINDER out_name="cloud_plane_align" cloud_ref="cloud_c9" cloud_min_size="10">
+            <CYLINDER reference="cylinder_B_ref"/>
+            <INTERVAL target="distance" type="min_max" min="-2" max="2"/>
+            <INTERVAL target="height" type="min_max" min="-4" max="4"/>
+        </ZONE_CYLINDER>      
+        
+        <!-- Use this to extract cloud based on plane_align height -->
+        <!-- <ZONE_CYLINDER out_name="cloud_cylinder_align" cloud_ref="cloud_c6" cloud_min_size="10"> -->
+            <!-- <CYLINDER diameter="215.0" height="0.0" axis="axis_z" base_center="plane_align"/> -->
+            <!-- <INTERVAL target="distance" type="min_max" min="-4" max="4"/> -->
+            <!-- <INTERVAL target="height" type="min_max" min="-4.5" max="-3.5"/> -->
+        <!-- </ZONE_CYLINDER> -->
+        
+        <!-- Use this to extract cloud based on cylinder_align position -->
+        <!-- <ZONE_CYLINDER out_name="cloud_plane_align" cloud_ref="cloud_c9" cloud_min_size="10"> -->
+            <!-- <CYLINDER reference="cylinder_align"/> -->
+            <!-- <INTERVAL target="distance" type="min_max" min="-15" max="-10"/> -->
+            <!-- <INTERVAL target="height" type="min_max" min="0" max="8"/> -->
+        <!-- </ZONE_CYLINDER> -->
+    </EXTRACTIONS>
+    <!-- Reduce point clouds to keep only 10% of data points -->
+    <!-- <CLOUD_OPERATIONS> -->
+        <!-- <REDUCE_CLOUD out_name="cloud_cylinder_align_reduced" cloud_ref="cloud_cylinder_align" percentage_of_points="10"/> -->
+        <!-- <REDUCE_CLOUD out_name="cloud_plane_align_reduced" cloud_ref="cloud_plane_align" percentage_of_points="10"/>     -->
+    <!-- </CLOUD_OPERATIONS> -->
+    <FIT>
+        <CYLINDER_FIT out_name="cylinder_align" cloud_ref="cloud_cylinder_align">
+            <FIT_FILTER reference="fit_filter_1sigma_fixedAxis"/>
+            <CYLINDER reference="cylinder_align_ref"/>
+        </CYLINDER_FIT>
+        <PLANE_FIT out_name="plane_align" cloud_ref="cloud_plane_align">
+            <FIT_FILTER reference="fit_filter_1sigma"/>
+            <PLANE reference="plane_align_ref"/>
+        </PLANE_FIT>
+    </FIT>
+
+    <!-- ALIGNMENT Rz -->
+    <EXTRACTIONS>
+        <ZONE_AXIS_ALIGNED_BOX out_name="cloud_terminal_lug" cloud_ref="cloud_c8" axis_aligned_box="terminal_lug_box" cloud_min_size="10" reverse_selection="false"/>
+
+        <ZONE_CYLINDER out_name="cloud_external_cylinders" cloud_ref="cloud_ref_C_f" cloud_min_size="10" reverse_selection="true">
+            <CYLINDER base_center="origin" axis="axis_z" radius="110.0" height="0.0"/>
+            <INTERVAL target="distance" type="inside"/>
+            <INTERVAL target="height" type="min_max" min="-999.0" max="999.0"/>
+        </ZONE_CYLINDER>
+        <ZONE_CYLINDER out_name="cloud_Cylinder_Rz_align" cloud_ref="cloud_external_cylinders" cloud_min_size="10">
+            <CYLINDER reference="cylinder_C_ref"/>
+            <INTERVAL target="distance" type="min_max" min="-2" max="2"/>
+            <INTERVAL target="height" type="min_max" min="-46" max="46"/>
+        </ZONE_CYLINDER>
+    </EXTRACTIONS>
+    <FIT>
+		<CYLINDER_FIT out_name="Cylinder_Rz_align" cloud_ref="cloud_Cylinder_Rz_align" return_filtered_cloud="true">
+			<FIT_FILTER reference="fit_filter_3sigma_fixedAxis"/>
+			<CYLINDER reference="cylinder_Rz_align_ref"/>
+		</CYLINDER_FIT>
+    </FIT>
+
+</CONTROL>

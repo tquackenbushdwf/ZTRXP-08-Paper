@@ -1,0 +1,211 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CONTROL reference="213-0021-CalibV3" description="Check artefact program" process_dll=""  version="0.1.0">
+
+    <PARAMETERS>
+	
+        <PARAMETER name="check_artefact_save_sub_clouds" value="true"/>
+        <PARAMETER name="check_artefact_full_cloud_activated" value="false"/>
+
+	
+		<!-- Check artefact for cloud c1 -->
+        <PARAMETER name="check_artefact_c1_activated" value="false"/>										<!--  here   -->
+		<PARAMETER name="check_artefact_c1_reference_1" value="plane_Py4_coarse"/>
+		<PARAMETER name="check_artefact_c1_reference_2" value="plane_Py6_coarse"/>
+		<PARAMETER name="check_artefact_c1_reference_3" value="plane_Pxz8_coarse"/>
+		<PARAMETER name="check_artefact_c1_reference_4" value="plane_Pxz9_coarse"/>
+		<PARAMETER name="check_artefact_c1_reference_5" value="plane_Pxz2_coarse"/>
+		<PARAMETER name="check_artefact_c1_reference_6" value="plane_Pxz3_coarse"/>
+		<PARAMETER name="check_artefact_c1_reference_7" value="plane_Py4"/>
+		<PARAMETER name="check_artefact_c1_reference_8" value="plane_Py6"/>
+		<PARAMETER name="check_artefact_c1_reference_9" value="plane_Pxz8"/>
+		<PARAMETER name="check_artefact_c1_reference_10" value="plane_Pxz9"/>
+		<PARAMETER name="check_artefact_c1_reference_11" value="plane_Pxz2"/>
+		<PARAMETER name="check_artefact_c1_reference_12" value="plane_Pxz3"/>
+        <PARAMETER name="check_artefact_c1_reference_13" value="cylinder_Cyl1_coarse"/>
+        <PARAMETER name="check_artefact_c1_reference_14" value="cylinder_Cyl1"/>
+
+
+
+		<!-- Check artefact for cloud c2 -->
+        <PARAMETER name="check_artefact_c2_activated" value="true"/>										<!--  here   -->
+		<PARAMETER name="check_artefact_c2_reference_1" value="plane_Py3_coarse"/>
+		<PARAMETER name="check_artefact_c2_reference_2" value="plane_Py5_coarse"/>
+		<PARAMETER name="check_artefact_c2_reference_3" value="plane_Pxz4_coarse"/>
+		<PARAMETER name="check_artefact_c2_reference_4" value="plane_Pxz5_coarse"/>
+		<PARAMETER name="check_artefact_c2_reference_5" value="plane_Pxz6_coarse"/>
+		<PARAMETER name="check_artefact_c2_reference_6" value="plane_Pxz7_coarse"/>
+		<PARAMETER name="check_artefact_c2_reference_7" value="plane_Py3"/>
+		<PARAMETER name="check_artefact_c2_reference_8" value="plane_Py5"/>
+		<PARAMETER name="check_artefact_c2_reference_9" value="plane_Pxz4"/>
+		<PARAMETER name="check_artefact_c2_reference_10" value="plane_Pxz5"/>
+		<PARAMETER name="check_artefact_c2_reference_11" value="plane_Pxz6"/>
+		<PARAMETER name="check_artefact_c2_reference_12" value="plane_Pxz7"/>
+        <PARAMETER name="check_artefact_c2_reference_13" value="cylinder_Cyl1_coarse"/>
+        <PARAMETER name="check_artefact_c2_reference_14" value="cylinder_Cyl1"/>
+
+
+		
+		<!-- Check artefact for cloud c3 -->
+        <PARAMETER name="check_artefact_c3_activated" value="false"/>										<!--  here   -->
+        <PARAMETER name="check_artefact_c3_reference_1" value="cylinder_Cyl2_coarse"/>
+        <PARAMETER name="check_artefact_c3_reference_2" value="cylinder_Cyl3_coarse"/>
+        <PARAMETER name="check_artefact_c3_reference_3" value="plane_Pz1_coarse"/>
+        <PARAMETER name="check_artefact_c3_reference_4" value="plane_Pz2_coarse"/>
+        <PARAMETER name="check_artefact_c3_reference_5" value="plane_Py10_coarse"/>
+        <PARAMETER name="check_artefact_c3_reference_6" value="plane_Py8_coarse"/>
+        <PARAMETER name="check_artefact_c3_reference_7" value="cylinder_Cyl2"/>
+        <PARAMETER name="check_artefact_c3_reference_8" value="cylinder_Cyl3"/>
+        <PARAMETER name="check_artefact_c3_reference_9" value="plane_Pz1"/>
+        <PARAMETER name="check_artefact_c3_reference_10" value="plane_Pz2"/>
+        <PARAMETER name="check_artefact_c3_reference_11" value="plane_Py10"/>
+        <PARAMETER name="check_artefact_c3_reference_12" value="plane_Py8"/>
+
+		
+		<!-- Check artefact for cloud c4 -->
+        <PARAMETER name="check_artefact_c4_activated" value="false"/>										<!--  here   -->
+        <PARAMETER name="check_artefact_c4_reference_1" value="cylinder_Cyl3_coarse"/>
+        <PARAMETER name="check_artefact_c4_reference_2" value="cylinder_Cyl4_coarse"/>
+        <PARAMETER name="check_artefact_c4_reference_3" value="plane_Pz3_coarse"/>
+        <PARAMETER name="check_artefact_c4_reference_4" value="plane_Py10_coarse"/>
+        <PARAMETER name="check_artefact_c4_reference_5" value="plane_Py8_coarse"/>
+        <PARAMETER name="check_artefact_c4_reference_6" value="cylinder_Cyl3"/>
+        <PARAMETER name="check_artefact_c4_reference_7" value="cylinder_Cyl4"/>
+        <PARAMETER name="check_artefact_c4_reference_8" value="plane_Pz3"/>
+        <PARAMETER name="check_artefact_c4_reference_9" value="plane_Py10"/>
+        <PARAMETER name="check_artefact_c4_reference_10" value="plane_Py8"/>
+
+		
+		<!-- Check artefact for cloud c5 -->
+        <PARAMETER name="check_artefact_c5_activated" value="false"/>										<!--  here   -->
+        <PARAMETER name="check_artefact_c5_reference_1" value="cylinder_Cyl4_coarse"/>
+        <PARAMETER name="check_artefact_c5_reference_2" value="plane_Pz4_coarse"/>
+        <PARAMETER name="check_artefact_c5_reference_3" value="plane_Pz5_coarse"/>
+        <PARAMETER name="check_artefact_c5_reference_4" value="plane_Pz6_coarse"/>
+        <PARAMETER name="check_artefact_c5_reference_5" value="plane_Px1_coarse"/>	
+        <PARAMETER name="check_artefact_c5_reference_6" value="plane_Px2_coarse"/>
+        <PARAMETER name="check_artefact_c5_reference_7" value="cylinder_Cyl4"/>
+        <PARAMETER name="check_artefact_c5_reference_8" value="plane_Pz4"/>
+        <PARAMETER name="check_artefact_c5_reference_9" value="plane_Pz5"/>
+        <PARAMETER name="check_artefact_c5_reference_10" value="plane_Pz6"/>
+        <PARAMETER name="check_artefact_c5_reference_11" value="plane_Px1"/>	
+        <PARAMETER name="check_artefact_c5_reference_12" value="plane_Px2"/>	
+
+		
+		<!-- Check artefact for cloud c6 -->
+        <PARAMETER name="check_artefact_c6_activated" value="false"/>										<!--  here   -->
+        <PARAMETER name="check_artefact_c6_reference_1" value="plane_Pz4_coarse"/>
+        <PARAMETER name="check_artefact_c6_reference_2" value="plane_Pz5_coarse"/>
+        <PARAMETER name="check_artefact_c6_reference_3" value="plane_Pz6_coarse"/>
+        <PARAMETER name="check_artefact_c6_reference_4" value="plane_Py4_coarse"/>
+        <PARAMETER name="check_artefact_c6_reference_5" value="plane_Py6_coarse"/>
+		<PARAMETER name="check_artefact_c6_reference_6" value="plane_Pxz2_coarse"/>
+		<PARAMETER name="check_artefact_c6_reference_7" value="plane_Pxz9_coarse"/>
+		<PARAMETER name="check_artefact_c6_reference_8" value="plane_Pxz4_coarse"/>
+		<PARAMETER name="check_artefact_c6_reference_9" value="plane_Pxz7_coarse"/>
+        <PARAMETER name="check_artefact_c6_reference_10" value="plane_Pz4"/>
+        <PARAMETER name="check_artefact_c6_reference_11" value="plane_Pz5"/>
+        <PARAMETER name="check_artefact_c6_reference_12" value="plane_Pz6"/>
+        <PARAMETER name="check_artefact_c6_reference_13" value="plane_Py4"/>
+        <PARAMETER name="check_artefact_c6_reference_14" value="plane_Py6"/>
+		<PARAMETER name="check_artefact_c6_reference_15" value="plane_Pxz2"/>
+		<PARAMETER name="check_artefact_c6_reference_16" value="plane_Pxz9"/>
+		<PARAMETER name="check_artefact_c6_reference_17" value="plane_Pxz4"/>
+		<PARAMETER name="check_artefact_c6_reference_18" value="plane_Pxz7"/>
+        <PARAMETER name="check_artefact_c6_reference_19" value="cylinder_Cyl1_coarse"/>
+        <PARAMETER name="check_artefact_c6_reference_20" value="cylinder_Cyl1"/>
+
+		
+				<!-- Check artefact for cloud c7 -->
+        <PARAMETER name="check_artefact_c7_activated" value="false"/>										<!--  here    -->
+        <PARAMETER name="check_artefact_c7_reference_1" value="cylinder_Cyl4_coarse"/>
+        <PARAMETER name="check_artefact_c7_reference_2" value="plane_Pz4_coarse"/>
+        <PARAMETER name="check_artefact_c7_reference_3" value="plane_Pz5_coarse"/>
+        <PARAMETER name="check_artefact_c7_reference_4" value="plane_Pz6_coarse"/>
+        <PARAMETER name="check_artefact_c7_reference_5" value="plane_Py1_coarse"/>	
+        <PARAMETER name="check_artefact_c7_reference_6" value="plane_Py2_coarse"/>
+        <PARAMETER name="check_artefact_c7_reference_7" value="cylinder_Cyl4"/>
+        <PARAMETER name="check_artefact_c7_reference_8" value="plane_Pz4"/>
+        <PARAMETER name="check_artefact_c7_reference_9" value="plane_Pz5"/>
+        <PARAMETER name="check_artefact_c7_reference_10" value="plane_Pz6"/>
+        <PARAMETER name="check_artefact_c7_reference_11" value="plane_Py1"/>	
+        <PARAMETER name="check_artefact_c7_reference_12" value="plane_Py2"/>
+
+
+		<!-- Check artefact for cloud c8 -->
+        <PARAMETER name="check_artefact_c8_activated" value="true"/>										<!--  here    -->
+        <PARAMETER name="check_artefact_c8_reference_1" value="plane_Py3_coarse"/>
+        <PARAMETER name="check_artefact_c8_reference_2" value="plane_Py5_coarse"/>
+		<PARAMETER name="check_artefact_c8_reference_3" value="plane_Pxz1_coarse"/>
+		<PARAMETER name="check_artefact_c8_reference_4" value="plane_Pxz10_coarse"/>
+        <PARAMETER name="check_artefact_c8_reference_5" value="plane_Pz1_coarse"/>
+        <PARAMETER name="check_artefact_c8_reference_6" value="plane_Py3"/>
+        <PARAMETER name="check_artefact_c8_reference_7" value="plane_Py5"/>
+		<PARAMETER name="check_artefact_c8_reference_8" value="plane_Pxz1"/>
+		<PARAMETER name="check_artefact_c8_reference_9" value="plane_Pxz10"/>
+        <PARAMETER name="check_artefact_c8_reference_10" value="plane_Pz1"/>
+        <PARAMETER name="check_artefact_c8_reference_11" value="cylinder_Cyl1_coarse"/>
+        <PARAMETER name="check_artefact_c8_reference_12" value="cylinder_Cyl1"/>
+
+		
+		<!-- Check artefact for cloud c9 -->
+        <PARAMETER name="check_artefact_c9_activated" value="false"/>
+        <PARAMETER name="check_artefact_c9_reference_1" value="plane_Pxz1_coarse"/>
+        <PARAMETER name="check_artefact_c9_reference_2" value="plane_Pxz3_coarse"/>
+        <PARAMETER name="check_artefact_c9_reference_3" value="plane_Pxz8_coarse"/>
+        <PARAMETER name="check_artefact_c9_reference_4" value="plane_Pxz10_coarse"/>
+        <PARAMETER name="check_artefact_c9_reference_5" value="plane_Py4_coarse"/>
+        <PARAMETER name="check_artefact_c9_reference_6" value="plane_Py6_coarse"/>
+        <PARAMETER name="check_artefact_c9_reference_7" value="plane_Pxz1"/>
+        <PARAMETER name="check_artefact_c9_reference_8" value="plane_Pxz3"/>
+        <PARAMETER name="check_artefact_c9_reference_9" value="plane_Pxz8"/>
+        <PARAMETER name="check_artefact_c9_reference_10" value="plane_Pxz10"/>
+        <PARAMETER name="check_artefact_c9_reference_11" value="plane_Py4"/>
+        <PARAMETER name="check_artefact_c9_reference_12" value="plane_Py6"/>
+        <PARAMETER name="check_artefact_c9_reference_13" value="cylinder_Cyl1_coarse"/>
+        <PARAMETER name="check_artefact_c9_reference_14" value="cylinder_Cyl1"/>
+		
+		<!-- Check artefact for cloud c10 -->
+        <PARAMETER name="check_artefact_c10_activated" value="false"/>										<!--  here   -->
+        <PARAMETER name="check_artefact_c10_reference_1" value="cylinder_Cyl3_coarse"/>
+        <PARAMETER name="check_artefact_c10_reference_2" value="cylinder_Cyl4_coarse"/>
+        <PARAMETER name="check_artefact_c10_reference_3" value="plane_Px1_coarse"/>	
+        <PARAMETER name="check_artefact_c10_reference_4" value="plane_Px2_coarse"/>
+        <PARAMETER name="check_artefact_c10_reference_5" value="plane_Pz3_coarse"/>
+        <PARAMETER name="check_artefact_c10_reference_6" value="cylinder_Cyl3"/>
+        <PARAMETER name="check_artefact_c10_reference_7" value="cylinder_Cyl4"/>
+        <PARAMETER name="check_artefact_c10_reference_8" value="plane_Px1"/>	
+        <PARAMETER name="check_artefact_c10_reference_9" value="plane_Px2"/>
+        <PARAMETER name="check_artefact_c10_reference_10" value="plane_Pz3"/>
+
+		
+		<!-- Check artefact for cloud c11 -->
+        <PARAMETER name="check_artefact_c11_activated" value="false"/>
+        <PARAMETER name="check_artefact_c11_reference_1" value="plane_Pxz1_coarse"/>
+        <PARAMETER name="check_artefact_c11_reference_2" value="plane_Pxz10_coarse"/>
+        <PARAMETER name="check_artefact_c11_reference_3" value="plane_Py4_coarse"/>
+        <PARAMETER name="check_artefact_c11_reference_4" value="plane_Py6_coarse"/>
+        <PARAMETER name="check_artefact_c11_reference_5" value="plane_Pxz1"/>
+        <PARAMETER name="check_artefact_c11_reference_6" value="plane_Pxz10"/>
+        <PARAMETER name="check_artefact_c11_reference_7" value="plane_Py4"/>
+        <PARAMETER name="check_artefact_c11_reference_8" value="plane_Py6"/>
+        <PARAMETER name="check_artefact_c11_reference_9" value="cylinder_Cyl1_coarse"/>
+        <PARAMETER name="check_artefact_c11_reference_10" value="cylinder_Cyl1"/>
+		
+		<!-- Check artefact for cloud c12 -->
+        <PARAMETER name="check_artefact_c12_activated" value="false"/>										<!--  here -->
+        <PARAMETER name="check_artefact_c12_reference_1" value="cylinder_Cyl2_coarse"/>
+        <PARAMETER name="check_artefact_c12_reference_2" value="plane_Pxz1_coarse"/>
+        <PARAMETER name="check_artefact_c12_reference_3" value="plane_Pxz10_coarse"/>	
+		<PARAMETER name="check_artefact_c12_reference_4" value="plane_Py7_coarse"/>
+        <PARAMETER name="check_artefact_c12_reference_5" value="plane_Py9_coarse"/>
+        <PARAMETER name="check_artefact_c12_reference_6" value="plane_Pz2_coarse"/>
+        <PARAMETER name="check_artefact_c12_reference_7" value="cylinder_Cyl2"/>
+        <PARAMETER name="check_artefact_c12_reference_8" value="plane_Pxz1"/>
+        <PARAMETER name="check_artefact_c12_reference_9" value="plane_Pxz10"/>
+		<PARAMETER name="check_artefact_c12_reference_10" value="plane_Py7"/>
+        <PARAMETER name="check_artefact_c12_reference_11" value="plane_Py9"/>
+        <PARAMETER name="check_artefact_c12_reference_12" value="plane_Pz2"/>
+
+ 
+    </PARAMETERS>
+</CONTROL>

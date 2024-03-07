@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CYCLE description="Operations done at the end of a cycle">  
+	<!-- Wait end movements, disable motors and notify that motion is done -->
+    <WAIT type="stop" timeout="30000"/>
+    <NOTIFY type="notifAllMovesDone"/>
+	
+	<!-- Reset gain values -->
+	<SENSOR type="load_program" component_name="aerotech" program="$aerotech_program_NoPart"/>
+	<!-- Keep the laser always on - Temperature stability -->
+	<SENSOR type="signal_generator" signal_name="pwm" start="true" value="$frequency"/> 	
+</CYCLE>

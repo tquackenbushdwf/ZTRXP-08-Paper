@@ -1,0 +1,222 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CONTROL reference="213-0021-CalibV3" description="Check artefact program" process_dll=""  version="0.1.0">
+
+    <PARAMETERS>
+        <!-- Activation/deactivation of check artefact sub-steps -->
+        <PARAMETER name="check_geometries_filter_cloud" value="false"/>     <!-- If true, apply a 3D filter on the point cloud -->
+        <PARAMETER name="check_geometries_save_sub_clouds" value="true"/>   <!-- If true, subcloud is saved for each geometry -->
+        <PARAMETER name="check_geometries_form_fault" value="false"/>        <!-- If true, calculate form fault of each geometry -->
+        
+        <!-- Parameters for 3D filtering -->
+        <FILTER_3D name="check_geometries_3d_filter" type="triangular" search_radius="0.5" remove_outliers="true" min_nr_of_neighbors="5"/>
+        
+        <!-- Feature export activation/deactivation -->
+        <PARAMETER name="check_geometries_activate_dist_max" value="true"/>         <!-- If true, export the dist max -->
+        <PARAMETER name="check_geometries_activate_average" value="false"/>         <!-- If true, export the average value -->
+        <PARAMETER name="check_geometries_activate_std_dev" value="true"/>          <!-- If true, export the standard deviation value -->
+        <PARAMETER name="check_geometries_activate_nr_of_points" value="false"/>    <!-- If true, export nr of points -->
+	
+
+	
+		<!-- Check artefact for cloud c1 -->
+        <PARAMETER name="check_geometries_c1_activated" value="false"/>										<!--  here   -->
+		<PARAMETER name="check_geometries_c1_geom_1" value="plane_Py4_coarse"/>
+		<PARAMETER name="check_geometries_c1_geom_2" value="plane_Py6_coarse"/>
+		<PARAMETER name="check_geometries_c1_geom_3" value="plane_Pxz8_coarse"/>
+		<PARAMETER name="check_geometries_c1_geom_4" value="plane_Pxz9_coarse"/>
+		<PARAMETER name="check_geometries_c1_geom_5" value="plane_Pxz2_coarse"/>
+		<PARAMETER name="check_geometries_c1_geom_6" value="plane_Pxz3_coarse"/>
+		<PARAMETER name="check_geometries_c1_geom_7" value="plane_Py4"/>
+		<PARAMETER name="check_geometries_c1_geom_8" value="plane_Py6"/>
+		<PARAMETER name="check_geometries_c1_geom_9" value="plane_Pxz8"/>
+		<PARAMETER name="check_geometries_c1_geom_10" value="plane_Pxz9"/>
+		<PARAMETER name="check_geometries_c1_geom_11" value="plane_Pxz2"/>
+		<PARAMETER name="check_geometries_c1_geom_12" value="plane_Pxz3"/>
+        <PARAMETER name="check_geometries_c1_geom_13" value="cylinder_Cyl1_coarse"/>
+        <PARAMETER name="check_geometries_c1_geom_14" value="cylinder_Cyl1"/>
+
+
+
+		<!-- Check artefact for cloud c2 -->
+        <PARAMETER name="check_geometries_c2_activated" value="false"/>										<!--  here   -->
+		<PARAMETER name="check_geometries_c2_geom_1" value="plane_Py3_coarse"/>
+		<PARAMETER name="check_geometries_c2_geom_2" value="plane_Py5_coarse"/>
+		<PARAMETER name="check_geometries_c2_geom_3" value="plane_Pxz4_coarse"/>
+		<PARAMETER name="check_geometries_c2_geom_4" value="plane_Pxz5_coarse"/>
+		<PARAMETER name="check_geometries_c2_geom_5" value="plane_Pxz6_coarse"/>
+		<PARAMETER name="check_geometries_c2_geom_6" value="plane_Pxz7_coarse"/>
+		<PARAMETER name="check_geometries_c2_geom_7" value="plane_Py3"/>
+		<PARAMETER name="check_geometries_c2_geom_8" value="plane_Py5"/>
+		<PARAMETER name="check_geometries_c2_geom_9" value="plane_Pxz4"/>
+		<PARAMETER name="check_geometries_c2_geom_10" value="plane_Pxz5"/>
+		<PARAMETER name="check_geometries_c2_geom_11" value="plane_Pxz6"/>
+		<PARAMETER name="check_geometries_c2_geom_12" value="plane_Pxz7"/>
+        <PARAMETER name="check_geometries_c2_geom_13" value="cylinder_Cyl1_coarse"/>
+        <PARAMETER name="check_geometries_c2_geom_14" value="cylinder_Cyl1"/>
+
+
+		
+		<!-- Check artefact for cloud c3 -->
+        <PARAMETER name="check_geometries_c3_activated" value="true"/>										<!--  here   -->
+        <PARAMETER name="check_geometries_c3_geom_1" value="cylinder_Cyl2_coarse"/>
+        <PARAMETER name="check_geometries_c3_geom_2" value="cylinder_Cyl3_coarse"/>
+        <PARAMETER name="check_geometries_c3_geom_3" value="plane_Pz1_coarse"/>
+        <PARAMETER name="check_geometries_c3_geom_4" value="plane_Pz2_coarse"/>
+        <PARAMETER name="check_geometries_c3_geom_5" value="plane_Py10_coarse"/>
+        <PARAMETER name="check_geometries_c3_geom_6" value="plane_Py8_coarse"/>
+        <PARAMETER name="check_geometries_c3_geom_7" value="cylinder_Cyl2"/>
+        <PARAMETER name="check_geometries_c3_geom_8" value="cylinder_Cyl3"/>
+        <PARAMETER name="check_geometries_c3_geom_9" value="plane_Pz1"/>
+        <PARAMETER name="check_geometries_c3_geom_10" value="plane_Pz2"/>
+        <PARAMETER name="check_geometries_c3_geom_11" value="plane_Py10"/>
+        <PARAMETER name="check_geometries_c3_geom_12" value="plane_Py8"/>
+
+		
+		<!-- Check artefact for cloud c4 -->
+        <PARAMETER name="check_geometries_c4_activated" value="true"/>										<!--  here   -->
+        <PARAMETER name="check_geometries_c4_geom_1" value="cylinder_Cyl3_coarse"/>
+        <PARAMETER name="check_geometries_c4_geom_2" value="cylinder_Cyl4_coarse"/>
+        <PARAMETER name="check_geometries_c4_geom_3" value="plane_Pz3_coarse"/>
+        <PARAMETER name="check_geometries_c4_geom_4" value="plane_Py10_coarse"/>
+        <PARAMETER name="check_geometries_c4_geom_5" value="plane_Py8_coarse"/>
+        <PARAMETER name="check_geometries_c4_geom_6" value="cylinder_Cyl3"/>
+        <PARAMETER name="check_geometries_c4_geom_7" value="cylinder_Cyl4"/>
+        <PARAMETER name="check_geometries_c4_geom_8" value="plane_Pz3"/>
+        <PARAMETER name="check_geometries_c4_geom_9" value="plane_Py10"/>
+        <PARAMETER name="check_geometries_c4_geom_10" value="plane_Py8"/>
+
+		
+		<!-- Check artefact for cloud c5 -->
+        <PARAMETER name="check_geometries_c5_activated" value="false"/>										<!--  here   -->
+        <PARAMETER name="check_geometries_c5_geom_1" value="cylinder_Cyl4_coarse"/>
+        <PARAMETER name="check_geometries_c5_geom_2" value="plane_Pz4_coarse"/>
+        <PARAMETER name="check_geometries_c5_geom_3" value="plane_Pz5_coarse"/>
+        <PARAMETER name="check_geometries_c5_geom_4" value="plane_Pz6_coarse"/>
+        <PARAMETER name="check_geometries_c5_geom_5" value="plane_Px1_coarse"/>	
+        <PARAMETER name="check_geometries_c5_geom_6" value="plane_Px2_coarse"/>
+        <PARAMETER name="check_geometries_c5_geom_7" value="cylinder_Cyl4"/>
+        <PARAMETER name="check_geometries_c5_geom_8" value="plane_Pz4"/>
+        <PARAMETER name="check_geometries_c5_geom_9" value="plane_Pz5"/>
+        <PARAMETER name="check_geometries_c5_geom_10" value="plane_Pz6"/>
+        <PARAMETER name="check_geometries_c5_geom_11" value="plane_Px1"/>	
+        <PARAMETER name="check_geometries_c5_geom_12" value="plane_Px2"/>	
+
+		
+		<!-- Check artefact for cloud c6 -->
+        <PARAMETER name="check_geometries_c6_activated" value="false"/>										<!--  here   -->
+        <PARAMETER name="check_geometries_c6_geom_1" value="plane_Pz4_coarse"/>
+        <PARAMETER name="check_geometries_c6_geom_2" value="plane_Pz5_coarse"/>
+        <PARAMETER name="check_geometries_c6_geom_3" value="plane_Pz6_coarse"/>
+        <PARAMETER name="check_geometries_c6_geom_4" value="plane_Py4_coarse"/>
+        <PARAMETER name="check_geometries_c6_geom_5" value="plane_Py6_coarse"/>
+		<PARAMETER name="check_geometries_c6_geom_6" value="plane_Pxz2_coarse"/>
+		<PARAMETER name="check_geometries_c6_geom_7" value="plane_Pxz9_coarse"/>
+		<PARAMETER name="check_geometries_c6_geom_8" value="plane_Pxz4_coarse"/>
+		<PARAMETER name="check_geometries_c6_geom_9" value="plane_Pxz7_coarse"/>
+        <PARAMETER name="check_geometries_c6_geom_10" value="plane_Pz4"/>
+        <PARAMETER name="check_geometries_c6_geom_11" value="plane_Pz5"/>
+        <PARAMETER name="check_geometries_c6_geom_12" value="plane_Pz6"/>
+        <PARAMETER name="check_geometries_c6_geom_13" value="plane_Py4"/>
+        <PARAMETER name="check_geometries_c6_geom_14" value="plane_Py6"/>
+		<PARAMETER name="check_geometries_c6_geom_15" value="plane_Pxz2"/>
+		<PARAMETER name="check_geometries_c6_geom_16" value="plane_Pxz9"/>
+		<PARAMETER name="check_geometries_c6_geom_17" value="plane_Pxz4"/>
+		<PARAMETER name="check_geometries_c6_geom_18" value="plane_Pxz7"/>
+        <PARAMETER name="check_geometries_c6_geom_19" value="cylinder_Cyl1_coarse"/>
+        <PARAMETER name="check_geometries_c6_geom_20" value="cylinder_Cyl1"/>
+
+		
+				<!-- Check artefact for cloud c7 -->
+        <PARAMETER name="check_geometries_c7_activated" value="false"/>										<!--  here    -->
+        <PARAMETER name="check_geometries_c7_geom_1" value="cylinder_Cyl4_coarse"/>
+        <PARAMETER name="check_geometries_c7_geom_2" value="plane_Pz4_coarse"/>
+        <PARAMETER name="check_geometries_c7_geom_3" value="plane_Pz5_coarse"/>
+        <PARAMETER name="check_geometries_c7_geom_4" value="plane_Pz6_coarse"/>
+        <PARAMETER name="check_geometries_c7_geom_5" value="plane_Py1_coarse"/>	
+        <PARAMETER name="check_geometries_c7_geom_6" value="plane_Py2_coarse"/>
+        <PARAMETER name="check_geometries_c7_geom_7" value="cylinder_Cyl4"/>
+        <PARAMETER name="check_geometries_c7_geom_8" value="plane_Pz4"/>
+        <PARAMETER name="check_geometries_c7_geom_9" value="plane_Pz5"/>
+        <PARAMETER name="check_geometries_c7_geom_10" value="plane_Pz6"/>
+        <PARAMETER name="check_geometries_c7_geom_11" value="plane_Py1"/>	
+        <PARAMETER name="check_geometries_c7_geom_12" value="plane_Py2"/>
+
+
+		<!-- Check artefact for cloud c8 -->
+        <PARAMETER name="check_geometries_c8_activated" value="false"/>										<!--  here    -->
+        <PARAMETER name="check_geometries_c8_geom_1" value="plane_Py3_coarse"/>
+        <PARAMETER name="check_geometries_c8_geom_2" value="plane_Py5_coarse"/>
+		<PARAMETER name="check_geometries_c8_geom_3" value="plane_Pxz1_coarse"/>
+		<PARAMETER name="check_geometries_c8_geom_4" value="plane_Pxz10_coarse"/>
+        <PARAMETER name="check_geometries_c8_geom_5" value="plane_Pz1_coarse"/>
+        <PARAMETER name="check_geometries_c8_geom_6" value="plane_Py3"/>
+        <PARAMETER name="check_geometries_c8_geom_7" value="plane_Py5"/>
+		<PARAMETER name="check_geometries_c8_geom_8" value="plane_Pxz1"/>
+		<PARAMETER name="check_geometries_c8_geom_9" value="plane_Pxz10"/>
+        <PARAMETER name="check_geometries_c8_geom_10" value="plane_Pz1"/>
+        <PARAMETER name="check_geometries_c8_geom_11" value="cylinder_Cyl1_coarse"/>
+        <PARAMETER name="check_geometries_c8_geom_12" value="cylinder_Cyl1"/>
+
+		
+		<!-- Check artefact for cloud c9 -->
+        <PARAMETER name="check_geometries_c9_activated" value="false"/>
+        <PARAMETER name="check_geometries_c9_geom_1" value="plane_Pxz1_coarse"/>
+        <PARAMETER name="check_geometries_c9_geom_2" value="plane_Pxz3_coarse"/>
+        <PARAMETER name="check_geometries_c9_geom_3" value="plane_Pxz8_coarse"/>
+        <PARAMETER name="check_geometries_c9_geom_4" value="plane_Pxz10_coarse"/>
+        <PARAMETER name="check_geometries_c9_geom_5" value="plane_Py4_coarse"/>
+        <PARAMETER name="check_geometries_c9_geom_6" value="plane_Py6_coarse"/>
+        <PARAMETER name="check_geometries_c9_geom_7" value="plane_Pxz1"/>
+        <PARAMETER name="check_geometries_c9_geom_8" value="plane_Pxz3"/>
+        <PARAMETER name="check_geometries_c9_geom_9" value="plane_Pxz8"/>
+        <PARAMETER name="check_geometries_c9_geom_10" value="plane_Pxz10"/>
+        <PARAMETER name="check_geometries_c9_geom_11" value="plane_Py4"/>
+        <PARAMETER name="check_geometries_c9_geom_12" value="plane_Py6"/>
+        <PARAMETER name="check_geometries_c9_geom_13" value="cylinder_Cyl1_coarse"/>
+        <PARAMETER name="check_geometries_c9_geom_14" value="cylinder_Cyl1"/>
+		
+		<!-- Check artefact for cloud c10 -->
+        <PARAMETER name="check_geometries_c10_activated" value="false"/>										<!--  here   -->
+        <PARAMETER name="check_geometries_c10_geom_1" value="cylinder_Cyl3_coarse"/>
+        <PARAMETER name="check_geometries_c10_geom_2" value="cylinder_Cyl4_coarse"/>
+        <PARAMETER name="check_geometries_c10_geom_3" value="plane_Px1_coarse"/>	
+        <PARAMETER name="check_geometries_c10_geom_4" value="plane_Px2_coarse"/>
+        <PARAMETER name="check_geometries_c10_geom_5" value="plane_Pz3_coarse"/>
+        <PARAMETER name="check_geometries_c10_geom_6" value="cylinder_Cyl3"/>
+        <PARAMETER name="check_geometries_c10_geom_7" value="cylinder_Cyl4"/>
+        <PARAMETER name="check_geometries_c10_geom_8" value="plane_Px1"/>	
+        <PARAMETER name="check_geometries_c10_geom_9" value="plane_Px2"/>
+        <PARAMETER name="check_geometries_c10_geom_10" value="plane_Pz3"/>
+
+		
+		<!-- Check artefact for cloud c11 -->
+        <PARAMETER name="check_geometries_c11_activated" value="false"/>
+        <PARAMETER name="check_geometries_c11_geom_1" value="plane_Pxz1_coarse"/>
+        <PARAMETER name="check_geometries_c11_geom_2" value="plane_Pxz10_coarse"/>
+        <PARAMETER name="check_geometries_c11_geom_3" value="plane_Py4_coarse"/>
+        <PARAMETER name="check_geometries_c11_geom_4" value="plane_Py6_coarse"/>
+        <PARAMETER name="check_geometries_c11_geom_5" value="plane_Pxz1"/>
+        <PARAMETER name="check_geometries_c11_geom_6" value="plane_Pxz10"/>
+        <PARAMETER name="check_geometries_c11_geom_7" value="plane_Py4"/>
+        <PARAMETER name="check_geometries_c11_geom_8" value="plane_Py6"/>
+        <PARAMETER name="check_geometries_c11_geom_9" value="cylinder_Cyl1_coarse"/>
+        <PARAMETER name="check_geometries_c11_geom_10" value="cylinder_Cyl1"/>
+		
+		<!-- Check artefact for cloud c12 -->
+        <PARAMETER name="check_geometries_c12_activated" value="false"/>										<!--  here -->
+        <PARAMETER name="check_geometries_c12_geom_1" value="cylinder_Cyl2_coarse"/>
+        <PARAMETER name="check_geometries_c12_geom_2" value="plane_Pxz1_coarse"/>
+        <PARAMETER name="check_geometries_c12_geom_3" value="plane_Pxz10_coarse"/>	
+		<PARAMETER name="check_geometries_c12_geom_4" value="plane_Py7_coarse"/>
+        <PARAMETER name="check_geometries_c12_geom_5" value="plane_Py9_coarse"/>
+        <PARAMETER name="check_geometries_c12_geom_6" value="plane_Pz2_coarse"/>
+        <PARAMETER name="check_geometries_c12_geom_7" value="cylinder_Cyl2"/>
+        <PARAMETER name="check_geometries_c12_geom_8" value="plane_Pxz1"/>
+        <PARAMETER name="check_geometries_c12_geom_9" value="plane_Pxz10"/>
+		<PARAMETER name="check_geometries_c12_geom_10" value="plane_Py7"/>
+        <PARAMETER name="check_geometries_c12_geom_11" value="plane_Py9"/>
+        <PARAMETER name="check_geometries_c12_geom_12" value="plane_Pz2"/>
+
+ 
+    </PARAMETERS>
+</CONTROL>

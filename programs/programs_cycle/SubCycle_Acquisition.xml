@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CYCLE description="Part scanning">
+    <!-- Parameters :
+         double frequency : Acquisition frequency in Hz
+         double speed : Rotation speed in °/s
+         double home_speed : Home speed in °/s
+         double travel_distance : Scan distance in °
+         double initial_position : Initial position for scanning in °
+    -->
+    <!-- Initialisation -->
+	<!-- Load part gain vals. -->
+	<SENSOR type="load_program" component_name="aerotech" program="$aerotech_program_Part"/>
+	
+    <MOVE type="start" axis="rotation"/>
+    <SENSOR type="signal_generator" signal_name="pwm" start="false"/>
+    <SENSOR type="acquisition" component_name="laser_line" start="false"/>
+    <SENSOR type="acquisition" component_name="msx" start="false"/>
+
+    <!-- Move to initial position -->
+    <MOVE type="absolute" axis="rotation" position="$initial_position" speed="$home_speed"/>
+    <WAIT type="stop" timeout="30000"/>
+
+    <!-- Start measurements -->
+    <SENSOR type="acquisition" component_name="laser_line" start="true"/>
+    <SENSOR type="acquisition" component_name="msx" start="true"/>
+    <SENSOR type="signal_generator" signal_name="pwm" start="true" value="$frequency"/>
+
+    <!-- Scanning -->
+    <MOVE type="relative" axis="rotation" speed="$speed" distance="$travel_distance"/>
+    <WAIT type="stop" timeout="60000"/>
+	
+    <!-- Stop measurements -->
+    <SENSOR type="signal_generator" signal_name="pwm" start="false"/> 
+    <WAIT type="time" value="100"/>
+    <SENSOR type="acquisition" component_name="laser_line" start="false" time="50"/>
+    <SENSOR type="acquisition" component_name="msx" start="false" time="50"/>
+
+    <!-- Back to home -->
+    <MOVE type="absolute" axis="rotation" position="$initial_position" speed="$home_speed"/>	
+</CYCLE>

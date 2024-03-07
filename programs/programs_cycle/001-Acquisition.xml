@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CYCLE nb_iter="10" description="Acquisition cycle" version="0.1.0">
+    
+    <!-- Sensor parameters -->
+    <SENSOR type="load_program" component_name="laser_line" program="$keyence_program"/>
+    
+    <CYCLE path=".\SubCycle_Acquisition.xml" />
+    <CYCLE path=".\SubCycle_Process.xml" />
+    <CYCLE path=".\SubCycle_EndAcquisition.xml" />
+    <CYCLE path=".\SubCycle_EndProcess.xml" />
+
+    <WAIT type="time" value="100"/>
+</CYCLE>

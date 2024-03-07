@@ -1,0 +1,1128 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CONTROL reference="213-0021-CalibV3" description="Programme de calibration" process_dll=""  version="0.1.0">
+
+    <PARAMETERS>
+        <!-- ******* Activate calibration sensor per sensor ******* -->
+        <!-- This block CAO_CALIB_# is only for debug purpose -->
+        <PARAMETER name="cao_calib_c1_activated" value="false"/>
+        <PARAMETER name="cao_calib_c2_activated" value="false"/>
+        <PARAMETER name="cao_calib_c3_activated" value="false"/>
+        <PARAMETER name="cao_calib_c4_activated" value="false"/>
+        <PARAMETER name="cao_calib_c5_activated" value="false"/>
+        <PARAMETER name="cao_calib_c6_activated" value="false"/>
+        <PARAMETER name="cao_calib_c7_activated" value="false"/>
+        <PARAMETER name="cao_calib_c8_activated" value="false"/>
+        <PARAMETER name="cao_calib_c9_activated" value="false"/>
+        <PARAMETER name="cao_calib_c10_activated" value="false"/>
+        <PARAMETER name="cao_calib_c11_activated" value="false"/>
+        <PARAMETER name="cao_calib_c12_activated" value="false"/>
+
+		<!-- Coarse calibration activation per sensor -->
+        <PARAMETER name="coarse_calib_c1_activated" value="true"/>		<!-- Everything but tz UPDATED--> 
+        <PARAMETER name="coarse_calib_c2_activated" value="true"/>		<!-- Everything but tz UPDATED-->
+		<PARAMETER name="coarse_calib_c3_activated" value="true"/>   	<!-- ok -->
+		<PARAMETER name="coarse_calib_c4_activated" value="true"/>		<!-- ok -->
+        <PARAMETER name="coarse_calib_c5_activated" value="true"/>		<!-- ok -->	
+        <PARAMETER name="coarse_calib_c6_activated" value="true"/>		<!-- ok -->
+        <PARAMETER name="coarse_calib_c7_activated" value="true"/>		<!-- ok -->
+		<PARAMETER name="coarse_calib_c8_activated" value="true"/>		<!-- ok -->
+		<PARAMETER name="coarse_calib_c9_activated" value="true"/>		<!-- Everything but tz UPDATED-->
+        <PARAMETER name="coarse_calib_c10_activated" value="true"/>		<!-- ok -->
+        <PARAMETER name="coarse_calib_c11_activated" value="true"/>		<!-- Everything but tz UPDATED BUT STILL SKETCHY ADDED REFERENCE PX+/- PLANES -->
+        <PARAMETER name="coarse_calib_c12_activated" value="true"/>		<!-- ok -->
+
+		<!-- Neat calibration activation per sensor -->
+        <PARAMETER name="neat_calib_c1_activated" value="true"/>		<!-- Everything but tz UPDATED -->  
+        <PARAMETER name="neat_calib_c2_activated" value="true"/>		<!-- Everything but tz UPDATED -->
+        <PARAMETER name="neat_calib_c3_activated" value="true"/>      	<!-- ok -->	
+        <PARAMETER name="neat_calib_c4_activated" value="true"/>    	<!-- ok --> 
+        <PARAMETER name="neat_calib_c5_activated" value="true"/>  		<!-- ok --> 
+        <PARAMETER name="neat_calib_c6_activated" value="true"/>		<!-- ok -->
+        <PARAMETER name="neat_calib_c7_activated" value="true"/>  		<!-- ok --> 
+        <PARAMETER name="neat_calib_c8_activated" value="true"/>		<!-- ok -->	
+        <PARAMETER name="neat_calib_c9_activated" value="true"/> 		<!-- Everything but tz UPDATED--> 
+        <PARAMETER name="neat_calib_c10_activated" value="true"/>		<!-- Couldn't get rz to converge UPDATED WITH ANTIONE'S SUGGESTED "CYLINDERS" METHOD -->	
+        <PARAMETER name="neat_calib_c11_activated" value="true"/>		<!-- Everything but tz UPDATED BUT STILL SKETCHY ADDED REFERENCE PX+/- PLANES-->
+        <PARAMETER name="neat_calib_c12_activated" value="true"/>		<!-- ok -->	
+    </PARAMETERS>
+
+    <!-- ########### NEAT CALIBRATION ########### -->
+    
+    <PARAMETERS>
+        <!-- ******* Sensor C1 ******* -->
+        <PARAMETER name="neat_calib_c1_loop_on_each_step" value="false"/> <!-- Activate to loop on each parameter or one by one -->
+        <PARAMETER name="neat_calib_c1_activate_rx" value="true"/>
+        <PARAMETER name="neat_calib_c1_activate_ry" value="true"/>
+        <PARAMETER name="neat_calib_c1_activate_rz" value="true"/>
+        <PARAMETER name="neat_calib_c1_activate_theta" value="true"/>
+        <PARAMETER name="neat_calib_c1_activate_tr" value="true"/>
+        <PARAMETER name="neat_calib_c1_activate_tz" value="true"/>
+
+        <PARAMETER name="neat_calib_c1_coeff_rx" value="1.0"/>
+        <PARAMETER name="neat_calib_c1_coeff_ry" value="-1.0"/>
+        <PARAMETER name="neat_calib_c1_coeff_rz" value="1.0"/>
+        <PARAMETER name="neat_calib_c1_coeff_theta" value="0.5"/>
+        <PARAMETER name="neat_calib_c1_coeff_tr" value="1.0"/>
+        <PARAMETER name="neat_calib_c1_coeff_tz" value="1.0"/>
+
+        <PARAMETER name="neat_calib_c1_method_rx" value="parallelism"/> <!-- squarness / parallelism -->
+        <PLANE     name="neat_calib_c1_plane_y_rx" reference="plane_Py4"/>
+        <PLANE     name="neat_calib_c1_plane_y_rx_ref" reference="plane_Py4_ref"/>
+        <PLANE     name="neat_calib_c1_plane_y_2_rx" reference="plane_Py6"/>
+        <PLANE     name="neat_calib_c1_plane_y_2_rx_ref" reference="plane_Py6_ref"/>
+
+        <PARAMETER name="neat_calib_c1_method_ry" value="cylinder_conicity"/> <!-- conicity / planeCircleConicity / planes / cylinder_conicity / cylinder_conicity_with_param -->
+        <CYLINDER  name="neat_calib_c1_cylinder_ry" reference="cylinder_Cyl1"/>
+		
+        <PARAMETER name="neat_calib_c1_method_rz" value="distance"/> <!-- squarness / distance -->
+        <PLANE     name="neat_calib_c1_plane_y_rz" reference="plane_Py4"/>
+        <PLANE     name="neat_calib_c1_plane_y_rz_ref" reference="plane_Py4_ref"/>
+        <PLANE     name="neat_calib_c1_plane_y_2_rz" reference="plane_Py6"/>
+        <PLANE     name="neat_calib_c1_plane_y_2_rz_ref" reference="plane_Py6_ref"/>
+        <LINE      name="neat_calib_c1_line_rz_ref" reference="line_planeIntersection_rz_ref_top4-2"/>
+
+        <PARAMETER name="neat_calib_c1_method_theta" value="circle_intersection_2_planes"/> <!-- z_derivate/plane_intersection/line_intersection/circle_intersection/circle_intersection_2_planes -->
+        <PLANE     name="neat_calib_c1_plane_theta" reference="plane_Py4"/>
+        <PLANE     name="neat_calib_c1_plane_theta_ref" reference="plane_Py4_ref"/>
+        <PLANE     name="neat_calib_c1_plane_theta_2" reference="plane_Py6"/>
+        <PLANE     name="neat_calib_c1_plane_theta_2_ref" reference="plane_Py6_ref"/>	
+        <CIRCLE    name="neat_calib_c1_circle_theta_ref" reference="Circle_planeIntersection_theta_ref_top4"/>
+
+        <PARAMETER name="neat_calib_c1_method_tr" value="cylinder_radius"/> <!-- cylinder_radius/gauge_radius/intersection_plane_cone_radius/plane_distance -->
+        <CYLINDER      name="neat_calib_c1_cylinder_tr" reference="cylinder_Cyl1"/>
+        <CYLINDER      name="neat_calib_c1_cylinder_tr_ref" reference="cylinder_Cyl1_ref"/>
+		
+        <!-- <PARAMETER name="neat_calib_c1_method_tz" value="plane_position"/> <!-- plane_position/cone_position/cone_cylinder_intersection/cone_cylinder_intersection_auto -->	 -->
+		<!-- <PLANE     name="neat_calib_c1_plane_tz" reference="plane_Pz2"/> -->
+        <!-- <PLANE     name="neat_calib_c1_plane_tz_ref" reference="plane_Pz2_ref"/> -->
+		
+		
+		<!--3 plane intersection method-->
+		<PARAMETER name="neat_calib_c1_method_tz" value="3_planes_intersection"/> <!-- plane_position/cone_position/cone_cylinder_intersection/cone_cylinder_intersection_auto/3_planes_intersection -->
+        <PARAMETER name="neat_calib_c1_tz_intersection_number" value="2"/>
+        <PLANE     name="neat_calib_c1_tz_point_1_plane_1" reference="plane_Pxz3"/>
+        <PLANE     name="neat_calib_c1_tz_point_1_plane_2" reference="plane_Px+_ref"/>
+        <PLANE     name="neat_calib_c1_tz_point_1_plane_3" reference="plane_Py4"/>
+        <PLANE     name="neat_calib_c1_tz_point_1_plane_1_ref" reference="plane_Pxz3_ref"/>
+        <PLANE     name="neat_calib_c1_tz_point_1_plane_2_ref" reference="plane_Px+_ref"/>
+        <PLANE     name="neat_calib_c1_tz_point_1_plane_3_ref" reference="plane_Py4_ref"/>
+        <PLANE     name="neat_calib_c1_tz_point_2_plane_1" reference="plane_Pxz8"/>
+        <PLANE     name="neat_calib_c1_tz_point_2_plane_2" reference="plane_Px-_ref"/>
+        <PLANE     name="neat_calib_c1_tz_point_2_plane_3" reference="plane_Py6"/>
+        <PLANE     name="neat_calib_c1_tz_point_2_plane_1_ref" reference="plane_Pxz8_ref"/>
+        <PLANE     name="neat_calib_c1_tz_point_2_plane_2_ref" reference="plane_Px-_ref"/>
+        <PLANE     name="neat_calib_c1_tz_point_2_plane_3_ref" reference="plane_Py6_ref"/>		
+
+		
+		<!--3 plane intersection method-->
+		<!-- <PARAMETER name="neat_calib_c1_method_tz" value="3_planes_intersection"/> <!-- plane_position/cone_position/cone_cylinder_intersection/cone_cylinder_intersection_auto/3_planes_intersection --> -->
+<!--         <PARAMETER name="neat_calib_c1_tz_intersection_number" value="2"/>
+        <PLANE     name="neat_calib_c1_tz_point_1_plane_1" reference="plane_Pxz2"/>
+        <PLANE     name="neat_calib_c1_tz_point_1_plane_2" reference="plane_Pxz3"/>
+        <PLANE     name="neat_calib_c1_tz_point_1_plane_3" reference="plane_Py3"/>
+        <PLANE     name="neat_calib_c1_tz_point_1_plane_1_ref" reference="plane_Pxz2_ref"/>
+        <PLANE     name="neat_calib_c1_tz_point_1_plane_2_ref" reference="plane_Pxz3_ref"/>
+        <PLANE     name="neat_calib_c1_tz_point_1_plane_3_ref" reference="plane_Py3_ref"/>
+        <PLANE     name="neat_calib_c1_tz_point_2_plane_1" reference="plane_Pxz8"/>
+        <PLANE     name="neat_calib_c1_tz_point_2_plane_2" reference="plane_Pxz9"/>
+        <PLANE     name="neat_calib_c1_tz_point_2_plane_3" reference="plane_Py5"/>
+        <PLANE     name="neat_calib_c1_tz_point_2_plane_1_ref" reference="plane_Pxz8_ref"/>
+        <PLANE     name="neat_calib_c1_tz_point_2_plane_2_ref" reference="plane_Pxz9_ref"/>
+        <PLANE     name="neat_calib_c1_tz_point_2_plane_3_ref" reference="plane_Py5_ref"/> -->
+		
+       
+
+        <!-- ******* Sensor C2 ******* -->
+        <PARAMETER name="neat_calib_c2_loop_on_each_step" value="false"/>
+        <PARAMETER name="neat_calib_c2_activate_rx" value="true"/>
+        <PARAMETER name="neat_calib_c2_activate_ry" value="true"/>
+        <PARAMETER name="neat_calib_c2_activate_rz" value="true"/>
+        <PARAMETER name="neat_calib_c2_activate_theta" value="true"/>
+        <PARAMETER name="neat_calib_c2_activate_tr" value="true"/>
+        <PARAMETER name="neat_calib_c2_activate_tz" value="true"/>
+
+        <PARAMETER name="neat_calib_c2_coeff_rx" value="1.0"/>
+        <PARAMETER name="neat_calib_c2_coeff_ry" value="-1.0"/>
+        <PARAMETER name="neat_calib_c2_coeff_rz" value="-1.0"/>
+        <PARAMETER name="neat_calib_c2_coeff_theta" value="1.0"/>
+        <PARAMETER name="neat_calib_c2_coeff_tr" value="1.0"/>
+        <PARAMETER name="neat_calib_c2_coeff_tz" value="1.0"/>
+
+        <PARAMETER name="neat_calib_c2_method_rx" value="parallelism"/> <!-- squarness / parallelism -->
+        <PLANE     name="neat_calib_c2_plane_y_rx" reference="plane_Py3"/>
+        <PLANE     name="neat_calib_c2_plane_y_rx_ref" reference="plane_Py3_ref"/>
+        <PLANE     name="neat_calib_c2_plane_y_2_rx" reference="plane_Py5"/>
+        <PLANE     name="neat_calib_c2_plane_y_2_rx_ref" reference="plane_Py5_ref"/>
+
+        <PARAMETER name="neat_calib_c2_method_ry" value="cylinder_conicity"/> <!-- conicity / planeCircleConicity / planes / cylinder_conicity / cylinder_conicity_with_param -->
+        <CYLINDER  name="neat_calib_c2_cylinder_ry" reference="cylinder_Cyl1"/>
+
+        <PARAMETER name="neat_calib_c2_method_rz" value="distance"/> <!-- squarness / distance -->
+        <PLANE     name="neat_calib_c2_plane_y_rz" reference="plane_Py3"/>
+        <PLANE     name="neat_calib_c2_plane_y_rz_ref" reference="plane_Py3_ref"/>
+        <PLANE     name="neat_calib_c2_plane_y_2_rz" reference="plane_Py5"/>
+        <PLANE     name="neat_calib_c2_plane_y_2_rz_ref" reference="plane_Py5_ref"/>
+        <LINE      name="neat_calib_c2_line_rz_ref" reference="line_planeIntersection_rz_ref_bottom2-y"/>
+
+        <PARAMETER name="neat_calib_c2_method_theta" value="circle_intersection_2_planes"/> <!-- z_derivate/plane_intersection/line_intersection/circle_intersection/circle_intersection_2_planes -->
+        <PLANE     name="neat_calib_c2_plane_theta" reference="plane_Py3"/>
+        <PLANE     name="neat_calib_c2_plane_theta_ref" reference="plane_Py3_ref"/>
+        <PLANE     name="neat_calib_c2_plane_theta_2" reference="plane_Py5"/>
+        <PLANE     name="neat_calib_c2_plane_theta_2_ref" reference="plane_Py5_ref"/>	
+        <CIRCLE    name="neat_calib_c2_circle_theta_ref" reference="Circle_planeIntersection_theta_ref_bottom4"/>
+        <!-- <CIRCLE    name="neat_calib_c2_circle_theta_ref" reference="Circle_planeIntersection_theta_ref_bottom2-y"/> -->
+
+        <PARAMETER name="neat_calib_c2_method_tr" value="cylinder_radius"/> <!-- cylinder_radius/gauge_radius/intersection_plane_cone_radius/plane_distance -->
+        <CYLINDER  name="neat_calib_c2_cylinder_tr" reference="cylinder_Cyl1"/>
+        <CYLINDER  name="neat_calib_c2_cylinder_tr_ref" reference="cylinder_Cyl1_ref"/>
+
+        <!-- <PARAMETER name="neat_calib_c2_method_tz" value="plane_position"/> <!-- plane_position/cone_position/cone_cylinder_intersection/cone_cylinder_intersection_auto --> -->
+        <!-- <!-- <CONE      name="neat_calib_c2_cone_tz" reference="cone_Co3"/> -->
+        <!-- <CONE      name="neat_calib_c2_cone_tz_ref" reference="cone_Co3_ref"/> -->
+        <!-- <CYLINDER  name="neat_calib_c2_cylinder_tz" reference="cylinder_Cyl1"/> -->
+        <!-- <CYLINDER  name="neat_calib_c2_cylinder_tz_ref" reference="cylinder_Cyl1_ref"/> --> -->
+		<!-- <PLANE     name="neat_calib_c2_plane_tz" reference="plane_Pz1"/> -->
+        <!-- <PLANE     name="neat_calib_c2_plane_tz_ref" reference="plane_Pz1_ref"/> -->
+		
+			<!--3 plane intersection method-->
+		<PARAMETER name="neat_calib_c2_method_tz" value="3_planes_intersection"/> <!-- plane_position/cone_position/cone_cylinder_intersection/cone_cylinder_intersection_auto/3_planes_intersection -->
+        <PARAMETER name="neat_calib_c2_tz_intersection_number" value="2"/>
+        <PLANE     name="neat_calib_c2_tz_point_1_plane_1" reference="plane_Pxz4"/>
+        <PLANE     name="neat_calib_c2_tz_point_1_plane_2" reference="plane_Pxz5"/>
+        <PLANE     name="neat_calib_c2_tz_point_1_plane_3" reference="plane_Py3"/>
+        <PLANE     name="neat_calib_c2_tz_point_1_plane_1_ref" reference="plane_Pxz4_ref"/>
+        <PLANE     name="neat_calib_c2_tz_point_1_plane_2_ref" reference="plane_Pxz5_ref"/>
+        <PLANE     name="neat_calib_c2_tz_point_1_plane_3_ref" reference="plane_Py3_ref"/>
+        <PLANE     name="neat_calib_c2_tz_point_2_plane_1" reference="plane_Pxz6"/>
+        <PLANE     name="neat_calib_c2_tz_point_2_plane_2" reference="plane_Pxz7"/>
+        <PLANE     name="neat_calib_c2_tz_point_2_plane_3" reference="plane_Py5"/>
+        <PLANE     name="neat_calib_c2_tz_point_2_plane_1_ref" reference="plane_Pxz6_ref"/>
+        <PLANE     name="neat_calib_c2_tz_point_2_plane_2_ref" reference="plane_Pxz7_ref"/>
+        <PLANE     name="neat_calib_c2_tz_point_2_plane_3_ref" reference="plane_Py5_ref"/>
+
+
+        <!-- ******* Sensor C3 ******* -->
+        <PARAMETER name="neat_calib_c3_loop_on_each_step" value="false"/> <!-- Activation de la boucle sur chaque corrrection -->
+        <PARAMETER name="neat_calib_c3_activate_rx" value="true"/>
+        <PARAMETER name="neat_calib_c3_activate_ry" value="true"/>
+        <PARAMETER name="neat_calib_c3_activate_rz" value="true"/>
+        <PARAMETER name="neat_calib_c3_activate_theta" value="true"/>
+        <PARAMETER name="neat_calib_c3_activate_tr" value="true"/>
+        <PARAMETER name="neat_calib_c3_activate_tz" value="true"/>
+
+        <PARAMETER name="neat_calib_c3_coeff_rx" value="1.0"/>
+        <PARAMETER name="neat_calib_c3_coeff_ry" value="-1.0"/>
+        <PARAMETER name="neat_calib_c3_coeff_rz" value="1.0"/><!-- -0.5 si methode de la perpendicularité -->
+        <PARAMETER name="neat_calib_c3_coeff_theta" value="1.0"/>
+        <PARAMETER name="neat_calib_c3_coeff_tr" value="1.0"/>
+        <PARAMETER name="neat_calib_c3_coeff_tz" value="1.0"/>
+
+        <PARAMETER name="neat_calib_c3_method_rx" value="parallelism"/> <!-- squarness / parallelism -->
+        <PLANE     name="neat_calib_c3_plane_y_rx" reference="plane_Py8"/>
+        <PLANE     name="neat_calib_c3_plane_y_rx_ref" reference="plane_Py8_ref"/>
+        <PLANE     name="neat_calib_c3_plane_y_2_rx" reference="plane_Py10"/>
+        <PLANE     name="neat_calib_c3_plane_y_2_rx_ref" reference="plane_Py10_ref"/>
+
+        <PARAMETER name="neat_calib_c3_method_ry" value="cylinder_conicity"/> <!-- conicity / planeCircleConicity / planes / cylinder_conicity / cylinder_conicity_with_param -->
+        <CYLINDER  name="neat_calib_c3_cylinder_ry" reference="cylinder_Cyl2"/>
+
+        <PARAMETER name="neat_calib_c3_method_rz" value="distance"/> <!-- squarness / distance -->
+        <PLANE     name="neat_calib_c3_plane_y_rz" reference="plane_Py8"/>
+        <PLANE     name="neat_calib_c3_plane_y_rz_ref" reference="plane_Py8_ref"/>
+        <PLANE     name="neat_calib_c3_plane_y_2_rz" reference="plane_Py10"/>
+        <PLANE     name="neat_calib_c3_plane_y_2_rz_ref" reference="plane_Py10_ref"/>
+        <LINE      name="neat_calib_c3_line_rz_ref" reference="line_planeIntersection_rz_ref_top"/>
+
+        <PARAMETER name="neat_calib_c3_method_theta" value="circle_intersection_2_planes"/> <!-- z_derivate/plane_intersection/line_intersection/circle_intersection/circle_intersection_2_planes -->
+        <PLANE     name="neat_calib_c3_plane_theta" reference="plane_Py8"/>
+        <PLANE     name="neat_calib_c3_plane_theta_ref" reference="plane_Py8_ref"/>
+        <PLANE     name="neat_calib_c3_plane_theta_2" reference="plane_Py10"/>
+        <PLANE     name="neat_calib_c3_plane_theta_2_ref" reference="plane_Py10_ref"/>	
+        <CIRCLE    name="neat_calib_c3_circle_theta_ref" reference="Circle_planeIntersection_theta_ref_top"/>
+
+        <PARAMETER name="neat_calib_c3_method_tr" value="cylinder_radius"/> <!-- cylinder_radius/gauge_radius/intersection_plane_cone_radius/plane_distance -->
+        <CYLINDER  name="neat_calib_c3_cylinder_tr" reference="cylinder_Cyl2"/>
+        <CYLINDER  name="neat_calib_c3_cylinder_tr_ref" reference="cylinder_Cyl2_ref"/>
+		
+        <PARAMETER name="neat_calib_c3_method_tz" value="plane_position"/> <!-- plane_position/cone_position/cone_cylinder_intersection/cone_cylinder_intersection_auto -->
+        <PLANE     name="neat_calib_c3_plane_tz" reference="plane_Pz1"/>
+        <PLANE     name="neat_calib_c3_plane_tz_ref" reference="plane_Pz1_ref"/>
+
+
+        <!-- ******* Sensor C4 ******* -->
+        <PARAMETER name="neat_calib_c4_loop_on_each_step" value="false"/> <!-- Activation de la boucle sur chaque corrrection -->
+        <PARAMETER name="neat_calib_c4_activate_rx" value="true"/>
+        <PARAMETER name="neat_calib_c4_activate_ry" value="true"/>
+        <PARAMETER name="neat_calib_c4_activate_rz" value="true"/>
+        <PARAMETER name="neat_calib_c4_activate_theta" value="true"/>
+        <PARAMETER name="neat_calib_c4_activate_tr" value="true"/>
+        <PARAMETER name="neat_calib_c4_activate_tz" value="true"/>
+
+        <PARAMETER name="neat_calib_c4_coeff_rx" value="1.0"/>
+        <PARAMETER name="neat_calib_c4_coeff_ry" value="-1.0"/>
+        <PARAMETER name="neat_calib_c4_coeff_rz" value="1.0"/>	<!--0.5 si methode de la perpendicularité -->
+        <PARAMETER name="neat_calib_c4_coeff_theta" value="1.0"/>
+        <PARAMETER name="neat_calib_c4_coeff_tr" value="1.0"/>
+        <PARAMETER name="neat_calib_c4_coeff_tz" value="1.0"/>
+
+        <PARAMETER name="neat_calib_c4_method_rx" value="parallelism"/> <!-- squarness / parallelism -->
+        <PLANE     name="neat_calib_c4_plane_y_rx" reference="plane_Py8"/>
+        <PLANE     name="neat_calib_c4_plane_y_rx_ref" reference="plane_Py8_ref"/>
+        <PLANE     name="neat_calib_c4_plane_y_2_rx" reference="plane_Py10"/>
+        <PLANE     name="neat_calib_c4_plane_y_2_rx_ref" reference="plane_Py10_ref"/>
+
+        <PARAMETER name="neat_calib_c4_method_ry" value="cylinder_conicity"/> <!-- conicity / planeCircleConicity / planes / cylinder_conicity / cylinder_conicity_with_param -->
+		<CYLINDER  name="neat_calib_c4_cylinder_ry" reference="cylinder_Cyl3"/>
+        <!--<PLANE     name="neat_calib_c4_plane1_ry" reference="plane_Px5"/>
+        <PLANE     name="neat_calib_c4_plane1_ry_ref" reference="plane_Px5_ref"/>
+        <PLANE     name="neat_calib_c4_plane2_ry" reference="plane_Px7"/>
+        <PLANE     name="neat_calib_c4_plane2_ry_ref" reference="plane_Px7_ref"/> -->
+
+        <PARAMETER name="neat_calib_c4_method_rz" value="distance"/> <!-- squarness / distance -->
+        <PLANE     name="neat_calib_c4_plane_y_rz" reference="plane_Py8"/>
+        <PLANE     name="neat_calib_c4_plane_y_rz_ref" reference="plane_Py8_ref"/>
+        <PLANE     name="neat_calib_c4_plane_y_2_rz" reference="plane_Py10"/>
+        <PLANE     name="neat_calib_c4_plane_y_2_rz_ref" reference="plane_Py10_ref"/>
+        <LINE      name="neat_calib_c4_line_rz_ref" reference="line_planeIntersection_rz_ref_top2"/>
+
+        <PARAMETER name="neat_calib_c4_method_theta" value="circle_intersection_2_planes"/> <!-- z_derivate/plane_intersection/line_intersection/circle_intersection/circle_intersection_2_planes -->
+        <PLANE     name="neat_calib_c4_plane_theta" reference="plane_Py8"/>
+        <PLANE     name="neat_calib_c4_plane_theta_ref" reference="plane_Py8_ref"/>
+        <PLANE     name="neat_calib_c4_plane_theta_2" reference="plane_Py10"/>
+        <PLANE     name="neat_calib_c4_plane_theta_2_ref" reference="plane_Py10_ref"/>	
+        <CIRCLE    name="neat_calib_c4_circle_theta_ref" reference="Circle_planeIntersection_theta_ref_top2"/>
+
+        <PARAMETER name="neat_calib_c4_method_tr" value="cylinder_radius"/> <!-- cylinder_radius/gauge_radius/intersection_plane_cone_radius/plane_distance -->
+        <CYLINDER  name="neat_calib_c4_cylinder_tr" reference="cylinder_Cyl3"/>
+        <CYLINDER  name="neat_calib_c4_cylinder_tr_ref" reference="cylinder_Cyl3_ref"/>
+
+        <PARAMETER name="neat_calib_c4_method_tz" value="plane_position"/> <!-- plane_position/cone_position/cone_cylinder_intersection/cone_cylinder_intersection_auto -->
+        <PLANE     name="neat_calib_c4_plane_tz" reference="plane_Pz3"/>
+        <PLANE     name="neat_calib_c4_plane_tz_ref" reference="plane_Pz3_ref"/>
+
+ <!-- ******* Sensor C5 ******* -->
+        <PARAMETER name="neat_calib_c5_loop_on_each_step" value="false"/> <!-- Activation de la boucle sur chaque corrrection -->
+        <PARAMETER name="neat_calib_c5_activate_rx" value="true"/>
+        <PARAMETER name="neat_calib_c5_activate_ry" value="true"/>
+        <PARAMETER name="neat_calib_c5_activate_rz" value="true"/>
+        <PARAMETER name="neat_calib_c5_activate_theta" value="true"/>
+        <PARAMETER name="neat_calib_c5_activate_tr" value="true"/>
+        <PARAMETER name="neat_calib_c5_activate_tz" value="true"/>
+
+        <PARAMETER name="neat_calib_c5_coeff_rx" value="1.0"/>
+        <PARAMETER name="neat_calib_c5_coeff_ry" value="-1.0"/>
+        <PARAMETER name="neat_calib_c5_coeff_rz" value="1.0"/>	<!-- -0.5 si methode de la perpendicularité -->
+        <PARAMETER name="neat_calib_c5_coeff_theta" value="1.0"/>
+        <PARAMETER name="neat_calib_c5_coeff_tr" value="1.0"/>
+        <PARAMETER name="neat_calib_c5_coeff_tz" value="1.0"/>
+
+        <PARAMETER name="neat_calib_c5_method_rx" value="parallelism"/> <!-- squarness / parallelism -->
+        <PLANE     name="neat_calib_c5_plane_y_rx" reference="plane_Px1"/>
+        <PLANE     name="neat_calib_c5_plane_y_rx_ref" reference="plane_Px1_ref"/>
+        <PLANE     name="neat_calib_c5_plane_y_2_rx" reference="plane_Px2"/>
+        <PLANE     name="neat_calib_c5_plane_y_2_rx_ref" reference="plane_Px2_ref"/>
+
+		<PARAMETER name="neat_calib_c5_method_ry" value="cylinder_conicity"/> <!-- conicity / planeCircleConicity / planes / cylinder_conicity / cylinder_conicity_with_param -->
+		<CYLINDER  name="neat_calib_c5_cylinder_ry" reference="cylinder_Cyl4"/>
+		
+<!--    <CIRCLE     name="neat_calib_c5_circle1_ry" reference="circle_inner_Pz2"/>
+        <CIRCLE     name="neat_calib_c5_circle1_ry_ref" reference="circle_inner_Pz2_ref"/>
+        <CIRCLE     name="neat_calib_c5_circle2_ry" reference="circle_outer_Pz2"/>
+        <CIRCLE     name="neat_calib_c5_circle2_ry_ref" reference="circle_outer_Pz2_ref"/> --> 
+
+        <PARAMETER name="neat_calib_c5_method_rz" value="distance"/> <!-- squarness / distance -->
+        <PLANE     name="neat_calib_c5_plane_y_rz" reference="plane_Px1"/>
+        <PLANE     name="neat_calib_c5_plane_y_rz_ref" reference="plane_Px1_ref"/>
+        <PLANE     name="neat_calib_c5_plane_y_2_rz" reference="plane_Px2"/>
+        <PLANE     name="neat_calib_c5_plane_y_2_rz_ref" reference="plane_Px2_ref"/>
+        <LINE      name="neat_calib_c5_line_rz_ref" reference="line_planeIntersection_rz_ref_bottom2"/>
+
+        <PARAMETER name="neat_calib_c5_method_theta" value="circle_intersection_2_planes"/> <!-- z_derivate/plane_intersection/line_intersection/circle_intersection/circle_intersection_2_planes -->
+        <PLANE     name="neat_calib_c5_plane_theta" reference="plane_Px1"/>
+        <PLANE     name="neat_calib_c5_plane_theta_ref" reference="plane_Px1_ref"/>
+        <PLANE     name="neat_calib_c5_plane_theta_2" reference="plane_Px2"/>
+        <PLANE     name="neat_calib_c5_plane_theta_2_ref" reference="plane_Px2_ref"/>	
+        <CIRCLE    name="neat_calib_c5_circle_theta_ref" reference="Circle_planeIntersection_theta_ref_bottom2"/>
+
+        <PARAMETER name="neat_calib_c5_method_tr" value="cylinder_radius"/> <!-- cylinder_radius/gauge_radius/intersection_plane_cone_radius/plane_distance -->
+        <CYLINDER  name="neat_calib_c5_cylinder_tr" reference="cylinder_Cyl4"/>
+        <CYLINDER  name="neat_calib_c5_cylinder_tr_ref" reference="cylinder_Cyl4_ref"/>
+
+        <PARAMETER name="neat_calib_c5_method_tz" value="plane_position"/> <!-- plane_position/cone_position/cone_cylinder_intersection/cone_cylinder_intersection_auto -->
+        <PLANE     name="neat_calib_c5_plane_tz" reference="plane_Pz4"/>
+        <PLANE     name="neat_calib_c5_plane_tz_ref" reference="plane_Pz4_ref"/>
+
+
+		 <!-- ******* Sensor C6 ******* -->
+        <PARAMETER name="neat_calib_c6_loop_on_each_step" value="false"/> <!-- Activation de la boucle sur chaque corrrection -->
+        <PARAMETER name="neat_calib_c6_activate_rx" value="true"/>
+        <PARAMETER name="neat_calib_c6_activate_ry" value="true"/>
+        <PARAMETER name="neat_calib_c6_activate_rz" value="true"/>
+        <PARAMETER name="neat_calib_c6_activate_theta" value="true"/>
+        <PARAMETER name="neat_calib_c6_activate_tr" value="true"/>
+        <PARAMETER name="neat_calib_c6_activate_tz" value="true"/>
+
+        <PARAMETER name="neat_calib_c6_coeff_rx" value="1.0"/>
+        <PARAMETER name="neat_calib_c6_coeff_ry" value="-1.0"/>
+        <PARAMETER name="neat_calib_c6_coeff_rz" value="1.0"/>		<!-- -0.5 si methode de la perpendicularité -->
+        <PARAMETER name="neat_calib_c6_coeff_theta" value="1.0"/>
+        <PARAMETER name="neat_calib_c6_coeff_tr" value="1.0"/>
+        <PARAMETER name="neat_calib_c6_coeff_tz" value="1.0"/>
+
+        <PARAMETER name="neat_calib_c6_method_rx" value="parallelism"/> <!-- squarness / parallelism -->
+        <PLANE     name="neat_calib_c6_plane_y_rx" reference="plane_Py4"/>
+        <PLANE     name="neat_calib_c6_plane_y_rx_ref" reference="plane_Py4_ref"/>
+        <PLANE     name="neat_calib_c6_plane_y_2_rx" reference="plane_Py6"/>
+        <PLANE     name="neat_calib_c6_plane_y_2_rx_ref" reference="plane_Py6_ref"/>
+
+        <PARAMETER name="neat_calib_c6_method_ry" value="cylinder_conicity"/> <!-- conicity / planeCircleConicity / planes / cylinder_conicity / cylinder_conicity_with_param -->
+		<CYLINDER  name="neat_calib_c6_cylinder_ry" reference="cylinder_Cyl1"/>
+        <!-- <PLANE     name="neat_calib_c6_plane1_ry" reference="plane_Px5"/>
+        <PLANE     name="neat_calib_c6_plane1_ry_ref" reference="plane_Px5_ref"/>
+        <PLANE     name="neat_calib_c6_plane2_ry" reference="plane_Px7"/>
+        <PLANE     name="neat_calib_c6_plane2_ry_ref" reference="plane_Px7_ref"/> -->
+
+        <PARAMETER name="neat_calib_c6_method_rz" value="distance"/> <!-- squarness / distance -->
+        <PLANE     name="neat_calib_c6_plane_y_rz" reference="plane_Py4"/>
+        <PLANE     name="neat_calib_c6_plane_y_rz_ref" reference="plane_Py4_ref"/>
+        <PLANE     name="neat_calib_c6_plane_y_2_rz" reference="plane_Py6"/>
+        <PLANE     name="neat_calib_c6_plane_y_2_rz_ref" reference="plane_Py6_ref"/>
+        <LINE      name="neat_calib_c6_line_rz_ref" reference="line_planeIntersection_rz_ref_top3"/>
+
+        <PARAMETER name="neat_calib_c6_method_theta" value="circle_intersection_2_planes"/> <!-- z_derivate/plane_intersection/line_intersection/circle_intersection/circle_intersection_2_planes -->
+        <PLANE     name="neat_calib_c6_plane_theta" reference="plane_Py4"/>
+        <PLANE     name="neat_calib_c6_plane_theta_ref" reference="plane_Py4_ref"/>
+        <PLANE     name="neat_calib_c6_plane_theta_2" reference="plane_Py6"/>
+        <PLANE     name="neat_calib_c6_plane_theta_2_ref" reference="plane_Py6_ref"/>	
+        <CIRCLE    name="neat_calib_c6_circle_theta_ref" reference="Circle_planeIntersection_theta_ref_top"/>
+
+        <PARAMETER name="neat_calib_c6_method_tr" value="cylinder_radius"/> <!-- cylinder_radius/gauge_radius/intersection_plane_cone_radius/plane_distance -->
+        <CYLINDER  name="neat_calib_c6_cylinder_tr" reference="cylinder_Cyl1"/>
+        <CYLINDER  name="neat_calib_c6_cylinder_tr_ref" reference="cylinder_Cyl1_ref"/>
+
+        <PARAMETER name="neat_calib_c6_method_tz" value="plane_position"/> <!-- plane_position/cone_position/cone_cylinder_intersection/cone_cylinder_intersection_auto -->
+        <PLANE     name="neat_calib_c6_plane_tz" reference="plane_Pz4"/>
+        <PLANE     name="neat_calib_c6_plane_tz_ref" reference="plane_Pz4_ref"/>
+
+		 <!-- ******* Sensor C7 ******* -->
+        <PARAMETER name="neat_calib_c7_loop_on_each_step" value="false"/> <!-- Activation de la boucle sur chaque corrrection -->
+        <PARAMETER name="neat_calib_c7_activate_rx" value="true"/>
+        <PARAMETER name="neat_calib_c7_activate_ry" value="true"/>
+        <PARAMETER name="neat_calib_c7_activate_rz" value="true"/>
+        <PARAMETER name="neat_calib_c7_activate_theta" value="true"/>
+        <PARAMETER name="neat_calib_c7_activate_tr" value="true"/>
+        <PARAMETER name="neat_calib_c7_activate_tz" value="true"/>
+
+        <PARAMETER name="neat_calib_c7_coeff_rx" value="1.0"/>
+        <PARAMETER name="neat_calib_c7_coeff_ry" value="-1.0"/>
+        <PARAMETER name="neat_calib_c7_coeff_rz" value="-1.0"/>		<!-- -0.5 si methode de la perpendicularité -->
+        <PARAMETER name="neat_calib_c7_coeff_theta" value="1.0"/>
+        <PARAMETER name="neat_calib_c7_coeff_tr" value="1.0"/>
+        <PARAMETER name="neat_calib_c7_coeff_tz" value="1.0"/>
+
+        <PARAMETER name="neat_calib_c7_method_rx" value="parallelism"/> <!-- squarness / parallelism -->
+        <PLANE     name="neat_calib_c7_plane_y_rx" reference="plane_Py1"/>
+        <PLANE     name="neat_calib_c7_plane_y_rx_ref" reference="plane_Py1_ref"/>
+        <PLANE     name="neat_calib_c7_plane_y_2_rx" reference="plane_Py2"/>
+        <PLANE     name="neat_calib_c7_plane_y_2_rx_ref" reference="plane_Py2_ref"/>
+
+        <PARAMETER name="neat_calib_c7_method_ry" value="cylinder_conicity"/> <!-- conicity / planeCircleConicity / planes / cylinder_conicity / cylinder_conicity_with_param -->
+		<CYLINDER  name="neat_calib_c7_cylinder_ry" reference="cylinder_Cyl4"/>
+
+        <PARAMETER name="neat_calib_c7_method_rz" value="distance"/> <!-- squarness / distance -->
+        <PLANE     name="neat_calib_c7_plane_y_rz" reference="plane_Py1"/>
+        <PLANE     name="neat_calib_c7_plane_y_rz_ref" reference="plane_Py1_ref"/>
+        <PLANE     name="neat_calib_c7_plane_y_2_rz" reference="plane_Py2"/>
+        <PLANE     name="neat_calib_c7_plane_y_2_rz_ref" reference="plane_Py2_ref"/>
+        <LINE      name="neat_calib_c7_line_rz_ref" reference="line_planeIntersection_rz_ref_bottom2-y"/>
+
+        <PARAMETER name="neat_calib_c7_method_theta" value="circle_intersection_2_planes"/> <!-- z_derivate/plane_intersection/line_intersection/circle_intersection/circle_intersection_2_planes -->
+        <PLANE     name="neat_calib_c7_plane_theta" reference="plane_Py1"/>
+        <PLANE     name="neat_calib_c7_plane_theta_ref" reference="plane_Py1_ref"/>
+        <PLANE     name="neat_calib_c7_plane_theta_2" reference="plane_Py2"/>
+        <PLANE     name="neat_calib_c7_plane_theta_2_ref" reference="plane_Py2_ref"/>	
+        <CIRCLE    name="neat_calib_c7_circle_theta_ref" reference="Circle_planeIntersection_theta_ref_bottom3"/>
+
+        <PARAMETER name="neat_calib_c7_method_tr" value="cylinder_radius"/> <!-- cylinder_radius/gauge_radius/intersection_plane_cone_radius/plane_distance -->
+        <CYLINDER  name="neat_calib_c7_cylinder_tr" reference="cylinder_Cyl4"/>
+        <CYLINDER  name="neat_calib_c7_cylinder_tr_ref" reference="cylinder_Cyl4_ref"/>
+
+        <PARAMETER name="neat_calib_c7_method_tz" value="plane_position"/> <!-- plane_position/cone_position/cone_cylinder_intersection/cone_cylinder_intersection_auto -->
+        <PLANE     name="neat_calib_c7_plane_tz" reference="plane_Pz4"/>
+        <PLANE     name="neat_calib_c7_plane_tz_ref" reference="plane_Pz4_ref"/>
+		
+		
+		 <!-- ******* Sensor C8 ******* -->
+        <PARAMETER name="neat_calib_c8_loop_on_each_step" value="false"/> <!-- Activation de la boucle sur chaque corrrection -->
+        <PARAMETER name="neat_calib_c8_activate_rx" value="true"/>
+        <PARAMETER name="neat_calib_c8_activate_ry" value="true"/>
+        <PARAMETER name="neat_calib_c8_activate_rz" value="true"/>
+        <PARAMETER name="neat_calib_c8_activate_theta" value="true"/>
+        <PARAMETER name="neat_calib_c8_activate_tr" value="true"/>
+        <PARAMETER name="neat_calib_c8_activate_tz" value="true"/>
+
+        <PARAMETER name="neat_calib_c8_coeff_rx" value="1.0"/>
+        <PARAMETER name="neat_calib_c8_coeff_ry" value="-1.0"/>
+        <PARAMETER name="neat_calib_c8_coeff_rz" value="-1.0"/>		<!-- -0.5 si methode de la perpendicularité -->
+        <PARAMETER name="neat_calib_c8_coeff_theta" value="1.0"/>
+        <PARAMETER name="neat_calib_c8_coeff_tr" value="1.0"/>
+        <PARAMETER name="neat_calib_c8_coeff_tz" value="1.0"/>
+
+        <PARAMETER name="neat_calib_c8_method_rx" value="parallelism"/> <!-- squarness / parallelism -->
+        <PLANE     name="neat_calib_c8_plane_y_rx" reference="plane_Py3"/>
+        <PLANE     name="neat_calib_c8_plane_y_rx_ref" reference="plane_Py3_ref"/>
+        <PLANE     name="neat_calib_c8_plane_y_2_rx" reference="plane_Py5"/>
+        <PLANE     name="neat_calib_c8_plane_y_2_rx_ref" reference="plane_Py5_ref"/>
+
+        <PARAMETER name="neat_calib_c8_method_ry" value="cylinder_conicity"/> <!-- conicity / planeCircleConicity / planes / cylinder_conicity / cylinder_conicity_with_param -->
+		<CYLINDER  name="neat_calib_c8_cylinder_ry" reference="cylinder_Cyl1"/>
+
+        <PARAMETER name="neat_calib_c8_method_rz" value="distance"/> <!-- squarness / distance -->
+        <PLANE     name="neat_calib_c8_plane_y_rz" reference="plane_Py3"/>
+        <PLANE     name="neat_calib_c8_plane_y_rz_ref" reference="plane_Py3_ref"/>
+        <PLANE     name="neat_calib_c8_plane_y_2_rz" reference="plane_Py5"/>
+        <PLANE     name="neat_calib_c8_plane_y_2_rz_ref" reference="plane_Py5_ref"/>
+        <LINE      name="neat_calib_c8_line_rz_ref" reference="line_planeIntersection_rz_ref_top3"/>
+
+        <PARAMETER name="neat_calib_c8_method_theta" value="circle_intersection_2_planes"/> <!-- z_derivate/plane_intersection/line_intersection/circle_intersection/circle_intersection_2_planes -->
+        <PLANE     name="neat_calib_c8_plane_theta" reference="plane_Py3"/>
+        <PLANE     name="neat_calib_c8_plane_theta_ref" reference="plane_Py3_ref"/>
+        <PLANE     name="neat_calib_c8_plane_theta_2" reference="plane_Py5"/>
+        <PLANE     name="neat_calib_c8_plane_theta_2_ref" reference="plane_Py5_ref"/>	
+        <CIRCLE    name="neat_calib_c8_circle_theta_ref" reference="Circle_planeIntersection_theta_ref_top6"/>
+
+        <PARAMETER name="neat_calib_c8_method_tr" value="cylinder_radius"/> <!-- cylinder_radius/gauge_radius/intersection_plane_cone_radius/plane_distance -->
+        <CYLINDER  name="neat_calib_c8_cylinder_tr" reference="cylinder_Cyl1"/>
+        <CYLINDER  name="neat_calib_c8_cylinder_tr_ref" reference="cylinder_Cyl1_ref"/>
+
+        <PARAMETER name="neat_calib_c8_method_tz" value="plane_position"/> <!-- plane_position/cone_position/cone_cylinder_intersection/cone_cylinder_intersection_auto -->
+        <PLANE     name="neat_calib_c8_plane_tz" reference="plane_Pz1"/>
+        <PLANE     name="neat_calib_c8_plane_tz_ref" reference="plane_Pz1_ref"/>
+		
+		 <!-- ******* Sensor C9 ******* -->
+        <PARAMETER name="neat_calib_c9_loop_on_each_step" value="false"/> <!-- Activation de la boucle sur chaque corrrection -->
+        <PARAMETER name="neat_calib_c9_activate_rx" value="true"/>
+        <PARAMETER name="neat_calib_c9_activate_ry" value="true"/>
+        <PARAMETER name="neat_calib_c9_activate_rz" value="true"/>
+        <PARAMETER name="neat_calib_c9_activate_theta" value="true"/>
+        <PARAMETER name="neat_calib_c9_activate_tr" value="true"/>
+        <PARAMETER name="neat_calib_c9_activate_tz" value="true"/>
+
+        <PARAMETER name="neat_calib_c9_coeff_rx" value="1.0"/>
+        <PARAMETER name="neat_calib_c9_coeff_ry" value="-1.0"/>
+        <PARAMETER name="neat_calib_c9_coeff_rz" value="1.0"/>		<!-- -0.5 si methode de la perpendicularité -->
+        <PARAMETER name="neat_calib_c9_coeff_theta" value="1.0"/>
+        <PARAMETER name="neat_calib_c9_coeff_tr" value="1.0"/>
+        <PARAMETER name="neat_calib_c9_coeff_tz" value="1.0"/>
+
+        <PARAMETER name="neat_calib_c9_method_rx" value="parallelism"/> <!-- squarness / parallelism -->
+        <PLANE     name="neat_calib_c9_plane_y_rx" reference="plane_Py4"/>
+        <PLANE     name="neat_calib_c9_plane_y_rx_ref" reference="plane_Py4_ref"/>
+        <PLANE     name="neat_calib_c9_plane_y_2_rx" reference="plane_Py6"/>
+        <PLANE     name="neat_calib_c9_plane_y_2_rx_ref" reference="plane_Py6_ref"/>
+
+        <PARAMETER name="neat_calib_c9_method_ry" value="cylinder_conicity"/> <!-- conicity / planeCircleConicity / planes / cylinder_conicity / cylinder_conicity_with_param -->
+		<CYLINDER  name="neat_calib_c9_cylinder_ry" reference="cylinder_Cyl1"/>
+
+        <PARAMETER name="neat_calib_c9_method_rz" value="distance"/> <!-- squarness / distance -->
+        <PLANE     name="neat_calib_c9_plane_y_rz" reference="plane_Py4"/>
+        <PLANE     name="neat_calib_c9_plane_y_rz_ref" reference="plane_Py4_ref"/>
+        <PLANE     name="neat_calib_c9_plane_y_2_rz" reference="plane_Py6"/>
+        <PLANE     name="neat_calib_c9_plane_y_2_rz_ref" reference="plane_Py6_ref"/>
+        <LINE      name="neat_calib_c9_line_rz_ref" reference="line_planeIntersection_rz_ref_top6"/>
+
+        <PARAMETER name="neat_calib_c9_method_theta" value="circle_intersection_2_planes"/> <!-- z_derivate/plane_intersection/line_intersection/circle_intersection/circle_intersection_2_planes -->
+        <PLANE     name="neat_calib_c9_plane_theta" reference="plane_Py4"/>
+        <PLANE     name="neat_calib_c9_plane_theta_ref" reference="plane_Py4_ref"/>
+        <PLANE     name="neat_calib_c9_plane_theta_2" reference="plane_Py6"/>
+        <PLANE     name="neat_calib_c9_plane_theta_2_ref" reference="plane_Py6_ref"/>	
+        <CIRCLE    name="neat_calib_c9_circle_theta_ref" reference="Circle_planeIntersection_theta_ref_top6"/>
+
+        <PARAMETER name="neat_calib_c9_method_tr" value="cylinder_radius"/> <!-- cylinder_radius/gauge_radius/intersection_plane_cone_radius/plane_distance -->
+        <CYLINDER  name="neat_calib_c9_cylinder_tr" reference="cylinder_Cyl1"/>
+        <CYLINDER  name="neat_calib_c9_cylinder_tr_ref" reference="cylinder_Cyl1_ref"/>
+
+        <!-- <PARAMETER name="neat_calib_c9_method_tz" value="plane_position"/> <!-- plane_position/cone_position/cone_cylinder_intersection/cone_cylinder_intersection_auto --> -->
+        <!-- <PLANE     name="neat_calib_c9_plane_tz" reference="plane_Pz2"/> -->
+        <!-- <PLANE     name="neat_calib_c9_plane_tz_ref" reference="plane_Pz2_ref"/> -->
+		
+		<!--3 plane intersection method-->
+		<PARAMETER name="neat_calib_c9_method_tz" value="3_planes_intersection"/> <!-- plane_position/cone_position/cone_cylinder_intersection/cone_cylinder_intersection_auto/3_planes_intersection -->
+        <PARAMETER name="neat_calib_c9_tz_intersection_number" value="2"/>
+        <PLANE     name="neat_calib_c9_tz_point_1_plane_1" reference="plane_Pxz1"/>
+        <PLANE     name="neat_calib_c9_tz_point_1_plane_2" reference="plane_Px+_ref"/>
+        <PLANE     name="neat_calib_c9_tz_point_1_plane_3" reference="plane_Py4"/>
+        <PLANE     name="neat_calib_c9_tz_point_1_plane_1_ref" reference="plane_Pxz1_ref"/>
+        <PLANE     name="neat_calib_c9_tz_point_1_plane_2_ref" reference="plane_Px+_ref"/>
+        <PLANE     name="neat_calib_c9_tz_point_1_plane_3_ref" reference="plane_Py4_ref"/>
+        <PLANE     name="neat_calib_c9_tz_point_2_plane_1" reference="plane_Pxz10"/>
+        <PLANE     name="neat_calib_c9_tz_point_2_plane_2" reference="plane_Px-_ref"/>
+        <PLANE     name="neat_calib_c9_tz_point_2_plane_3" reference="plane_Py6"/>
+        <PLANE     name="neat_calib_c9_tz_point_2_plane_1_ref" reference="plane_Pxz10_ref"/>
+        <PLANE     name="neat_calib_c9_tz_point_2_plane_2_ref" reference="plane_Px-_ref"/>
+        <PLANE     name="neat_calib_c9_tz_point_2_plane_3_ref" reference="plane_Py6_ref"/>
+		
+		<!--3 plane intersection method-->
+		<!-- <PARAMETER name="neat_calib_c9_method_tz" value="3_planes_intersection"/> <!-- plane_position/cone_position/cone_cylinder_intersection/cone_cylinder_intersection_auto/3_planes_intersection --> -->
+<!--         <PARAMETER name="neat_calib_c9_tz_intersection_number" value="2"/>
+        <PLANE     name="neat_calib_c9_tz_point_1_plane_1" reference="plane_Pxz2"/>
+        <PLANE     name="neat_calib_c9_tz_point_1_plane_2" reference="plane_Pxz3"/>
+        <PLANE     name="neat_calib_c9_tz_point_1_plane_3" reference="plane_Py4"/>
+        <PLANE     name="neat_calib_c9_tz_point_1_plane_1_ref" reference="plane_Pxz2_ref"/>
+        <PLANE     name="neat_calib_c9_tz_point_1_plane_2_ref" reference="plane_Pxz3_ref"/>
+        <PLANE     name="neat_calib_c9_tz_point_1_plane_3_ref" reference="plane_Py4_ref"/>
+        <PLANE     name="neat_calib_c9_tz_point_2_plane_1" reference="plane_Pxz8"/>
+        <PLANE     name="neat_calib_c9_tz_point_2_plane_2" reference="plane_Pxz9"/>
+        <PLANE     name="neat_calib_c9_tz_point_2_plane_3" reference="plane_Py6"/>
+        <PLANE     name="neat_calib_c9_tz_point_2_plane_1_ref" reference="plane_Pxz8_ref"/>
+        <PLANE     name="neat_calib_c9_tz_point_2_plane_2_ref" reference="plane_Pxz9_ref"/>
+        <PLANE     name="neat_calib_c9_tz_point_2_plane_3_ref" reference="plane_Py6_ref"/> -->
+		
+		 <!-- ******* Sensor C10 ******* -->
+        <PARAMETER name="neat_calib_c10_loop_on_each_step" value="false"/> <!-- Activation de la boucle sur chaque corrrection -->
+        <PARAMETER name="neat_calib_c10_activate_rx" value="true"/>
+        <PARAMETER name="neat_calib_c10_activate_ry" value="true"/>
+        <PARAMETER name="neat_calib_c10_activate_rz" value="true"/>
+        <PARAMETER name="neat_calib_c10_activate_theta" value="true"/>
+        <PARAMETER name="neat_calib_c10_activate_tr" value="true"/>
+        <PARAMETER name="neat_calib_c10_activate_tz" value="true"/>
+
+        <PARAMETER name="neat_calib_c10_coeff_rx" value="1.0"/>
+        <PARAMETER name="neat_calib_c10_coeff_ry" value="-1.0"/>
+        <PARAMETER name="neat_calib_c10_coeff_rz" value="1.0"/>		<!-- -0.5 si methode de la perpendicularité -->
+        <PARAMETER name="neat_calib_c10_coeff_theta" value="1.0"/>
+        <PARAMETER name="neat_calib_c10_coeff_tr" value="1.0"/>
+        <PARAMETER name="neat_calib_c10_coeff_tz" value="1.0"/>
+
+        <PARAMETER name="neat_calib_c10_method_rx" value="parallelism"/> <!-- squarness / parallelism -->
+        <PLANE     name="neat_calib_c10_plane_y_rx" reference="plane_Px1"/>
+        <PLANE     name="neat_calib_c10_plane_y_rx_ref" reference="plane_Px1_ref"/>
+        <PLANE     name="neat_calib_c10_plane_y_2_rx" reference="plane_Px2"/>
+        <PLANE     name="neat_calib_c10_plane_y_2_rx_ref" reference="plane_Px2_ref"/>
+
+        <PARAMETER name="neat_calib_c10_method_ry" value="cylinder_conicity"/> <!-- conicity / planeCircleConicity / planes / cylinder_conicity / cylinder_conicity_with_param -->
+		<CYLINDER  name="neat_calib_c10_cylinder_ry" reference="cylinder_Cyl4"/>
+
+        <!-- <PARAMETER name="neat_calib_c10_method_rz" value="distance"/> <!-- squarness / distance --> -->
+        <!-- <PLANE     name="neat_calib_c10_plane_y_rz" reference="plane_Px1"/> -->
+        <!-- <PLANE     name="neat_calib_c10_plane_y_rz_ref" reference="plane_Px1_ref"/> -->
+        <!-- <PLANE     name="neat_calib_c10_plane_y_2_rz" reference="plane_Px2"/> -->
+        <!-- <PLANE     name="neat_calib_c10_plane_y_2_rz_ref" reference="plane_Px2_ref"/> -->
+        <!-- <LINE      name="neat_calib_c10_line_rz_ref" reference="line_planeIntersection_rz_ref_top5"/> -->
+		
+		<PARAMETER name="neat_calib_c10_method_rz" value="cylinders"/> <!-- distance / squarness / squarness_plane_cylinder / cylinders -->
+		<CYLINDER  name="neat_calib_c10_cylinder_1_rz" reference="cylinder_Cyl3"/>
+		<CYLINDER  name="neat_calib_c10_cylinder_1_rz_ref" reference="cylinder_Cyl3_ref"/>
+		<CYLINDER  name="neat_calib_c10_cylinder_2_rz" reference="cylinder_Cyl4"/>
+		<CYLINDER  name="neat_calib_c10_cylinder_2_rz_ref" reference="cylinder_Cyl4_ref"/>
+
+
+        <PARAMETER name="neat_calib_c10_method_theta" value="circle_intersection_2_planes"/> <!-- z_derivate/plane_intersection/line_intersection/circle_intersection/circle_intersection_2_planes -->
+        <PLANE     name="neat_calib_c10_plane_theta" reference="plane_Px1"/>
+        <PLANE     name="neat_calib_c10_plane_theta_ref" reference="plane_Px1_ref"/>
+        <PLANE     name="neat_calib_c10_plane_theta_2" reference="plane_Px2"/>
+        <PLANE     name="neat_calib_c10_plane_theta_2_ref" reference="plane_Px2_ref"/>	
+        <CIRCLE    name="neat_calib_c10_circle_theta_ref" reference="Circle_planeIntersection_theta_ref_top5"/>
+
+        <PARAMETER name="neat_calib_c10_method_tr" value="cylinder_radius"/> <!-- cylinder_radius/gauge_radius/intersection_plane_cone_radius/plane_distance -->
+        <CYLINDER  name="neat_calib_c10_cylinder_tr" reference="cylinder_Cyl4"/>
+        <CYLINDER  name="neat_calib_c10_cylinder_tr_ref" reference="cylinder_Cyl4_ref"/>
+
+        <PARAMETER name="neat_calib_c10_method_tz" value="plane_position"/> <!-- plane_position/cone_position/cone_cylinder_intersection/cone_cylinder_intersection_auto -->
+        <PLANE     name="neat_calib_c10_plane_tz" reference="plane_Pz3"/>
+        <PLANE     name="neat_calib_c10_plane_tz_ref" reference="plane_Pz3_ref"/>
+		
+		
+		 <!-- ******* Sensor C11 ******* -->
+        <PARAMETER name="neat_calib_c11_loop_on_each_step" value="false"/> <!-- Activation de la boucle sur chaque corrrection -->
+        <PARAMETER name="neat_calib_c11_activate_rx" value="true"/>
+        <PARAMETER name="neat_calib_c11_activate_ry" value="true"/>
+        <PARAMETER name="neat_calib_c11_activate_rz" value="true"/>
+        <PARAMETER name="neat_calib_c11_activate_theta" value="true"/>
+        <PARAMETER name="neat_calib_c11_activate_tr" value="true"/>
+        <PARAMETER name="neat_calib_c11_activate_tz" value="true"/>
+
+        <PARAMETER name="neat_calib_c11_coeff_rx" value="1.0"/>
+        <PARAMETER name="neat_calib_c11_coeff_ry" value="-1.0"/>
+        <PARAMETER name="neat_calib_c11_coeff_rz" value="1.0"/>		<!-- -0.5 si methode de la perpendicularité -->
+        <PARAMETER name="neat_calib_c11_coeff_theta" value="1.0"/>
+        <PARAMETER name="neat_calib_c11_coeff_tr" value="1.0"/>
+        <PARAMETER name="neat_calib_c11_coeff_tz" value="1.0"/>
+
+        <PARAMETER name="neat_calib_c11_method_rx" value="parallelism"/> <!-- squarness / parallelism -->
+        <PLANE     name="neat_calib_c11_plane_y_rx" reference="plane_Py4"/>
+        <PLANE     name="neat_calib_c11_plane_y_rx_ref" reference="plane_Py4_ref"/>
+        <PLANE     name="neat_calib_c11_plane_y_2_rx" reference="plane_Py6"/>
+        <PLANE     name="neat_calib_c11_plane_y_2_rx_ref" reference="plane_Py6_ref"/>
+
+        <PARAMETER name="neat_calib_c11_method_ry" value="cylinder_conicity"/> <!-- conicity / planeCircleConicity / planes / cylinder_conicity / cylinder_conicity_with_param -->
+		<CYLINDER  name="neat_calib_c11_cylinder_ry" reference="cylinder_Cyl1"/>
+
+        <PARAMETER name="neat_calib_c11_method_rz" value="distance"/> <!-- squarness / distance -->
+        <PLANE     name="neat_calib_c11_plane_y_rz" reference="plane_Py4"/>
+        <PLANE     name="neat_calib_c11_plane_y_rz_ref" reference="plane_Py4_ref"/>
+        <PLANE     name="neat_calib_c11_plane_y_2_rz" reference="plane_Py6"/>
+        <PLANE     name="neat_calib_c11_plane_y_2_rz_ref" reference="plane_Py6_ref"/>
+        <LINE      name="neat_calib_c11_line_rz_ref" reference="line_planeIntersection_rz_ref_top5y"/>
+
+        <PARAMETER name="neat_calib_c11_method_theta" value="circle_intersection_2_planes"/> <!-- z_derivate/plane_intersection/line_intersection/circle_intersection/circle_intersection_2_planes -->
+        <PLANE     name="neat_calib_c11_plane_theta" reference="plane_Py4"/>
+        <PLANE     name="neat_calib_c11_plane_theta_ref" reference="plane_Py4_ref"/>
+        <PLANE     name="neat_calib_c11_plane_theta_2" reference="plane_Py6"/>
+        <PLANE     name="neat_calib_c11_plane_theta_2_ref" reference="plane_Py6_ref"/>	
+        <CIRCLE    name="neat_calib_c11_circle_theta_ref" reference="Circle_planeIntersection_theta_ref_top5y"/>
+
+        <PARAMETER name="neat_calib_c11_method_tr" value="cylinder_radius"/> <!-- cylinder_radius/gauge_radius/intersection_plane_cone_radius/plane_distance -->
+        <CYLINDER  name="neat_calib_c11_cylinder_tr" reference="cylinder_Cyl1"/>
+        <CYLINDER  name="neat_calib_c11_cylinder_tr_ref" reference="cylinder_Cyl1_ref"/>
+
+        <!-- <PARAMETER name="neat_calib_c11_method_tz" value="plane_position"/> <!-- plane_position/cone_position/cone_cylinder_intersection/cone_cylinder_intersection_auto --> -->
+        <!-- <PLANE     name="neat_calib_c11_plane_tz" reference="plane_Pz2"/> -->
+        <!-- <PLANE     name="neat_calib_c11_plane_tz_ref" reference="plane_Pz2_ref"/> -->
+		
+		<!--3 plane intersection method-->
+		<PARAMETER name="neat_calib_c11_method_tz" value="3_planes_intersection"/> <!-- plane_position/cone_position/cone_cylinder_intersection/cone_cylinder_intersection_auto/3_planes_intersection -->
+        <PARAMETER name="neat_calib_c11_tz_intersection_number" value="2"/>
+        <PLANE     name="neat_calib_c11_tz_point_1_plane_1" reference="plane_Pxz1"/>
+        <PLANE     name="neat_calib_c11_tz_point_1_plane_2" reference="plane_Px+_ref"/>
+        <PLANE     name="neat_calib_c11_tz_point_1_plane_3" reference="plane_Py4"/>
+        <PLANE     name="neat_calib_c11_tz_point_1_plane_1_ref" reference="plane_Pxz1_ref"/>
+        <PLANE     name="neat_calib_c11_tz_point_1_plane_2_ref" reference="plane_Px+_ref"/>
+        <PLANE     name="neat_calib_c11_tz_point_1_plane_3_ref" reference="plane_Py4_ref"/>
+        <PLANE     name="neat_calib_c11_tz_point_2_plane_1" reference="plane_Pxz10"/>
+        <PLANE     name="neat_calib_c11_tz_point_2_plane_2" reference="plane_Px-_ref"/>
+        <PLANE     name="neat_calib_c11_tz_point_2_plane_3" reference="plane_Py6"/>
+        <PLANE     name="neat_calib_c11_tz_point_2_plane_1_ref" reference="plane_Pxz10_ref"/>
+        <PLANE     name="neat_calib_c11_tz_point_2_plane_2_ref" reference="plane_Px-_ref"/>
+        <PLANE     name="neat_calib_c11_tz_point_2_plane_3_ref" reference="plane_Py6_ref"/>
+		
+		 <!-- ******* Sensor C12 ******* -->
+        <PARAMETER name="neat_calib_c12_loop_on_each_step" value="false"/> <!-- Activation de la boucle sur chaque corrrection -->
+        <PARAMETER name="neat_calib_c12_activate_rx" value="true"/>
+        <PARAMETER name="neat_calib_c12_activate_ry" value="true"/>
+        <PARAMETER name="neat_calib_c12_activate_rz" value="true"/>
+        <PARAMETER name="neat_calib_c12_activate_theta" value="true"/>
+        <PARAMETER name="neat_calib_c12_activate_tr" value="true"/>
+        <PARAMETER name="neat_calib_c12_activate_tz" value="true"/>
+
+        <PARAMETER name="neat_calib_c12_coeff_rx" value="1.0"/>
+        <PARAMETER name="neat_calib_c12_coeff_ry" value="-1.0"/>
+        <PARAMETER name="neat_calib_c12_coeff_rz" value="-1.0"/>		<!-- -0.5 si methode de la perpendicularité -->
+        <PARAMETER name="neat_calib_c12_coeff_theta" value="1.0"/>
+        <PARAMETER name="neat_calib_c12_coeff_tr" value="1.0"/>
+        <PARAMETER name="neat_calib_c12_coeff_tz" value="1.0"/>
+
+        <PARAMETER name="neat_calib_c12_method_rx" value="parallelism"/> <!-- squarness / parallelism -->
+        <PLANE     name="neat_calib_c12_plane_y_rx" reference="plane_Py7"/>
+        <PLANE     name="neat_calib_c12_plane_y_rx_ref" reference="plane_Py7_ref"/>
+        <PLANE     name="neat_calib_c12_plane_y_2_rx" reference="plane_Py9"/>
+        <PLANE     name="neat_calib_c12_plane_y_2_rx_ref" reference="plane_Py9_ref"/>
+
+        <PARAMETER name="neat_calib_c12_method_ry" value="cylinder_conicity"/> <!-- conicity / planeCircleConicity / planes / cylinder_conicity / cylinder_conicity_with_param -->
+		<CYLINDER  name="neat_calib_c12_cylinder_ry" reference="cylinder_Cyl2"/>
+
+        <PARAMETER name="neat_calib_c12_method_rz" value="distance"/> <!-- squarness / distance -->
+        <PLANE     name="neat_calib_c12_plane_y_rz" reference="plane_Py7"/>
+        <PLANE     name="neat_calib_c12_plane_y_rz_ref" reference="plane_Py7_ref"/>
+        <PLANE     name="neat_calib_c12_plane_y_2_rz" reference="plane_Py9"/>
+        <PLANE     name="neat_calib_c12_plane_y_2_rz_ref" reference="plane_Py9_ref"/>
+        <LINE      name="neat_calib_c12_line_rz_ref" reference="line_planeIntersection_rz_ref_top3"/>
+
+        <PARAMETER name="neat_calib_c12_method_theta" value="circle_intersection_2_planes"/> <!-- z_derivate/plane_intersection/line_intersection/circle_intersection/circle_intersection_2_planes -->
+        <PLANE     name="neat_calib_c12_plane_theta" reference="plane_Py7"/>
+        <PLANE     name="neat_calib_c12_plane_theta_ref" reference="plane_Py7_ref"/>
+        <PLANE     name="neat_calib_c12_plane_theta_2" reference="plane_Py9"/>
+        <PLANE     name="neat_calib_c12_plane_theta_2_ref" reference="plane_Py9_ref"/>	
+        <CIRCLE    name="neat_calib_c12_circle_theta_ref" reference="Circle_planeIntersection_theta_ref_top3"/>
+
+        <PARAMETER name="neat_calib_c12_method_tr" value="cylinder_radius"/> <!-- cylinder_radius/gauge_radius/intersection_plane_cone_radius/plane_distance -->
+        <CYLINDER  name="neat_calib_c12_cylinder_tr" reference="cylinder_Cyl2"/>
+        <CYLINDER  name="neat_calib_c12_cylinder_tr_ref" reference="cylinder_Cyl2_ref"/>
+
+        <PARAMETER name="neat_calib_c12_method_tz" value="plane_position"/> <!-- plane_position/cone_position/cone_cylinder_intersection/cone_cylinder_intersection_auto -->
+        <PLANE     name="neat_calib_c12_plane_tz" reference="plane_Pz2"/>
+        <PLANE     name="neat_calib_c12_plane_tz_ref" reference="plane_Pz2_ref"/>
+		
+		
+    </PARAMETERS>
+
+    <!-- ########### COARSE CALIBRATION ########### -->
+    
+    <PARAMETERS>
+        <!-- ******* Sensor C1 ******* -->
+        <PARAMETER name="coarse_calib_c1_loop_on_each_step" value="false"/>
+        <PARAMETER name="coarse_calib_c1_activate_rx" value="false"/>
+        <PARAMETER name="coarse_calib_c1_activate_ry" value="false"/>
+        <PARAMETER name="coarse_calib_c1_activate_rz" value="false"/>
+        <PARAMETER name="coarse_calib_c1_activate_theta" value="true"/>
+        <PARAMETER name="coarse_calib_c1_activate_tr" value="true"/>
+        <PARAMETER name="coarse_calib_c1_activate_tz" value="true"/>
+
+        <PARAMETER name="coarse_calib_c1_coeff_theta" value="1.0"/>
+        <PARAMETER name="coarse_calib_c1_coeff_tr" value="1.0"/>
+        <PARAMETER name="coarse_calib_c1_coeff_tz" value="1.0"/>
+
+        <PARAMETER name="coarse_calib_c1_method_theta" value="line_intersection"/> <!-- z_derivate/plane_intersection/line_intersection/circle_intersection/circle_intersection_2_planes -->
+        <PLANE     name="coarse_calib_c1_plane_theta" reference="plane_Py4_coarse"/>
+        <PLANE     name="coarse_calib_c1_plane_theta_ref" reference="plane_Py4_ref"/>
+        <LINE      name="coarse_calib_c1_line_theta_ref" reference="line_Py4_planeIntersection_theta_ref"/>
+
+        <PARAMETER name="coarse_calib_c1_method_tr" value="cylinder_radius"/> <!-- cylinder_radius/gauge_radius/intersection_plane_cone_radius/plane_distance -->
+        <CYLINDER  name="coarse_calib_c1_cylinder_tr" reference="cylinder_Cyl1_coarse"/>
+        <CYLINDER  name="coarse_calib_c1_cylinder_tr_ref" reference="cylinder_Cyl1_ref"/>
+
+        <!-- <PARAMETER name="coarse_calib_c1_method_tz" value="plane_position"/> <!-- plane_position/cone_position/cone_cylinder_intersection/cone_cylinder_intersection_auto --> -->
+        <!-- <PLANE     name="coarse_calib_c1_plane_tz" reference="plane_Pz2_coarse"/> -->
+        <!-- <PLANE     name="coarse_calib_c1_plane_tz_ref" reference="plane_Pz2_ref"/> -->
+		
+		<!--3 plane method-->
+		<PARAMETER name="coarse_calib_c1_method_tz" value="3_planes_intersection"/> <!-- plane_position/cone_position/cone_cylinder_intersection/cone_cylinder_intersection_auto/3_planes_intersection -->
+        <PARAMETER name="coarse_calib_c1_tz_intersection_number" value="1"/>
+        <PLANE     name="coarse_calib_c1_tz_point_1_plane_1" reference="plane_Pxz2_coarse"/>
+        <PLANE     name="coarse_calib_c1_tz_point_1_plane_2" reference="plane_Pxz3_coarse"/>
+        <PLANE     name="coarse_calib_c1_tz_point_1_plane_3" reference="plane_Py4_coarse"/>
+        <PLANE     name="coarse_calib_c1_tz_point_1_plane_1_ref" reference="plane_Pxz2_ref"/>
+        <PLANE     name="coarse_calib_c1_tz_point_1_plane_2_ref" reference="plane_Pxz3_ref"/>
+        <PLANE     name="coarse_calib_c1_tz_point_1_plane_3_ref" reference="plane_Py4_ref"/>
+
+        <!-- ******* Sensor C2 ******* -->
+        <PARAMETER name="coarse_calib_c2_loop_on_each_step" value="false"/>
+        <PARAMETER name="coarse_calib_c2_activate_rx" value="false"/>
+        <PARAMETER name="coarse_calib_c2_activate_ry" value="false"/>
+        <PARAMETER name="coarse_calib_c2_activate_rz" value="false"/>
+        <PARAMETER name="coarse_calib_c2_activate_theta" value="true"/>
+        <PARAMETER name="coarse_calib_c2_activate_tr" value="true"/>
+        <PARAMETER name="coarse_calib_c2_activate_tz" value="true"/>
+
+        <PARAMETER name="coarse_calib_c2_coeff_theta" value="1.0"/>
+        <PARAMETER name="coarse_calib_c2_coeff_tr" value="1.0"/>
+        <PARAMETER name="coarse_calib_c2_coeff_tz" value="1.0"/>
+
+        <PARAMETER name="coarse_calib_c2_method_theta" value="line_intersection"/> <!-- z_derivate/plane_intersection/line_intersection/circle_intersection/circle_intersection_2_planes -->
+        <PLANE     name="coarse_calib_c2_plane_theta" reference="plane_Py3_coarse"/>
+        <PLANE     name="coarse_calib_c2_plane_theta_ref" reference="plane_Py3_ref"/>
+        <LINE      name="coarse_calib_c2_line_theta_ref" reference="line_Py3_planeIntersection_theta_ref"/>
+
+        <PARAMETER name="coarse_calib_c2_method_tr" value="cylinder_radius"/> <!-- cylinder_radius/gauge_radius/intersection_plane_cone_radius/plane_distance -->
+        <CYLINDER  name="coarse_calib_c2_cylinder_tr" reference="cylinder_Cyl1_coarse"/>
+        <CYLINDER  name="coarse_calib_c2_cylinder_tr_ref" reference="cylinder_Cyl1_ref"/>
+
+        <!-- <PARAMETER name="coarse_calib_c2_method_tz" value="plane_position"/> <!-- plane_position/cone_position/cone_cylinder_intersection/cone_cylinder_intersection_auto --> -->
+        <!-- <PLANE     name="coarse_calib_c2_plane_tz" reference="plane_Pz1_coarse"/> -->
+        <!-- <PLANE     name="coarse_calib_c2_plane_tz_ref" reference="plane_Pz1_ref"/> -->
+		
+		<!--3 PLANE METHOD COURSE-->
+		<PARAMETER name="coarse_calib_c2_method_tz" value="3_planes_intersection"/> <!-- plane_position/cone_position/cone_cylinder_intersection/cone_cylinder_intersection_auto/3_planes_intersection -->
+		<PARAMETER name="coarse_calib_c2_tz_intersection_number" value="1"/>
+        <PLANE     name="coarse_calib_c2_tz_point_1_plane_1" reference="plane_Pxz4_coarse"/>
+        <PLANE     name="coarse_calib_c2_tz_point_1_plane_2" reference="plane_Pxz5_coarse"/>
+        <PLANE     name="coarse_calib_c2_tz_point_1_plane_3" reference="plane_Py3_coarse"/>
+        <PLANE     name="coarse_calib_c2_tz_point_1_plane_1_ref" reference="plane_Pxz4_ref"/>
+        <PLANE     name="coarse_calib_c2_tz_point_1_plane_2_ref" reference="plane_Pxz5_ref"/>
+        <PLANE     name="coarse_calib_c2_tz_point_1_plane_3_ref" reference="plane_Py3_ref"/>
+
+
+        <!-- ******* Sensor C3 ******* -->
+        <PARAMETER name="coarse_calib_c3_loop_on_each_step" value="false"/>
+        <PARAMETER name="coarse_calib_c3_activate_rx" value="false"/>
+        <PARAMETER name="coarse_calib_c3_activate_ry" value="false"/>
+        <PARAMETER name="coarse_calib_c3_activate_rz" value="false"/>
+        <PARAMETER name="coarse_calib_c3_activate_theta" value="true"/>
+        <PARAMETER name="coarse_calib_c3_activate_tr" value="true"/>
+        <PARAMETER name="coarse_calib_c3_activate_tz" value="true"/>
+
+        <PARAMETER name="coarse_calib_c3_coeff_theta" value="1.0"/>
+        <PARAMETER name="coarse_calib_c3_coeff_tr" value="1.0"/>
+        <PARAMETER name="coarse_calib_c3_coeff_tz" value="1.0"/>
+
+        <PARAMETER name="coarse_calib_c3_method_theta" value="line_intersection"/> <!-- z_derivate/plane_intersection/line_intersection/circle_intersection/circle_intersection_2_planes -->
+        <PLANE     name="coarse_calib_c3_plane_theta" reference="plane_Py8_coarse"/>
+        <PLANE     name="coarse_calib_c3_plane_theta_ref" reference="plane_Py8_ref"/>
+        <LINE      name="coarse_calib_c3_line_theta_ref" reference="line_Py8_planeIntersection_theta_ref"/>
+
+        <PARAMETER name="coarse_calib_c3_method_tr" value="cylinder_radius"/> <!-- cylinder_radius/gauge_radius/intersection_plane_cone_radius/plane_distance -->
+        <CYLINDER  name="coarse_calib_c3_cylinder_tr" reference="cylinder_Cyl2_coarse"/>
+        <CYLINDER  name="coarse_calib_c3_cylinder_tr_ref" reference="cylinder_Cyl2_ref"/>
+		
+        <PARAMETER name="coarse_calib_c3_method_tz" value="plane_position"/> <!-- plane_position/cone_position/cone_cylinder_intersection/cone_cylinder_intersection_auto -->
+        <PLANE     name="coarse_calib_c3_plane_tz" reference="plane_Pz1_coarse"/>
+        <PLANE     name="coarse_calib_c3_plane_tz_ref" reference="plane_Pz1_ref"/>
+
+        
+        <!-- ******* Sensor C4 ******* -->
+        <PARAMETER name="coarse_calib_c4_loop_on_each_step" value="false"/>
+        <PARAMETER name="coarse_calib_c4_activate_rx" value="false"/>
+        <PARAMETER name="coarse_calib_c4_activate_ry" value="false"/>
+        <PARAMETER name="coarse_calib_c4_activate_rz" value="false"/>
+        <PARAMETER name="coarse_calib_c4_activate_theta" value="true"/>
+        <PARAMETER name="coarse_calib_c4_activate_tr" value="true"/>
+        <PARAMETER name="coarse_calib_c4_activate_tz" value="true"/>
+
+        <PARAMETER name="coarse_calib_c4_coeff_theta" value="1.0"/>
+        <PARAMETER name="coarse_calib_c4_coeff_tr" value="1.0"/>
+        <PARAMETER name="coarse_calib_c4_coeff_tz" value="1.0"/>
+
+        <PARAMETER name="coarse_calib_c4_method_theta" value="line_intersection"/> <!-- z_derivate/plane_intersection/line_intersection/circle_intersection/circle_intersection_2_planes -->
+        <PLANE     name="coarse_calib_c4_plane_theta" reference="plane_Py8_coarse"/>
+        <PLANE     name="coarse_calib_c4_plane_theta_ref" reference="plane_Py8_ref"/>
+        <LINE      name="coarse_calib_c4_line_theta_ref" reference="line_Py8_planeIntersection_theta_ref"/>
+
+        <PARAMETER name="coarse_calib_c4_method_tr" value="cylinder_radius"/> <!-- cylinder_radius/gauge_radius/intersection_plane_cone_radius/plane_distance -->
+        <CYLINDER  name="coarse_calib_c4_cylinder_tr" reference="cylinder_Cyl3_coarse"/>
+        <CYLINDER  name="coarse_calib_c4_cylinder_tr_ref" reference="cylinder_Cyl3_ref"/>
+
+        <PARAMETER name="coarse_calib_c4_method_tz" value="plane_position"/> <!-- plane_position/cone_position/cone_cylinder_intersection/cone_cylinder_intersection_auto -->
+        <PLANE     name="coarse_calib_c4_plane_tz" reference="plane_Pz3_coarse"/>
+        <PLANE     name="coarse_calib_c4_plane_tz_ref" reference="plane_Pz3_ref"/>
+		
+		        <!-- ******* Sensor C5 ******* -->
+        <PARAMETER name="coarse_calib_c5_loop_on_each_step" value="false"/>
+        <PARAMETER name="coarse_calib_c5_activate_rx" value="false"/>
+        <PARAMETER name="coarse_calib_c5_activate_ry" value="false"/>
+        <PARAMETER name="coarse_calib_c5_activate_rz" value="false"/>
+        <PARAMETER name="coarse_calib_c5_activate_theta" value="true"/>
+        <PARAMETER name="coarse_calib_c5_activate_tr" value="true"/>
+        <PARAMETER name="coarse_calib_c5_activate_tz" value="true"/>
+
+        <PARAMETER name="coarse_calib_c5_coeff_theta" value="1.0"/>
+        <PARAMETER name="coarse_calib_c5_coeff_tr" value="1.0"/>
+        <PARAMETER name="coarse_calib_c5_coeff_tz" value="1.0"/>
+
+        <PARAMETER name="coarse_calib_c5_method_theta" value="line_intersection"/> <!-- z_derivate/plane_intersection/line_intersection/circle_intersection/circle_intersection_2_planes -->
+        <PLANE     name="coarse_calib_c5_plane_theta" reference="plane_Px1_coarse"/>
+        <PLANE     name="coarse_calib_c5_plane_theta_ref" reference="plane_Px1_ref"/>
+        <LINE      name="coarse_calib_c5_line_theta_ref" reference="line_Px1_planeIntersection_theta_ref"/>
+
+        <PARAMETER name="coarse_calib_c5_method_tr" value="cylinder_radius"/> <!-- cylinder_radius/gauge_radius/intersection_plane_cone_radius/plane_distance -->
+        <CYLINDER  name="coarse_calib_c5_cylinder_tr" reference="cylinder_Cyl4_coarse"/>
+        <CYLINDER  name="coarse_calib_c5_cylinder_tr_ref" reference="cylinder_Cyl4_ref"/>
+
+        <PARAMETER name="coarse_calib_c5_method_tz" value="plane_position"/> <!-- plane_position/cone_position/cone_cylinder_intersection/cone_cylinder_intersection_auto -->
+        <PLANE     name="coarse_calib_c5_plane_tz" reference="plane_Pz4_coarse"/>
+        <PLANE     name="coarse_calib_c5_plane_tz_ref" reference="plane_Pz4_ref"/>
+		
+		        <!-- ******* Sensor C6 ******* -->
+        <PARAMETER name="coarse_calib_c6_loop_on_each_step" value="false"/>
+        <PARAMETER name="coarse_calib_c6_activate_rx" value="false"/>
+        <PARAMETER name="coarse_calib_c6_activate_ry" value="false"/>
+        <PARAMETER name="coarse_calib_c6_activate_rz" value="false"/>
+        <PARAMETER name="coarse_calib_c6_activate_theta" value="true"/>
+        <PARAMETER name="coarse_calib_c6_activate_tr" value="true"/>
+        <PARAMETER name="coarse_calib_c6_activate_tz" value="true"/>
+
+
+        <PARAMETER name="coarse_calib_c6_coeff_theta" value="1.0"/>
+        <PARAMETER name="coarse_calib_c6_coeff_tr" value="1.0"/>
+        <PARAMETER name="coarse_calib_c6_coeff_tz" value="1.0"/>
+
+        <PARAMETER name="coarse_calib_c6_method_theta" value="line_intersection"/> <!-- z_derivate/plane_intersection/line_intersection/circle_intersection/circle_intersection_2_planes -->
+        <PLANE     name="coarse_calib_c6_plane_theta" reference="plane_Py4_coarse"/>
+        <PLANE     name="coarse_calib_c6_plane_theta_ref" reference="plane_Py4_ref"/>
+        <LINE      name="coarse_calib_c6_line_theta_ref" reference="line_Py4_planeIntersection_theta_ref"/>
+
+        <PARAMETER name="coarse_calib_c6_method_tr" value="cylinder_radius"/> <!-- cylinder_radius/gauge_radius/intersection_plane_cone_radius/plane_distance -->
+        <CYLINDER  name="coarse_calib_c6_cylinder_tr" reference="cylinder_Cyl1_coarse"/>
+        <CYLINDER  name="coarse_calib_c6_cylinder_tr_ref" reference="cylinder_Cyl1_ref"/>
+
+        <PARAMETER name="coarse_calib_c6_method_tz" value="plane_position"/> <!-- plane_position/cone_position/cone_cylinder_intersection/cone_cylinder_intersection_auto -->
+        <PLANE     name="coarse_calib_c6_plane_tz" reference="plane_Pz4_coarse"/>
+        <PLANE     name="coarse_calib_c6_plane_tz_ref" reference="plane_Pz4_ref"/>
+		
+				        <!-- ******* Sensor C7 ******* -->
+        <PARAMETER name="coarse_calib_c7_loop_on_each_step" value="false"/>
+        <PARAMETER name="coarse_calib_c7_activate_rx" value="false"/>
+        <PARAMETER name="coarse_calib_c7_activate_ry" value="false"/>
+        <PARAMETER name="coarse_calib_c7_activate_rz" value="false"/>
+        <PARAMETER name="coarse_calib_c7_activate_theta" value="true"/>
+        <PARAMETER name="coarse_calib_c7_activate_tr" value="true"/>
+        <PARAMETER name="coarse_calib_c7_activate_tz" value="true"/>
+
+        <PARAMETER name="coarse_calib_c7_coeff_theta" value="1.0"/>
+        <PARAMETER name="coarse_calib_c7_coeff_tr" value="1.0"/>
+        <PARAMETER name="coarse_calib_c7_coeff_tz" value="1.0"/>
+
+        <PARAMETER name="coarse_calib_c7_method_theta" value="line_intersection"/> <!-- z_derivate/plane_intersection/line_intersection/circle_intersection/circle_intersection_2_planes -->
+        <PLANE     name="coarse_calib_c7_plane_theta" reference="plane_Py1_coarse"/>
+        <PLANE     name="coarse_calib_c7_plane_theta_ref" reference="plane_Py1_ref"/>
+        <LINE      name="coarse_calib_c7_line_theta_ref" reference="line_Py1_planeIntersection_theta_ref"/>
+
+        <PARAMETER name="coarse_calib_c7_method_tr" value="cylinder_radius"/> <!-- cylinder_radius/gauge_radius/intersection_plane_cone_radius/plane_distance -->
+        <CYLINDER  name="coarse_calib_c7_cylinder_tr" reference="cylinder_Cyl4_coarse"/>
+        <CYLINDER  name="coarse_calib_c7_cylinder_tr_ref" reference="cylinder_Cyl4_ref"/>
+
+        <PARAMETER name="coarse_calib_c7_method_tz" value="plane_position"/> <!-- plane_position/cone_position/cone_cylinder_intersection/cone_cylinder_intersection_auto -->
+        <PLANE     name="coarse_calib_c7_plane_tz" reference="plane_Pz4_coarse"/>
+        <PLANE     name="coarse_calib_c7_plane_tz_ref" reference="plane_Pz4_ref"/>
+		
+				        <!-- ******* Sensor C8 ******* -->
+        <PARAMETER name="coarse_calib_c8_loop_on_each_step" value="false"/>
+        <PARAMETER name="coarse_calib_c8_activate_rx" value="false"/>
+        <PARAMETER name="coarse_calib_c8_activate_ry" value="false"/>
+        <PARAMETER name="coarse_calib_c8_activate_rz" value="false"/>
+        <PARAMETER name="coarse_calib_c8_activate_theta" value="true"/>
+        <PARAMETER name="coarse_calib_c8_activate_tr" value="true"/>
+        <PARAMETER name="coarse_calib_c8_activate_tz" value="true"/>
+
+        <PARAMETER name="coarse_calib_c8_coeff_theta" value="1.0"/>
+        <PARAMETER name="coarse_calib_c8_coeff_tr" value="1.0"/>
+        <PARAMETER name="coarse_calib_c8_coeff_tz" value="1.0"/>
+
+        <PARAMETER name="coarse_calib_c8_method_theta" value="line_intersection"/> <!-- z_derivate/plane_intersection/line_intersection/circle_intersection/circle_intersection_2_planes -->
+        <PLANE     name="coarse_calib_c8_plane_theta" reference="plane_Py3_coarse"/> <!-- UPDATE 6/22/2023: Change from Py4 to Py3 -->
+        <PLANE     name="coarse_calib_c8_plane_theta_ref" reference="plane_Py3_ref"/> <!-- UPDATE 6/22/2023: Change from Py4 to Py3 -->
+        <LINE      name="coarse_calib_c8_line_theta_ref" reference="line_Py3_planeIntersection_theta_ref"/> <!-- UPDATE 6/22/2023: Change from Py4 to Py3 -->
+
+        <PARAMETER name="coarse_calib_c8_method_tr" value="cylinder_radius"/> <!-- cylinder_radius/gauge_radius/intersection_plane_cone_radius/plane_distance -->
+        <CYLINDER  name="coarse_calib_c8_cylinder_tr" reference="cylinder_Cyl1_coarse"/>
+        <CYLINDER  name="coarse_calib_c8_cylinder_tr_ref" reference="cylinder_Cyl1_ref"/>
+
+        <PARAMETER name="coarse_calib_c8_method_tz" value="plane_position"/> <!-- plane_position/cone_position/cone_cylinder_intersection/cone_cylinder_intersection_auto -->
+        <PLANE     name="coarse_calib_c8_plane_tz" reference="plane_Pz1_coarse"/>
+        <PLANE     name="coarse_calib_c8_plane_tz_ref" reference="plane_Pz1_ref"/>
+		
+				        <!-- ******* Sensor C9 ******* -->
+        <PARAMETER name="coarse_calib_c9_loop_on_each_step" value="false"/>
+        <PARAMETER name="coarse_calib_c9_activate_rx" value="false"/>
+        <PARAMETER name="coarse_calib_c9_activate_ry" value="false"/>
+        <PARAMETER name="coarse_calib_c9_activate_rz" value="false"/>
+        <PARAMETER name="coarse_calib_c9_activate_theta" value="true"/>
+        <PARAMETER name="coarse_calib_c9_activate_tr" value="true"/>
+        <PARAMETER name="coarse_calib_c9_activate_tz" value="true"/>
+
+        <PARAMETER name="coarse_calib_c9_coeff_theta" value="1.0"/>
+        <PARAMETER name="coarse_calib_c9_coeff_tr" value="1.0"/>
+        <PARAMETER name="coarse_calib_c9_coeff_tz" value="1.0"/>
+
+        <PARAMETER name="coarse_calib_c9_method_theta" value="line_intersection"/> <!-- z_derivate/plane_intersection/line_intersection/circle_intersection/circle_intersection_2_planes -->
+        <PLANE     name="coarse_calib_c9_plane_theta" reference="plane_Py4_coarse"/>
+        <PLANE     name="coarse_calib_c9_plane_theta_ref" reference="plane_Py4_ref"/>
+        <LINE      name="coarse_calib_c9_line_theta_ref" reference="line_Py4_planeIntersection_theta_ref"/>
+
+        <PARAMETER name="coarse_calib_c9_method_tr" value="cylinder_radius"/> <!-- cylinder_radius/gauge_radius/intersection_plane_cone_radius/plane_distance -->
+        <CYLINDER  name="coarse_calib_c9_cylinder_tr" reference="cylinder_Cyl1_coarse"/>
+        <CYLINDER  name="coarse_calib_c9_cylinder_tr_ref" reference="cylinder_Cyl1_ref"/>
+
+        <!-- <PARAMETER name="coarse_calib_c9_method_tz" value="plane_position"/> <!-- plane_position/cone_position/cone_cylinder_intersection/cone_cylinder_intersection_auto --> -->
+        <!-- <PLANE     name="coarse_calib_c9_plane_tz" reference="plane_Pz2_coarse"/> -->
+        <!-- <PLANE     name="coarse_calib_c9_plane_tz_ref" reference="plane_Pz2_ref"/> -->
+		
+		<!--3 plane intersection method-->
+		<PARAMETER name="coarse_calib_c9_method_tz" value="3_planes_intersection"/> <!-- plane_position/cone_position/cone_cylinder_intersection/cone_cylinder_intersection_auto/3_planes_intersection -->
+        <PARAMETER name="coarse_calib_c9_tz_intersection_number" value="2"/>
+        <PLANE     name="coarse_calib_c9_tz_point_1_plane_1" reference="plane_Pxz1"/>
+        <PLANE     name="coarse_calib_c9_tz_point_1_plane_2" reference="plane_Px+_ref"/>
+        <PLANE     name="coarse_calib_c9_tz_point_1_plane_3" reference="plane_Py4"/>
+        <PLANE     name="coarse_calib_c9_tz_point_1_plane_1_ref" reference="plane_Pxz1_ref"/>
+        <PLANE     name="coarse_calib_c9_tz_point_1_plane_2_ref" reference="plane_Px+_ref"/>
+        <PLANE     name="coarse_calib_c9_tz_point_1_plane_3_ref" reference="plane_Py4_ref"/>
+        <PLANE     name="coarse_calib_c9_tz_point_2_plane_1" reference="plane_Pxz10"/>
+        <PLANE     name="coarse_calib_c9_tz_point_2_plane_2" reference="plane_Px-_ref"/>
+        <PLANE     name="coarse_calib_c9_tz_point_2_plane_3" reference="plane_Py6"/>
+        <PLANE     name="coarse_calib_c9_tz_point_2_plane_1_ref" reference="plane_Pxz10_ref"/>
+        <PLANE     name="coarse_calib_c9_tz_point_2_plane_2_ref" reference="plane_Px-_ref"/>
+        <PLANE     name="coarse_calib_c9_tz_point_2_plane_3_ref" reference="plane_Py6_ref"/>
+		
+		<!--3 plane method-->
+
+		<!-- <PARAMETER name="coarse_calib_c9_method_tz" value="3_planes_intersection"/> <!-- plane_position/cone_position/cone_cylinder_intersection/cone_cylinder_intersection_auto/3_planes_intersection --> -->
+        <!-- <PARAMETER name="coarse_calib_c9_tz_intersection_number" value="1"/> -->
+        <!-- <PLANE     name="coarse_calib_c9_tz_point_1_plane_1" reference="plane_Pxz2_coarse"/> -->
+        <!-- <PLANE     name="coarse_calib_c9_tz_point_1_plane_2" reference="plane_Pxz3_coarse"/> -->
+        <!-- <PLANE     name="coarse_calib_c9_tz_point_1_plane_3" reference="plane_Py4_coarse"/> -->
+        <!-- <PLANE     name="coarse_calib_c9_tz_point_1_plane_1_ref" reference="plane_Pxz2_ref"/> -->
+        <!-- <PLANE     name="coarse_calib_c9_tz_point_1_plane_2_ref" reference="plane_Pxz3_ref"/> -->
+        <!-- <PLANE     name="coarse_calib_c9_tz_point_1_plane_3_ref" reference="plane_Py4_ref"/> -->
+
+		
+		
+				        <!-- ******* Sensor C10 ******* -->
+        <PARAMETER name="coarse_calib_c10_loop_on_each_step" value="false"/>
+        <PARAMETER name="coarse_calib_c10_activate_rx" value="false"/>
+        <PARAMETER name="coarse_calib_c10_activate_ry" value="false"/>
+        <PARAMETER name="coarse_calib_c10_activate_rz" value="false"/>
+        <PARAMETER name="coarse_calib_c10_activate_theta" value="true"/>
+        <PARAMETER name="coarse_calib_c10_activate_tr" value="true"/>
+        <PARAMETER name="coarse_calib_c10_activate_tz" value="true"/>
+
+        <PARAMETER name="coarse_calib_c10_coeff_theta" value="1.0"/>
+        <PARAMETER name="coarse_calib_c10_coeff_tr" value="1.0"/>
+        <PARAMETER name="coarse_calib_c10_coeff_tz" value="1.0"/>
+
+        <PARAMETER name="coarse_calib_c10_method_theta" value="line_intersection"/> <!-- z_derivate/plane_intersection/line_intersection/circle_intersection/circle_intersection_2_planes -->
+        <PLANE     name="coarse_calib_c10_plane_theta" reference="plane_Px1_coarse"/>
+        <PLANE     name="coarse_calib_c10_plane_theta_ref" reference="plane_Px1_ref"/>
+        <LINE      name="coarse_calib_c10_line_theta_ref" reference="line_Px1_planeIntersection_theta_ref"/>
+
+        <PARAMETER name="coarse_calib_c10_method_tr" value="cylinder_radius"/> <!-- cylinder_radius/gauge_radius/intersection_plane_cone_radius/plane_distance -->
+        <CYLINDER  name="coarse_calib_c10_cylinder_tr" reference="cylinder_Cyl4_coarse"/>
+        <CYLINDER  name="coarse_calib_c10_cylinder_tr_ref" reference="cylinder_Cyl4_ref"/>
+
+        <PARAMETER name="coarse_calib_c10_method_tz" value="plane_position"/> <!-- plane_position/cone_position/cone_cylinder_intersection/cone_cylinder_intersection_auto -->
+        <PLANE     name="coarse_calib_c10_plane_tz" reference="plane_Pz3_coarse"/>
+        <PLANE     name="coarse_calib_c10_plane_tz_ref" reference="plane_Pz3_ref"/>
+	
+				        <!-- ******* Sensor C11 ******* -->
+        <PARAMETER name="coarse_calib_c11_loop_on_each_step" value="false"/>
+        <PARAMETER name="coarse_calib_c11_activate_rx" value="false"/>
+        <PARAMETER name="coarse_calib_c11_activate_ry" value="false"/>
+        <PARAMETER name="coarse_calib_c11_activate_rz" value="false"/>
+        <PARAMETER name="coarse_calib_c11_activate_theta" value="true"/>
+        <PARAMETER name="coarse_calib_c11_activate_tr" value="true"/>
+        <PARAMETER name="coarse_calib_c11_activate_tz" value="true"/>
+
+        <PARAMETER name="coarse_calib_c11_coeff_theta" value="1.0"/>
+        <PARAMETER name="coarse_calib_c11_coeff_tr" value="1.0"/>
+        <PARAMETER name="coarse_calib_c11_coeff_tz" value="1.0"/>
+
+        <PARAMETER name="coarse_calib_c11_method_theta" value="line_intersection"/> <!-- z_derivate/plane_intersection/line_intersection/circle_intersection/circle_intersection_2_planes -->
+        <PLANE     name="coarse_calib_c11_plane_theta" reference="plane_Py4_coarse"/>
+        <PLANE     name="coarse_calib_c11_plane_theta_ref" reference="plane_Py4_ref"/>
+        <LINE      name="coarse_calib_c11_line_theta_ref" reference="line_Py4_planeIntersection_theta_ref"/>
+
+        <PARAMETER name="coarse_calib_c11_method_tr" value="cylinder_radius"/> <!-- cylinder_radius/gauge_radius/intersection_plane_cone_radius/plane_distance -->
+        <CYLINDER  name="coarse_calib_c11_cylinder_tr" reference="cylinder_Cyl1_coarse"/>
+        <CYLINDER  name="coarse_calib_c11_cylinder_tr_ref" reference="cylinder_Cyl1_ref"/>
+
+        <!-- <PARAMETER name="coarse_calib_c11_method_tz" value="plane_position"/> <!-- plane_position/cone_position/cone_cylinder_intersection/cone_cylinder_intersection_auto --> -->
+        <!-- <PLANE     name="coarse_calib_c11_plane_tz" reference="plane_Pz2_coarse"/> -->
+        <!-- <PLANE     name="coarse_calib_c11_plane_tz_ref" reference="plane_Pz2_ref"/> -->
+		
+		<!--3 plane method-->
+		<PARAMETER name="coarse_calib_c11_method_tz" value="3_planes_intersection"/> <!-- plane_position/cone_position/cone_cylinder_intersection/cone_cylinder_intersection_auto/3_planes_intersection -->
+        <PARAMETER name="coarse_calib_c11_tz_intersection_number" value="1"/>
+        <PLANE     name="coarse_calib_c11_tz_point_1_plane_1" reference="plane_Pxz1_coarse"/>
+        <PLANE     name="coarse_calib_c11_tz_point_1_plane_2" reference="plane_Px+_ref"/>
+        <PLANE     name="coarse_calib_c11_tz_point_1_plane_3" reference="plane_Py4_coarse"/>
+        <PLANE     name="coarse_calib_c11_tz_point_1_plane_1_ref" reference="plane_Pxz1_ref"/>
+        <PLANE     name="coarse_calib_c11_tz_point_1_plane_2_ref" reference="plane_Px+_ref"/>
+        <PLANE     name="coarse_calib_c11_tz_point_1_plane_3_ref" reference="plane_Py4_ref"/>
+	
+	
+				        <!-- ******* Sensor C12 ******* -->
+        <PARAMETER name="coarse_calib_c12_loop_on_each_step" value="false"/>
+        <PARAMETER name="coarse_calib_c12_activate_rx" value="false"/>
+        <PARAMETER name="coarse_calib_c12_activate_ry" value="false"/>
+        <PARAMETER name="coarse_calib_c12_activate_rz" value="false"/>
+        <PARAMETER name="coarse_calib_c12_activate_theta" value="true"/>
+        <PARAMETER name="coarse_calib_c12_activate_tr" value="true"/>
+        <PARAMETER name="coarse_calib_c12_activate_tz" value="true"/>
+
+        <PARAMETER name="coarse_calib_c12_coeff_theta" value="1.0"/>
+        <PARAMETER name="coarse_calib_c12_coeff_tr" value="1.0"/>
+        <PARAMETER name="coarse_calib_c12_coeff_tz" value="1.0"/>
+
+        <PARAMETER name="coarse_calib_c12_method_theta" value="line_intersection"/> <!-- z_derivate/plane_intersection/line_intersection/circle_intersection/circle_intersection_2_planes -->
+        <PLANE     name="coarse_calib_c12_plane_theta" reference="plane_Py7_coarse"/>
+        <PLANE     name="coarse_calib_c12_plane_theta_ref" reference="plane_Py7_ref"/>
+        <LINE      name="coarse_calib_c12_line_theta_ref" reference="line_Py7_planeIntersection_theta_ref"/>
+
+        <PARAMETER name="coarse_calib_c12_method_tr" value="cylinder_radius"/> <!-- cylinder_radius/gauge_radius/intersection_plane_cone_radius/plane_distance -->
+        <CYLINDER  name="coarse_calib_c12_cylinder_tr" reference="cylinder_Cyl2_coarse"/>
+        <CYLINDER  name="coarse_calib_c12_cylinder_tr_ref" reference="cylinder_Cyl2_ref"/>
+
+        <PARAMETER name="coarse_calib_c12_method_tz" value="plane_position"/> <!-- plane_position/cone_position/cone_cylinder_intersection/cone_cylinder_intersection_auto -->
+        <PLANE     name="coarse_calib_c12_plane_tz" reference="plane_Pz2_coarse"/>
+        <PLANE     name="coarse_calib_c12_plane_tz_ref" reference="plane_Pz2_ref"/>
+		
+    </PARAMETERS>
+</CONTROL>

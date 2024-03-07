@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CYCLE description="Processing">
+    <WAIT type="process" timeout="180000" />
+    <MEASURE type="collect" keep_remainder="false" trace_synchro="false" check_synchro="true" max_buffer_disparity="1"/>
+    <MEASURE type="build" />
+    <MEASURE type="start_process" step=""/>
+</CYCLE>

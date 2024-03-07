@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PROGRAM reference="" version="1.0.0">
+    <SECTION description="Hardware parameters">
+        <STRING name="keyence_program" value="keyence_ed53-OP20"                gui_name="@Sensor program"  access="READ_WRITE"/>
+		<STRING name="aerotech_program_Part" 	value="C0042_Part"			gui_name="@Aerotech program Part"  	access="READ_WRITE"/>
+		<STRING name="aerotech_program_NoPart" 	value="C0042_NoPart"		gui_name="@Aerotech program NoPart"  	access="READ_WRITE"/>
+    </SECTION>
+    
+    <SECTION description="Cycle parameters">
+        <DOUBLE name="frequency" value="100.0"          gui_name="@Frequency"           min="0.0" max="500.0" unit ="Hz"       access="READ_WRITE"/>
+        <DOUBLE name="speed" value="10.00"              gui_name="@Speed"               min="0.0" max="100.0" unit ="°/s"      access="READ_WRITE"/>
+        <DOUBLE name="travel_distance" value="420.0"    gui_name="@Travel distance"     min="-9999.0" max="9999.0" unit ="°"   access="READ_WRITE"/>
+        <DOUBLE name="home_speed" value="45.0"          gui_name="@HOME Speed"          min="0.0" max="100.0" unit ="°/s"      access="READ_WRITE"/>		
+        <DOUBLE name="initial_position" value="38.0"     gui_name="@Initial position"    min="-9999.0" max="9999.0" unit ="°"   access="READ_WRITE"/>
+    </SECTION>
+</PROGRAM>

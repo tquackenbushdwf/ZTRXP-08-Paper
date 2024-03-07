@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PROGRAM version="1.0.0">
+    <SOLOIST_PARAMETERS name="common" id="-1">
+        <INTEGER name="WaitMode" value="0"/>
+        <BOOLEAN name="PerformHomeAfterConnection" value="true"/>
+    </SOLOIST_PARAMETERS>
+
+    <SOLOIST_PARAMETERS name="ZTRXP-04" id="1">
+        <DOUBLE name="GainKpos" value="2"/>
+        <DOUBLE name="GainKi" value="100"/>
+        <DOUBLE name="GainKp" value="2200"/>
+        <DOUBLE name="GainAff" value="0"/>
+        <DOUBLE name="GainVff" value="0"/>
+        <DOUBLE name="GainPff" value="0"/>
+        <DOUBLE name="GainKpi" value="0"/>
+        <DOUBLE name="GainKd1" value="0"/>
+        <DOUBLE name="GainKp1" value="0"/>
+    </SOLOIST_PARAMETERS>
+</PROGRAM>
+

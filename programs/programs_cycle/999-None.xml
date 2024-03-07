@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CYCLE nb_iter="30" description="Empty cycle">
+
+    <WAIT type="time" value="100"/>
+
+</CYCLE>

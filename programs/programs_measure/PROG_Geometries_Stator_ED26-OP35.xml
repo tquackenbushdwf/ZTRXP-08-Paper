@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CONTROL reference="" description="Geometries the stator." process_dll=""  version="1.0.0">
+
+    <!-- Cloud cleanning -->
+    <PARAMETERS>
+        <!-- Cloud Cleaning -->
+        <PARAMETER name="dClean_rmin" value="65"/>		<!-- Below this radius, points are delete -->
+        <PARAMETER name="dClean_rmax" value="135"/>		<!-- Upper this radius, points are delete -->
+        <PARAMETER name="dClean_zmin" value="-35"/>	    <!-- Below this z position, points are delete -->
+        <PARAMETER name="dClean_zmax" value="135"/>		<!-- Upper this z position, points are delete -->
+        <!-- Fixture -->
+        <PARAMETER name="bCleanFix_c1" value="false"/>
+        <PARAMETER name="bCleanFix_c2" value="true"/>
+        <PARAMETER name="bCleanFix_c3" value="false"/>
+        <PARAMETER name="bCleanFix_c4" value="false"/>
+        <PARAMETER name="bCleanFix_c5" value="true"/>
+        <PARAMETER name="bCleanFix_c6" value="true"/>
+        <PARAMETER name="bCleanFix_c7" value="true"/>
+        <PARAMETER name="bCleanFix_c8" value="false"/>
+        <PARAMETER name="bCleanFix_c9" value="false"/>
+        <PARAMETER name="bCleanFix_c10" value="true"/>
+        <PARAMETER name="bCleanFix_c11" value="false"/>
+        <PARAMETER name="bCleanFix_c12" value="false"/>
+        <PARAMETER name="bCleanFix_MethodAuto" value="true"/>	<!-- If 'true', 'dFix_theta_pos_deg' is evaluated automatically.-->
+        <PARAMETER name="uiFix_number_of_base" value="3"/>
+        <PARAMETER name="dFix_theta_pos_deg" value="45.8"/>		<!-- Angle of the 1st fixture in degree (middle of the fixture) -->
+        <PARAMETER name="dFix_theta_width_deg" value="10.0"/>	<!-- Width of the fixture in degree --> <!-- TODO Check: Width increased from 4° to 10° as feet are not perfectly 120° appart -->
+        <PARAMETER name="dFix_start_radius" value="95"/>		<!-- Below this radius, points are not in the fixture area -->
+        <PARAMETER name="dFix_end_radius" value="110"/>			<!-- Upper this radius, points are not in the fixture area -->
+        <PARAMETER name="dFix_start_height" value="-100"/>		<!-- Below this z position, points are not in the fixture area -->
+        <PARAMETER name="dFix_end_height" value="0"/>			<!-- Upper this z position, points are not in the fixture area -->
+        <POINT name="position_Fixture" x="0" y="0" z="-30.0"/>
+    </PARAMETERS>
+
+    <!-- Main areas -->
+    <PARAMETERS>
+        <AXIS_ALIGNED_BOX name="twist_strip_box" xmin="-999.0" xmax="999.0" ymin="-999.0" ymax="999.0" zmin="-4.0" zmax="40.0"/>
+        <AXIS_ALIGNED_BOX name="stack_strip_box" xmin="-999.0" xmax="999.0" ymin="-999.0" ymax="999.0" zmin="-152.0" zmax="4.0"/>
+        <AXIS_ALIGNED_BOX name="crown_strip_box" xmin="-999.0" xmax="999.0" ymin="-999.0" ymax="999.0" zmin="-152.0" zmax="-180.0"/>
+        <AXIS_ALIGNED_BOX name="terminal_lug_box" xmin="-999.0" xmax="999.0" ymin="-999.0" ymax="999.0" zmin="999.0" zmax="999.0"/>
+    </PARAMETERS>
+    
+    <!-- Main references -->
+    <PARAMETERS>
+        <!-- Datum -->
+        <!-- Cylinder A ref -->	      
+        <POINT name="base_center_cylinder_A_ref" x="0" y="0" z="-148.00"/>
+        <CYLINDER name="cylinder_A_ref" base_center="base_center_cylinder_A_ref" axis="axis_z" diameter="215.00" height="148.0"/>
+        <!-- Plane B ref -->
+        <POINT name="center_Plane_B_ref" x="0" y="0" z="0.00"/>
+        <POINT name="center_Plane_B1_ref" x="0" y="0" z="-95.00"/>
+        <PLANE name="plane_B_ref" point="center_Plane_B_ref" normal="axis_z"/>        <!-- Top stack plane -->	
+        <PLANE name="plane_B1_ref" point="center_Plane_B1_ref" normal="axis_z"/>      <!-- Bot stack plane -->	
+        <CYLINDER name="cylinder_B_ref" diameter="200.00" height="0.0" axis="axis_z" base_center="center_Plane_B_ref"/>     <!-- used for extraction -->
+        <CYLINDER name="cylinder_B1_ref" diameter="200.00" height="0.0" axis="axis_z" base_center="center_Plane_B1_ref"/>   <!-- used for extraction -->
+        <!-- Cylinder C ref -->
+        <POINT name="base_center_cylinder_C_ref" x="-79.660" y="88.471" z="-95"/>
+        <CYLINDER name="cylinder_C_ref" diameter="9.0" height="95.00" axis="axis_z" base_center="base_center_cylinder_C_ref"/>
+    </PARAMETERS>
+
+	<!-- Features -->
+    <PARAMETERS>
+		<!-- Paper -->
+        <POINT name="position_ZPaper_top" x="0" y="0" z="1.0"/>
+        <POINT name="position_ZPaper_bot" x="0" y="0" z="-149.0"/>
+    </PARAMETERS>
+
+</CONTROL>

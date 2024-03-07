@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CYCLE description="End processing">
+    <!-- Execution of this script is only needed if process was executed with steps -->
+    <WAIT type="process" timeout="1600000" />
+    <MEASURE type="start_process" step="end_process"/>
+	<!-- Commented out above line -->
+</CYCLE>

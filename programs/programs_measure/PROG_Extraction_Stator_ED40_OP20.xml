@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CONTROL reference="" description="File made to regroup generic extraction used for the stator." process_dll=""  version="1.0.0">
+
+    <!-- Fixture -->
+    <EXTRACTIONS>
+        <ZONE_CYLINDER out_name="cloud_Fixture" cloud_ref="cloud_c2" cloud_min_size="10"  reverse_selection="false">
+            <CYLINDER base_center="position_Fixture" axis="axis_z" radius="105.0" height="0.0"/>
+            <INTERVAL target="distance" type="min_max" min="-2.5" max="2.5"/>
+            <INTERVAL target="height" type="min_max" min="-5" max="5"/>
+        </ZONE_CYLINDER>
+    </EXTRACTIONS>
+	
+    <!-- Main references -->
+    <EXTRACTIONS>
+        <ZONE_AXIS_ALIGNED_BOX out_name="cloud_ref_C_c6" cloud_ref="cloud_c6" axis_aligned_box="stack_strip_box" cloud_min_size="10" reverse_selection="false"/>
+        <ZONE_AXIS_ALIGNED_BOX out_name="cloud_ref_C_c9" cloud_ref="cloud_c9" axis_aligned_box="stack_strip_box" cloud_min_size="10" reverse_selection="false"/>
+    </EXTRACTIONS>
+    <CLOUD_OPERATIONS>
+        <MERGE_CLOUDS out_name="cloud_ref_C_f">
+            <CLOUD reference="cloud_ref_C_c6"/>
+            <CLOUD reference="cloud_ref_C_c9"/>
+        </MERGE_CLOUDS>
+    </CLOUD_OPERATIONS> 
+    
+    <EXTRACTIONS>
+        <ZONE_CYLINDER out_name="cloud_Plane_B" cloud_ref="cloud_ref_C_f" cloud_min_size="10"  reverse_selection="false">
+            <CYLINDER reference="cylinder_B_ref"/>
+            <INTERVAL target="distance" type="min_max" min="-4" max="4"/>
+            <INTERVAL target="height" type="min_max" min="-2" max="2"/>
+        </ZONE_CYLINDER>
+        <ZONE_CYLINDER out_name="cloud_Plane_B1" cloud_ref="cloud_ref_C_f" cloud_min_size="10"  reverse_selection="false">
+            <CYLINDER reference="cylinder_B1_ref"/>
+            <INTERVAL target="distance" type="min_max" min="-4" max="4"/>
+            <INTERVAL target="height" type="min_max" min="-2" max="2"/>
+        </ZONE_CYLINDER>
+    </EXTRACTIONS>
+    <FIT>
+        <PLANE_FIT out_name="Plane_B" cloud_ref="cloud_Plane_B" return_filtered_cloud="true">
+            <FIT_FILTER reference="fit_filter_1sigma"/>
+            <PLANE reference="plane_B_ref"/>
+        </PLANE_FIT>
+        <PLANE_FIT out_name="Plane_B1" cloud_ref="cloud_Plane_B1" return_filtered_cloud="true">
+            <FIT_FILTER reference="fit_filter_1sigma"/>
+            <PLANE reference="plane_B1_ref"/>
+        </PLANE_FIT>
+    </FIT>
+    
+    <!-- Paper -->
+    <PARAMETERS>
+        <!-- Extraction Box for the cloud around paper area, Center will be updated for each paper area in the process -->
+        <AXIS_ALIGNED_BOX name="AABox_PaperCloud" xmin="-6.0" xmax="6.0" ymin="-6.0" ymax="6.0" zmin="-8.0" zmax="8.0"/>
+        
+        <ORIENTED_BOX name="OBox_Paper" width="12.0" length="0.5" height="8.0" >				<!-- Extraction Box for the paper area -->
+            <CENTER x="0.0" y="0.0" z="0.0"/>													<!-- Center and Orientations will be updated for each paper area in the process -->
+            <AXIS_U x="1" y="0" z="0"/>
+            <AXIS_V x="0" y="1" z="0"/>
+        </ORIENTED_BOX>
+        <ORIENTED_BOX name="OBox_Reference" width="2.0" length="2.0" height="2.0" >				<!-- Extraction Box for the paper area -->
+            <CENTER x="0.0" y="0.0" z="0.0"/>													<!-- Center and Orientations will be updated for each paper area in the process -->
+            <AXIS_U x="1" y="0" z="0"/>
+            <AXIS_V x="0" y="1" z="0"/>
+        </ORIENTED_BOX>
+        <ORIENTED_BOX name="OBox_PaperGap" width="4.0" length="10.0" height="1.0" >			    <!-- Extraction Box for the paper gap -->
+            <CENTER x="0.0" y="0.0" z="0.0"/>													<!-- Center and Orientations will be updated for each paper area in the process -->
+            <AXIS_U x="1" y="0" z="0"/>
+            <AXIS_V x="0" y="1" z="0"/>
+        </ORIENTED_BOX>
+    </PARAMETERS>
+
+  <!-- Paper cylindrical area definition -->
+    <PARAMETERS>
+        <!-- Cylinder center are based on Plane B to have extraction zones centered on the paper -->
+        <CYLINDER name="cylinder_Paper_top_outer" base_center="Plane_B" axis="axis_z" radius="90.00" height="0.0"/>
+        <CYLINDER name="cylinder_Paper_top_inner" base_center="Plane_B" axis="axis_z" radius="72.00" height="0.0"/>
+        <CYLINDER name="cylinder_Paper_bot_outer" base_center="Plane_B1" axis="axis_z" radius="90.00" height="0.0"/>
+        <CYLINDER name="cylinder_Paper_bot_inner" base_center="Plane_B1" axis="axis_z" radius="72.00" height="0.0"/>
+        
+        <INTERVAL name="distance_interval_outer" target="distance" type="min_max" min="-2.0" max="6.0"/>
+        <INTERVAL name="distance_interval_outer_c2" target="distance" type="min_max" min="-2.0" max="1.0"/>
+        <INTERVAL name="distance_interval_inner" target="distance" type="min_max" min="-2.0" max="2.0"/>
+        <INTERVAL name="distance_interval_inner_old" target="distance" type="min_max" min="-6.0" max="6.0"/>
+        
+        <INTERVAL name="height_interval_top" target="height" type="min_max" min="-2.0" max="5.0"/>
+        <INTERVAL name="height_interval_bot" target="height" type="min_max" min="-5.0" max="2.0"/>
+    </PARAMETERS>
+        
+    
+    <EXTRACTIONS>	
+        <!-- Top Extraction of outer paper area -->
+        <ZONE_CYLINDER out_name="cloud_cylinder_Paper_top_outer_c1" cloud_ref="cloud_c1" cloud_min_size="0"  reverse_selection="false">
+            <CYLINDER reference="cylinder_Paper_top_outer"/>
+            <INTERVAL reference="distance_interval_outer"/>
+            <INTERVAL reference="height_interval_top"/>
+        </ZONE_CYLINDER>
+        <ZONE_CYLINDER out_name="cloud_cylinder_Paper_top_outer_c8" cloud_ref="cloud_c8" cloud_min_size="10"  reverse_selection="false">
+            <CYLINDER reference="cylinder_Paper_top_outer"/>
+            <INTERVAL reference="distance_interval_outer"/>
+            <INTERVAL reference="height_interval_top"/>
+        </ZONE_CYLINDER>
+        <ZONE_CYLINDER out_name="cloud_cylinder_Paper_top_outer_c11" cloud_ref="cloud_c11" cloud_min_size="0"  reverse_selection="false">
+            <CYLINDER reference="cylinder_Paper_top_outer"/>
+            <INTERVAL reference="distance_interval_outer"/>
+            <INTERVAL reference="height_interval_top"/>
+        </ZONE_CYLINDER>
+        <!-- Top Extraction of inner paper area -->
+        <ZONE_CYLINDER out_name="cloud_cylinder_Paper_top_inner_c3" cloud_ref="cloud_c3" cloud_min_size="10"  reverse_selection="false">
+            <CYLINDER reference="cylinder_Paper_top_inner"/>
+            <INTERVAL reference="distance_interval_inner"/>
+            <INTERVAL reference="height_interval_top"/>
+        </ZONE_CYLINDER>
+        <ZONE_CYLINDER out_name="cloud_cylinder_Paper_top_inner_c4" cloud_ref="cloud_c4" cloud_min_size="0"  reverse_selection="false">
+            <CYLINDER reference="cylinder_Paper_top_inner"/>
+            <INTERVAL reference="distance_interval_inner"/>
+            <INTERVAL reference="height_interval_top"/>
+        </ZONE_CYLINDER>
+        <!-- Bot Extraction of outer paper area -->
+        <ZONE_CYLINDER out_name="cloud_cylinder_Paper_bot_outer_c2" cloud_ref="cloud_c2" cloud_min_size="10"  reverse_selection="false">
+            <CYLINDER reference="cylinder_Paper_bot_outer"/>
+            <INTERVAL reference="distance_interval_outer_c2"/>
+            <INTERVAL reference="height_interval_bot"/>
+        </ZONE_CYLINDER>
+        <ZONE_CYLINDER out_name="cloud_cylinder_Paper_bot_outer_c6" cloud_ref="cloud_c6" cloud_min_size="10"  reverse_selection="false">
+            <CYLINDER reference="cylinder_Paper_bot_outer"/>
+            <INTERVAL reference="distance_interval_outer"/>
+            <INTERVAL reference="height_interval_bot"/>
+        </ZONE_CYLINDER>
+        <!-- Bot Extraction of inner paper area -->
+        <ZONE_CYLINDER out_name="cloud_cylinder_Paper_bot_inner_c5" cloud_ref="cloud_c5" cloud_min_size="10"  reverse_selection="false">
+            <CYLINDER reference="cylinder_Paper_bot_inner"/>
+            <INTERVAL reference="distance_interval_inner"/>
+            <INTERVAL reference="height_interval_bot"/>
+        </ZONE_CYLINDER>
+        <ZONE_CYLINDER out_name="cloud_cylinder_Paper_bot_inner_c7" cloud_ref="cloud_c7" cloud_min_size="10"  reverse_selection="false">
+            <CYLINDER reference="cylinder_Paper_bot_inner"/>
+            <INTERVAL reference="distance_interval_inner"/>
+            <INTERVAL reference="height_interval_bot"/>
+        </ZONE_CYLINDER>
+    </EXTRACTIONS>
+    <CLOUD_OPERATIONS>        
+		<!-- Merge clouds for paper area (needs to be called after filtering) -->
+        <COPY_CLOUD out_name="cloud_cylinder_Paper_top_outer" cloud_ref="cloud_cylinder_Paper_top_outer_c8"/>
+        <COPY_CLOUD out_name="cloud_cylinder_Paper_top_inner" cloud_ref="cloud_cylinder_Paper_top_inner_c3"/>
+        <MERGE_CLOUDS out_name="cloud_cylinder_Paper_bot_outer">
+            <CLOUD reference="cloud_cylinder_Paper_bot_outer_c2"/>
+            <CLOUD reference="cloud_cylinder_Paper_bot_outer_c6"/>
+        </MERGE_CLOUDS>
+        <MERGE_CLOUDS out_name="cloud_cylinder_Paper_bot_inner">
+            <CLOUD reference="cloud_cylinder_Paper_bot_inner_c5"/>
+            <CLOUD reference="cloud_cylinder_Paper_bot_inner_c7"/>
+        </MERGE_CLOUDS>
+    </CLOUD_OPERATIONS>
+
+</CONTROL>

@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CONTROL reference="213-0021-CalibV3" description="213-0021_GEAR_Calib_V3" process_dll="PROC_213_0021_GEAR_Calib_V3"  version="0.1.0">
+   
+    <CONTROL path="./PROG_Common.xml" />
+    <CONTROL path="./PROG_ZTGXE-01_2_Geometry_WesternMet_88.xml"/>
+    <CONTROL path="./PROG_ZTGXE-01_2_Alignment.xml"/>
+    <CONTROL path="./PROG_ZTGXE-01_2_Extraction.xml"/>
+    <CONTROL path="./PROG_ZTGXE-01_2_Calibration.xml"/>
+    <CONTROL path="./PROG_ZTGXE-01_2_CheckGeometries.xml"/>
+
+    <PARAMETERS>
+        <!-- Steps -->
+        <PARAMETER name="apply_calibration" value="false"/>    <!-- If false, the calibration will be computed but not applied -->
+        <PARAMETER name="reset_calibration" value="false"/>    <!-- If activated, reset the calibration to default (from config machine) -->
+        <PARAMETER name="compute_alignment" value="true"/>     <!-- Calculate the artefact position and align the clouds -->
+        <PARAMETER name="coarse_calibration" value="false"/>   <!-- Calculate coarse calibration  -->
+        <PARAMETER name="neat_calibration" value="true"/>      <!-- Calculate fine calibration  -->
+        <PARAMETER name="check_alignment" value="true"/>       <!-- Export the artifact position and verify it is within the tolerances  -->
+        <PARAMETER name="check_cloud_quality" value="true"/>   <!-- Verify the number of points per cloud and the laser feedback (averaged intensity)                             -->
+        <PARAMETER name="check_geometries" value="false"/>     <!-- Extract artifact geometries per sensor, save subclouds and check geometries form fault -->
+        <PARAMETER name="check_calibration" value="true"/>     <!-- Sensor position deviation between the current calibration and the default (from config machine) -->
+        <PARAMETER name="export_calibration" value="false"/>   <!-- Export the sensor position (6 D.O.F per sensor) -->
+
+
+        <!-- Configuration -->
+        <PARAMETER name="sensor_number" value="12"/>
+        <PARAMETER name="save_main_clouds" value="false"/>
+        <PARAMETER name="save_sub_clouds" value="true"/>
+        
+        
+        <!-- Default tolerances -->
+        <PARAMETER name="check_alignment_is_critical" value="false"/>                        <!-- If true, sends an error if one of the features is NOK -->
+        <PARAMETER name="check_alignment_default_tol_position" value="5.0"/>                <!-- Verification of artifact position (Tx, Ty, Tz)                                  -->
+        <PARAMETER name="check_alignment_default_tol_inclinaison" value="2.0"/>             <!-- Verification of artifact inclinaison (Rx, Ry) -->
+        <PARAMETER name="check_alignment_default_tol_orientation" value="100.0"/>            <!-- Verification of artifact orientation (Rz) -->
+        
+        <PARAMETER name="check_cloud_quality_is_critical" value="false"/>                    <!-- If true, sends an error if one of the features is NOK                           -->
+        <PARAMETER name="check_cloud_quality_default_tol_min_nr_points" value="1000000"/>   <!-- Verification of min number of points per sensor cloud -->
+        
+        <PARAMETER name="check_geometries_is_critical" value="false"/>                      <!-- If true, sends an error if one of the features is NOK -->
+        <PARAMETER name="check_geometries_default_tol_form_error" value="1.0"/>             <!-- Verification of geometries form (Max dist, avg dist, std dev) -->
+        <PARAMETER name="check_geometries_default_tol_min_nr_points" value="100"/>          <!-- Verification of min nr of points per geometry -->
+        
+        <PARAMETER name="check_calibration_is_critical" value="false"/>                      <!-- If true, sends an error if one of the features is NOK                           -->
+        <PARAMETER name="check_calibration_default_tol_position" value="3.5"/>              <!-- Verification of sensor position (Tx, Ty, Tz, Tr)-->
+        <PARAMETER name="check_calibration_default_tol_rotation" value="5.0"/>              <!-- Verification of sensor rotation (Rx, Ry, Rz) -->
+        <PARAMETER name="check_calibration_default_tol_orientation" value="2.0"/>           <!-- Verification of sensor position (Theta) - ZTR/ZTG only -->
+        
+		
+        <!-- Nest fixture clean-up -->
+		<PARAMETER name="c1_clean_fix" value="false"/>
+        <PARAMETER name="c2_clean_fix" value="false"/>
+        <PARAMETER name="c3_clean_fix" value="false"/>
+        <PARAMETER name="c4_clean_fix" value="false"/>
+        <PARAMETER name="c5_clean_fix" value="false"/>
+        <PARAMETER name="c6_clean_fix" value="false"/>
+		<PARAMETER name="c7_clean_fix" value="false"/>
+        <PARAMETER name="c8_clean_fix" value="false"/>
+        <PARAMETER name="c9_clean_fix" value="false"/>
+        <PARAMETER name="c10_clean_fix" value="false"/>
+        <PARAMETER name="c11_clean_fix" value="false"/>
+        <PARAMETER name="c12_clean_fix" value="false"/>
+
+        <!-- <PARAMETER name="c3_fix_start_angle" value="72.50"/> -->
+        <!-- <PARAMETER name="c3_fix_offset_angle" value="15.0"/> -->
+        <!-- <PARAMETER name="c3_fix_number_of_base" value="3"/> -->
+		
+        <!-- <PARAMETER name="c4_fix_start_angle" value="72.50"/> -->
+        <!-- <PARAMETER name="c4_fix_offset_angle" value="15.0"/> -->
+        <!-- <PARAMETER name="c4_fix_number_of_base" value="3"/> -->
+		
+        <!-- <PARAMETER name="c6_fix_start_angle" value="72.50"/> -->
+        <!-- <PARAMETER name="c6_fix_offset_angle" value="15.0"/> -->
+        <!-- <PARAMETER name="c6_fix_number_of_base" value="3"/> -->
+    </PARAMETERS>
+</CONTROL>

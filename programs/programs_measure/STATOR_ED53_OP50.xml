@@ -1,0 +1,183 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CONTROL reference="" description="" process_dll=""  version="1.0.0">
+
+    <!--<CONTROL path="./PROG_Common.xml"/>-->
+    <CONTROL path="./PROG_Parameters_Common.xml"/>
+    <CONTROL path="./PROG_Geometries_Stator_ED53-OP50.xml"/>
+    <CONTROL path="./PROG_Alignment_Stator.xml"/>
+    <CONTROL path="./PROG_Extraction_Stator_ED53_OP50.xml"/>
+
+    <!-- PARAMETERS -->
+    <PARAMETERS>
+        <!-- Global -->
+        <PARAMETER name="sForceStep" value="STATOR_ED53"/>
+
+        <!-- Computation -->
+        <!-- Paper -->
+        <PARAMETER name="dExcludePointsRatio" value="0.00"/>                  <!-- Default filter, 0 mean no filter  -->
+        <PARAMETER name="dExcludePointsRatio_Paper_top_outer" value="0.0"/>   <!-- Percentage of outliers to remove for the whole top outer paper area -->
+        <PARAMETER name="dExcludePointsRatio_Paper_top_inner" value="0.0"/>   <!-- Percentage of outliers to remove for the whole top inner paper area -->
+        <PARAMETER name="dExcludePointsRatio_Paper_bot_outer" value="0.0"/>   <!-- Percentage of outliers to remove for the whole bot outer paper area -->
+        <PARAMETER name="dExcludePointsRatio_Paper_bot_inner" value="0.0"/>   <!-- Percentage of outliers to remove for the whole bot inner paper area -->
+        <PARAMETER name="dExcludePointsRatio_Paper_gap_inner" value="1.0"/>   <!-- Percentage of outliers to remove on the angular paper section (this section helps to position paper height extraction) -->
+        <PARAMETER name="dExcludePointsRatio_PaperHeight_top_outer" value="0.0"/>      <!-- Percentage of outliers to remove before the paper height computation -->
+        <PARAMETER name="dExcludePointsRatio_PaperHeight_top_inner_CW" value="0.0"/>   <!-- Percentage of outliers to remove before the paper height computation -->
+        <PARAMETER name="dExcludePointsRatio_PaperHeight_top_inner_CCW" value="0.0"/>  <!-- Percentage of outliers to remove before the paper height computation -->
+        <PARAMETER name="dExcludePointsRatio_PaperHeight_bot_outer" value="0.0"/>      <!-- Percentage of outliers to remove before the paper height computation -->
+        <PARAMETER name="dExcludePointsRatio_PaperHeight_bot_inner_CW" value="0.0"/>   <!-- Percentage of outliers to remove before the paper height computation -->
+        <PARAMETER name="dExcludePointsRatio_PaperHeight_bot_inner_CCW" value="0.0"/>  <!-- Percentage of outliers to remove before the paper height computation -->
+        <PARAMETER name="dExcludePointsRatio_RefArea" value="2.0"/>                    <!-- Percentage of outliers to remove on the reference area --> 
+        
+        <PARAMETER name="dPaperExtractionLength_top_outer" value="2.5"/>        <!-- Extraction length on paper (mm) -->
+        <PARAMETER name="dPaperExtractionLength_top_inner_CW" value="1.5"/>     <!-- Extraction length on paper (mm) -->
+        <PARAMETER name="dPaperExtractionLength_top_inner_CCW" value="1.5"/>    <!-- Extraction length on paper (mm) -->
+        <PARAMETER name="dPaperExtractionLength_bot_outer" value="2.5"/>        <!-- Extraction length on paper (mm) -->
+        <PARAMETER name="dPaperExtractionLength_bot_inner_CW" value="1.5"/>     <!-- Extraction length on paper (mm) -->
+        <PARAMETER name="dPaperExtractionLength_bot_inner_CCW" value="1.5"/>    <!-- Extraction length on paper (mm) -->
+        <PARAMETER name="dPaperRadius_outer" value="90.00"/>			        <!-- Radius of the outer paper (mm) -->
+        <PARAMETER name="dPaperRadius_inner" value="71.00"/>			        <!-- Radius of the inner paper (mm) -->
+        
+        <PARAMETER name="uiTransitionDetectionMethod_top_outer" value="0"/>		<!-- Method to estimate the paper edge (0:Number of points + Width; 1: Radial; 2:Intensity) -->
+        <PARAMETER name="uiTransitionDetectionMethod_top_inner" value="1"/>		<!-- Method to estimate the paper edge (0:Number of points + Width; 1: Radial; 2:Intensity) -->
+        <PARAMETER name="uiTransitionDetectionMethod_bot_outer" value="1"/>		<!-- Method to estimate the paper edge (0:Number of points + Width; 1: Radial; 2:Intensity) -->
+        <PARAMETER name="uiTransitionDetectionMethod_bot_inner" value="1"/>		<!-- Method to estimate the paper edge (0:Number of points + Width; 1: Radial; 2:Intensity) -->
+
+        <PARAMETER name="bHistoInnerLikeOuter" value="true"/>		            <!-- Inner extraction area for histogram same as outer or like paper -->
+        <PARAMETER name="uiNbEdgeIterationMax_Extraction" value="0"/>		    <!-- Maximum iteration for edge extraction if too small -->
+        <PARAMETER name="uiEdgeNbPointMini" value="50"/>		            	<!-- If not enough points inside margins, add closest points until have that minimal size -->
+        <PARAMETER name="uiNbEdgeIterationMax_Evaluation" value="0"/>		    <!-- Maximum iteration for edge evaluation if not stable -->
+        <PARAMETER name="dDeltaEdgeThreshold" value="0.050"/>		            <!-- Threshold to considere the edge evaluation stable -->
+                
+        <PARAMETER name="dHistoResolutionZ" value="0.050"/>		            <!-- Histogram resolution in Z (mm) -->
+		<PARAMETER name="uiHistoNbPointMini" value="10"/>		            <!-- Minimal number of points needed to considere the section in the median calculation -->
+        <PARAMETER name="dHistoMedianRatio" value="0.50"/>		            <!-- Ratio of the median needed to considere the section valid -->
+        <PARAMETER name="dHistoGaussCutOffFreq" value="1.0"/>		        <!-- Cut off frequency for the gaussian filter used for the radial and intensity detection -->
+        <PARAMETER name="bUseRegressionLine" value="true"/>		            <!-- Use a regression line on the paper sections -->
+        <PARAMETER name="dHistoMarginZ" value="0.2"/>		                <!-- Margin around the paper edge estimation, paper side (mm)  -->
+        <PARAMETER name="dHistoMarginEdgeZ" value="0.5"/>		            <!-- Margin around the paper edge estimation, wire side (mm)  -->
+        <PARAMETER name="dNbSigmaRemoved" value="1.0"/>		                <!-- Determine the area around the first line regression to keep before doing the 2nd evaluation (number of standard deviation) -->
+        <PARAMETER name="dNbSigmaOffset" value="2.0"/>		                <!-- Determine the offset to aplly on the 2nd line regression to obtain a line close to the paper edge (number of standard deviation) -->
+        
+        <PARAMETER name="uiNbPaperArea" value="48"/>					<!-- Number of paper area to inspect -->
+        <PARAMETER name="dPaperFirstPosition" value="120.75"/>			<!-- Angle of the first paper area /C (in degree) -->
+        <PARAMETER name="dPaperFirstPositionInner" value="120.75"/>	    <!-- Angle of the first paper area /C (in degree) -->
+        <PARAMETER name="dPaperDirection" value="-1.0"/>	            <!-- 1.0 for CCW -1.0 for CW when looking from above -->
+        <PARAMETER name="dPaperRadiusThreshold" value="90.00"/>			<!-- Radius in mm of the center of the outer paper box -->   
+        <PARAMETER name="dBoxPaperRef_InnerRadius" value="73"/>			<!-- Radius in mm of the center of the inner paper_ref box -->
+        <PARAMETER name="dBoxPaperRef_OuterRadius" value="93"/>		    <!-- Radius in mm of the center of the outer paper_ref box -->
+        <PARAMETER name="dBoxPaperGap_Radius" value="72"/>			    <!-- Radius in mm of the center of the inner paper_gap box -->
+        <PARAMETER name="dBoxPaperGap_Zmargin" value="1"/>			<!-- Margin in mm between the paper base and the paper_gap box -->
+        <PARAMETER name="dBoxPaperGap_Wmargin" value="0.75"/>			<!-- Margin in deg between the paper side and the paper_height box (the full paper area is around 3deg)-->
+        <PARAMETER name="dMinPaperGapWidth" value="2.00"/>			    <!-- Minimal width in degree to considere a good paper extraction -->
+        <PARAMETER name="dMinPaperGapWidthOuter" value="2.00"/>			<!-- Minimal width in degree to considere a good paper extraction on outer -->
+        <PARAMETER name="uiMinPaperGapSize" value="200"/>			    <!-- Minimal size in number of point to considere a good paper extraction -->
+        <PARAMETER name="uiMinPaperGapSizeOuter" value="50"/>			<!-- Minimal size in number of point to considere a good paper extraction on outer -->
+        <PARAMETER name="uiMinRefPaperSize_top_outer" value="200"/>	    <!-- Minimal size in number of point to considere a good ref extraction -->
+        <PARAMETER name="uiMinRefPaperSize_top_inner" value="200"/>	    <!-- Minimal size in number of point to considere a good ref extraction -->
+        <PARAMETER name="uiMinRefPaperSize_bot_outer" value="100"/>	    <!-- Minimal size in number of point to considere a good ref extraction -->
+        <PARAMETER name="uiMinRefPaperSize_bot_inner" value="200"/>	    <!-- Minimal size in number of point to considere a good ref extraction -->
+        <PARAMETER name="dStdDevMax_RefArea" value="0.04"/>			    <!-- Maximal standard deviation allowed along Z on the reference area  -->        
+    </PARAMETERS>
+
+    <!-- Alignment -->
+    <PARAMETERS>
+        <PARAMETER name="dInitialTranslationZ" value="-145.95"/>        <!-- Value to put the top plane on Z = 0 (mm) -->
+        <PARAMETER name="dInitialRotationZ" value="0.0"/>               <!-- Value to put the Ref C on Y axis (degree) -->
+    </PARAMETERS>
+
+    <PARAMETERS>
+        <!-- Intensity filter pour histogramme dynamique -->
+        <!-- Intensity filter pour histogramme dynamique -->
+        <PARAMETER name="bIntensityFilter_Histo_c1" value="false"/>
+        <PARAMETER name="bIntensityFilter_Histo_c2" value="false"/>
+        <PARAMETER name="bIntensityFilter_Histo_c3" value="false"/>
+        <PARAMETER name="bIntensityFilter_Histo_c4" value="false"/>
+        <PARAMETER name="bIntensityFilter_Histo_c5" value="false"/>
+        <PARAMETER name="bIntensityFilter_Histo_c6" value="false"/>
+        <PARAMETER name="bIntensityFilter_Histo_c7" value="false"/>
+        <PARAMETER name="bIntensityFilter_Histo_c8" value="false"/>
+        <PARAMETER name="bIntensityFilter_Histo_c9" value="false"/>
+        <PARAMETER name="bIntensityFilter_Histo_c10" value="false"/>
+        <PARAMETER name="bIntensityFilter_Histo_c11" value="false"/>
+        <PARAMETER name="bIntensityFilter_Histo_c12" value="false"/>
+        
+        <PARAMETER name="bIntensityHigherOnPaper_c1" value="true"/>
+        <PARAMETER name="bIntensityHigherOnPaper_c2" value="true"/>
+        <PARAMETER name="bIntensityHigherOnPaper_c3" value="true"/>
+        <PARAMETER name="bIntensityHigherOnPaper_c4" value="true"/>
+        <PARAMETER name="bIntensityHigherOnPaper_c5" value="true"/>
+        <PARAMETER name="bIntensityHigherOnPaper_c6" value="true"/>
+        <PARAMETER name="bIntensityHigherOnPaper_c7" value="true"/>
+        <PARAMETER name="bIntensityHigherOnPaper_c8" value="true"/>
+        <PARAMETER name="bIntensityHigherOnPaper_c9" value="true"/>
+        <PARAMETER name="bIntensityHigherOnPaper_c10" value="true"/>
+        <PARAMETER name="bIntensityHigherOnPaper_c11" value="true"/>
+        <PARAMETER name="bIntensityHigherOnPaper_c12" value="true"/>
+        
+        <!-- Intensity filter -->
+        <PARAMETER name="bIntensityFilter_c1" value="false"/>
+        <PARAMETER name="bIntensityFilter_c2" value="false"/>
+        <PARAMETER name="bIntensityFilter_c3" value="false"/>
+        <PARAMETER name="bIntensityFilter_c4" value="false"/>
+        <PARAMETER name="bIntensityFilter_c5" value="false"/>
+        <PARAMETER name="bIntensityFilter_c6" value="false"/>
+        <PARAMETER name="bIntensityFilter_c7" value="false"/>
+        <PARAMETER name="bIntensityFilter_c8" value="true"/>
+        <PARAMETER name="bIntensityFilter_c9" value="false"/>
+        <PARAMETER name="bIntensityFilter_c10" value="false"/>
+        <PARAMETER name="bIntensityFilter_c11" value="true"/>
+        <PARAMETER name="bIntensityFilter_c12" value="false"/>
+
+        <PARAMETER name="dIntensityZmin_c1" value="2.0"/>
+        <PARAMETER name="dIntensityZmin_c2" value="-999.0"/>
+        <PARAMETER name="dIntensityZmin_c3" value="2.0"/>
+        <PARAMETER name="dIntensityZmin_c4" value="0"/>
+        <PARAMETER name="dIntensityZmin_c5" value="-999.0"/>
+        <PARAMETER name="dIntensityZmin_c6" value="-999.0"/>
+        <PARAMETER name="dIntensityZmin_c7" value="-999.0"/>
+        <PARAMETER name="dIntensityZmin_c8" value="2.0"/>
+        <PARAMETER name="dIntensityZmin_c9" value="-999.0"/>
+        <PARAMETER name="dIntensityZmin_c10" value="-999.0"/>
+        <PARAMETER name="dIntensityZmin_c11" value="2.0"/>
+        <PARAMETER name="dIntensityZmin_c12" value="-999.0"/>
+
+        <PARAMETER name="dIntensityZmax_c1" value="999.0"/>
+        <PARAMETER name="dIntensityZmax_c2" value="-150.0"/>
+        <PARAMETER name="dIntensityZmax_c3" value="999.0"/>
+        <PARAMETER name="dIntensityZmax_c4" value="999.0"/>
+        <PARAMETER name="dIntensityZmax_c5" value="-145.0"/>
+        <PARAMETER name="dIntensityZmax_c6" value="-150.0"/>
+        <PARAMETER name="dIntensityZmax_c7" value="-145.0"/>
+        <PARAMETER name="dIntensityZmax_c8" value="999.0"/>
+        <PARAMETER name="dIntensityZmax_c9" value="999.0"/>
+        <PARAMETER name="dIntensityZmax_c10" value="999.0"/>
+        <PARAMETER name="dIntensityZmax_c11" value="999.0"/>
+        <PARAMETER name="dIntensityZmax_c12" value="999.0"/>
+
+        <PARAMETER name="dIntensityMin_c1" value="69.0"/>
+        <PARAMETER name="dIntensityMin_c2" value="25"/>
+        <PARAMETER name="dIntensityMin_c3" value="67.5"/>
+        <PARAMETER name="dIntensityMin_c4" value="67.5"/>
+        <PARAMETER name="dIntensityMin_c5" value="10.0"/>
+        <PARAMETER name="dIntensityMin_c6" value="40"/>
+        <PARAMETER name="dIntensityMin_c7" value="10"/>
+        <PARAMETER name="dIntensityMin_c8" value="0.0"/>
+        <PARAMETER name="dIntensityMin_c9" value="0.0"/>
+        <PARAMETER name="dIntensityMin_c10" value="0.0"/>
+        <PARAMETER name="dIntensityMin_c11" value="60.0"/>
+        <PARAMETER name="dIntensityMin_c12" value="0.0"/>
+		
+        <PARAMETER name="dIntensityMax_c1" value="80.0"/>
+        <PARAMETER name="dIntensityMax_c2" value="90.0"/>
+        <PARAMETER name="dIntensityMax_c3" value="90.0"/>
+        <PARAMETER name="dIntensityMax_c4" value="90.0"/>
+        <PARAMETER name="dIntensityMax_c5" value="90.0"/>
+        <PARAMETER name="dIntensityMax_c6" value="75.0"/>
+        <PARAMETER name="dIntensityMax_c7" value="90.0"/>
+        <PARAMETER name="dIntensityMax_c8" value="10.0"/>
+        <PARAMETER name="dIntensityMax_c9" value="90.0"/>
+        <PARAMETER name="dIntensityMax_c10" value="90.0"/>
+        <PARAMETER name="dIntensityMax_c11" value="90.0"/>
+        <PARAMETER name="dIntensityMax_c12" value="90.0"/>
+    </PARAMETERS>
+</CONTROL>

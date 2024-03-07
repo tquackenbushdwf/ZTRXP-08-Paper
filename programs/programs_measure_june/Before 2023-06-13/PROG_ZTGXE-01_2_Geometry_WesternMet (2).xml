@@ -1,0 +1,176 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CONTROL reference="213-0021-CalibV3" description="Paramètres de l'artefact" process_dll=""  version="0.1.0">
+    <PARAMETERS>
+  <!-- Planes -->        
+        <!-- Px Planes -->
+		<!-- PX REFRENCE PLANES-->
+		<POINT name="center_Px-_ref" x="-118" y="0" z="-30"/>
+        <AXIS name="normal_Px-_ref" x="-1.0000" y="0.000" z="0.000"/>
+        <PLANE name="plane_Px-_ref" point="center_Px-_ref" normal="normal_Px-_ref"/>
+		
+		<POINT name="center_Px+_ref" x="118" y="0" z="-30"/>
+        <AXIS name="normal_Px+_ref" x="1.0000" y="0.000" z="0.000"/>
+        <PLANE name="plane_Px+_ref" point="center_Px+_ref" normal="normal_Px+_ref"/>
+		
+		<!--ACTUAL PX PLANES-->
+        <POINT name="center_Px1_ref" x="35.0331" y="29.5076" z="-117.5"/>
+        <AXIS name="normal_Px1_ref" x="-1.0000" y="-0.0006" z="0.0001"/>
+        <PLANE name="plane_Px1_ref" point="center_Px1_ref" normal="normal_Px1_ref"/>
+
+        <POINT name="center_Px2_ref" x="-35.0586" y="-29.5100" z="-117.5"/>
+        <AXIS name="normal_Px2_ref" x="1.0000" y="0.0007" z="-0.0000"/>
+        <PLANE name="plane_Px2_ref" point="center_Px2_ref" normal="normal_Px2_ref"/>
+		
+        <!-- Py Planes -->
+        <POINT name="center_Py1_ref" x="47.2460" y="10.0874" z="-117.5"/>
+        <AXIS name="normal_Py1_ref" x="0.0006" y="-1.0000" z="0.0000"/>
+        <PLANE name="plane_Py1_ref" point="center_Py1_ref" normal="normal_Py1_ref"/>
+
+        <POINT name="center_Py2_ref" x="-47.2352" y="-10.0773" z="-117.5"/>
+        <AXIS name="normal_Py2_ref" x="-0.0006" y="1.0000" z="0.0000"/>
+        <PLANE name="plane_Py2_ref" point="center_Py2_ref" normal="normal_Py2_ref"/>
+
+        <POINT name="center_Py3_ref" x="101.3835" y="25.0956" z="-117.5"/>
+        <AXIS name="normal_Py3_ref" x="0.0001" y="1.0000" z="-0.0000"/>
+        <PLANE name="plane_Py3_ref" point="center_Py3_ref" normal="normal_Py3_ref"/>
+
+        <POINT name="center_Py4_ref" x="101.25" y="-24.8877" z="-117.5"/>
+        <AXIS name="normal_Py4_ref" x="-0.0002" y="-1.0000" z="0.0000"/>
+        <PLANE name="plane_Py4_ref" point="center_Py4_ref" normal="normal_Py4_ref"/>
+
+        <POINT name="center_Py5_ref" x="-101.25" y="-25.0670" z="-117.5"/>
+        <AXIS name="normal_Py5_ref" x="-0.0001" y="-1.0000" z="0.0003"/>
+        <PLANE name="plane_Py5_ref" point="center_Py5_ref" normal="normal_Py5_ref"/>
+
+        <POINT name="center_Py6_ref" x="-101.25" y="24.9367" z="-117.5"/>
+        <AXIS name="normal_Py6_ref" x="-0.0002" y="1.0000" z="-0.0003"/>
+        <PLANE name="plane_Py6_ref" point="center_Py6_ref" normal="normal_Py6_ref"/>
+
+        <POINT name="center_Py7_ref" x="97.95" y="16.3185" z="-14"/>
+        <AXIS name="normal_Py7_ref" x="0.0001" y="-1.0000" z="0.0004"/>
+        <PLANE name="plane_Py7_ref" point="center_Py7_ref" normal="normal_Py7_ref"/>
+
+        <POINT name="center_Py8_ref" x="97.95" y="-16.2026" z="-14"/>
+        <AXIS name="normal_Py8_ref" x="-0.0004" y="1.0000" z="0.0005"/>
+        <PLANE name="plane_Py8_ref" point="center_Py8_ref" normal="normal_Py8_ref"/>
+        
+        <POINT name="center_Py9_ref" x="-97.95" y="-16.2595" z="-14"/>
+        <AXIS name="normal_Py9_ref" x="0.0002" y="1.0000" z="-0.0003"/>
+        <PLANE name="plane_Py9_ref" point="center_Py9_ref" normal="normal_Py9_ref"/>
+        
+        <POINT name="center_Py10_ref" x="-97.95" y="16.2646" z="-14"/>
+        <AXIS name="normal_Py10_ref" x="0.0007" y="-.9999" z="0.0008"/>
+        <PLANE name="plane_Py10_ref" point="center_Py10_ref" normal="normal_Py10_ref"/>
+           
+        <!-- Pz Planes-->
+        <POINT name="center_Pz1_ref" x="0.0" y="0.0" z="0.0000"/>
+        <AXIS name="normal_Pz1_ref" x="0.0000" y="0.0000" z="1.0000"/>
+        <PLANE name="plane_Pz1_ref" point="center_Pz1_ref" normal="normal_Pz1_ref"/>
+
+        <POINT name="center_Pz2_ref" x="0.0" y="0.0" z="-27.0404"/>
+        <AXIS name="normal_Pz2_ref" x="-0.0000" y="0.0000" z="1.0000"/>
+        <PLANE name="plane_Pz2_ref" point="center_Pz2_ref" normal="normal_Pz2_ref"/>
+		
+		<POINT name="center_Pz3_ref" x="0." y="0.0" z="-73.0352"/>
+        <AXIS name="normal_Pz3_ref" x="-0.0000" y="0.0000" z="1.0000"/>
+        <PLANE name="plane_Pz3_ref" point="center_Pz3_ref" normal="normal_Pz3_ref"/>
+		
+		<POINT name="center_Pz4_ref" x="0" y="0.0" z="-234.9956"/>
+        <AXIS name="normal_Pz4_ref" x="0.0000" y="0.0000" z="-1.0000"/>
+        <PLANE name="plane_Pz4_ref" point="center_Pz4_ref" normal="normal_Pz4_ref"/>
+		
+		<POINT name="center_Pz5_ref" x="101.8877" y="0.0" z="-233.0411"/>
+        <AXIS name="normal_Pz5_ref" x="0.0000" y="-0.0003" z="-1.0000"/>
+        <PLANE name="plane_Pz5_ref" point="center_Pz5_ref" normal="normal_Pz5_ref"/>
+		
+		<POINT name="center_Pz6_ref" x="-104.0408" y="0.0" z="-233.0438"/>
+        <AXIS name="normal_Pz6_ref" x="-0.0000" y="-0.0001" z="-1.0000"/>
+        <PLANE name="plane_Pz6_ref" point="center_Pz6_ref" normal="normal_Pz6_ref"/>
+		
+                <!-- Pxz Planes -->
+        <POINT name="center_Pxz1_ref" x="121.6136" y="0.0887" z="-28.6252"/>
+        <AXIS name="normal_Pxz1_ref" x="0.7068" y="-0.0000" z="0.7073"/>
+        <PLANE name="plane_Pxz1_ref" point="center_Pxz1_ref" normal="normal_Pxz1_ref"/>
+        
+        <POINT name="center_Pxz2_ref" x="120.2833" y="-0.9258" z="-65.7034"/>
+        <AXIS name="normal_Pxz2_ref" x="0.7073" y="-0.0005" z="-0.7069"/>
+        <PLANE name="plane_Pxz2_ref" point="center_Pxz2_ref" normal="normal_Pxz2_ref"/>
+        
+        <POINT name="center_Pxz3_ref" x="119.7755" y="-0.9239" z="-88.8099"/>
+        <AXIS name="normal_Pxz3_ref" x="0.7071" y="-0.0000" z="0.7070"/>
+        <PLANE name="plane_Pxz3_ref" point="center_Pxz3_ref" normal="normal_Pxz3_ref"/>
+        
+        <POINT name="center_Pxz4_ref" x="120.9140" y="-1.1820" z="-192.0929"/>
+        <AXIS name="normal_Pxz4_ref" x="0.7070" y="-0.0004" z="-0.7071"/>
+        <PLANE name="plane_Pxz4_ref" point="center_Pxz4_ref" normal="normal_Pxz4_ref"/>
+        
+        <POINT name="center_Pxz5_ref" x="120.3691" y="-1.2524" z="-216.4053"/>
+        <AXIS name="normal_Pxz5_ref" x="0.7072" y="-0.0002" z="0.7069"/>
+        <PLANE name="plane_Pxz5_ref" point="center_Pxz5_ref" normal="normal_Pxz5_ref"/>
+        
+        <POINT name="center_Pxz6_ref" x="-119.7679" y="-0.1007" z="-215.8125"/>
+        <AXIS name="normal_Pxz6_ref" x="-0.7073" y="0.0005" z="0.7068"/>
+        <PLANE name="plane_Pxz6_ref" point="center_Pxz6_ref" normal="normal_Pxz6_ref"/>
+        
+        <POINT name="center_Pxz7_ref" x="-120.3653" y="-0.0977" z="-192.7974"/>
+        <AXIS name="normal_Pxz7_ref" x="-0.7066" y="0.0001" z="-0.7075"/>
+        <PLANE name="plane_Pxz7_ref" point="center_Pxz7_ref" normal="normal_Pxz7_ref"/>
+        
+        <POINT name="center_Pxz8_ref" x="-119.8082" y="-0.1005" z="-88.7711"/>
+        <AXIS name="normal_Pxz8_ref" x="-0.7071" y="0.0002" z="0.7071"/>
+        <PLANE name="plane_Pxz8_ref" point="center_Pxz8_ref" normal="normal_Pxz8_ref"/>        
+		
+		<POINT name="center_Pxz9_ref" x="-120.3269" y="-0.0973" z="-65.7586"/>
+        <AXIS name="normal_Pxz9_ref" x="-0.7071" y="-0.0001" z="-0.7070"/>
+        <PLANE name="plane_Pxz9_ref" point="center_Pxz9_ref" normal="normal_Pxz9_ref"/>     
+		
+		<POINT name="center_Pxz10_ref" x="-121.1012" y="-0.1009" z="-28.0539"/>
+        <AXIS name="normal_Pxz10_ref" x="-0.7069" y="0.0002" z="0.7072"/>
+        <PLANE name="plane_Pxz10_ref" point="center_Pxz10_ref" normal="normal_Pxz10_ref"/>     
+        
+        <!-- ****VERIFY THIS SECTIONS USE****  Combined Pxz Planes -->
+        <!--<POINT name="center_Pxz1_2_ref" x="89.5069" y="0.0000" z="17.5000"/>
+        <POINT name="center_Pxz3_4_ref" x="-89.5000" y="0.0000" z="17.5000"/>
+        <POINT name="center_Pxz5_6_ref" x="89.6678" y="0.0000" z="-97.5000"/>
+        <POINT name="center_Pxz7_8_ref" x="-89.5000" y="0.0000" z="-97.5000"/>
+        <AXIS name="normal_Pxz1_2_ref" x="0.7073" y="0.0004" z="0.7070"/>
+        <AXIS name="normal_Pxz3_4_ref" x="-0.7071" y="0.0000" z="0.7071"/>
+        <AXIS name="normal_Pxz5_6_ref" x="0.7070" y="-0.0001" z="-0.7072"/>
+        <AXIS name="normal_Pxz7_8_ref" x="-0.7071" y="0.0000" z="-0.7071"/>
+        <PLANE name="plane_Pxz1_2_ref" point="center_Pxz1_2_ref" normal="normal_Pxz1_2_ref"/> 
+        <PLANE name="plane_Pxz3_4_ref" point="center_Pxz3_4_ref" normal="normal_Pxz3_4_ref"/> 
+        <PLANE name="plane_Pxz5_6_ref" point="center_Pxz5_6_ref" normal="normal_Pxz5_6_ref"/> 
+        <PLANE name="plane_Pxz7_8_ref" point="center_Pxz7_8_ref" normal="normal_Pxz7_8_ref"/> 
+
+        <!-- Cylinders -->
+        <POINT name="base_center_Cyl1_ref" x="-0.0155" y="0.0027" z="-235"/>
+        <AXIS name="axis_Cyl1_ref" x="0.0001" y="-0.0000" z="1.0000"/>
+        <CYLINDER name="cylinder_Cyl1_ref" diameter="214.7007" height="235" axis="axis_Cyl1_ref" base_center="base_center_Cyl1_ref"/>  <!-- 215 -->
+        
+        <POINT name="base_center_Cyl2_ref" x="-0.0907" y="-0.0024" z="-27"/>
+        <AXIS name="axis_Cyl2_ref" x="0.0000" y="-0.0000" z="1.0000"/>
+        <CYLINDER name="cylinder_Cyl2_ref" diameter="190.0118" height="27.0000" axis="axis_Cyl2_ref" base_center="base_center_Cyl2_ref"/>
+
+        <POINT name="base_center_Cyl3_ref" x="-0.0872" y="-0.0023" z="-73"/>
+        <AXIS name="axis_Cyl3_ref" x="-0.0000" y="-0.0000" z="1.0000"/>
+        <CYLINDER name="cylinder_Cyl3_ref" diameter="160.0112" height="46.0000" axis="axis_Cyl3_ref" base_center="base_center_Cyl3_ref"/>
+
+        <POINT name="base_center_Cyl4_ref" x="-0.0085" y="0.0044" z="-235"/> <!--"-152.0146"-->
+        <AXIS name="axis_Cyl4_ref" x="0.0001" y="-0.0000" z="1.0000"/>
+        <CYLINDER name="cylinder_Cyl4_ref" diameter="120.1093" height="162.0000" axis="axis_Cyl4_ref" base_center="base_center_Cyl4_ref"/>
+
+
+<!---*****VERIFY THE USE OF THIS SECTION********--->
+        <!-- Virtual reference geometries -->
+        <POINT name="artefact_origin" x="0" y="0" z="0"/>
+        <POINT name="cylinder_py1_8_center" x="0" y="0" z="12"/>
+        <POINT name="cylinder_py9_16_center" x="0" y="0" z="-92"/>
+        <POINT name="cylinder_Pxz1_4_center" x="0" y="0" z="17.5"/>
+        <POINT name="cylinder_Pxz5_8_center" x="0" y="0" z="-97.5"/>
+        <CIRCLE name="circle_Py1_8_ref" radius="77.5"> <CENTER x="0" y="0" z="12"/> <AXIS x="0" y="0" z="1"/> </CIRCLE>
+        <CIRCLE name="circle_Py9_16_ref" radius="77.5"> <CENTER x="0" y="0" z="-92"/> <AXIS x="0" y="0" z="1"/> </CIRCLE>
+        <LINE name="line_Py1_8_ref"> <POINT x="0" y="0" z="12"/> <AXIS x="0" y="1" z="0"/> </LINE>
+        <LINE name="line_Py9_16_ref"> <POINT x="0" y="0" z="-92"/> <AXIS x="0" y="1" z="0"/> </LINE>
+      
+    </PARAMETERS>
+</CONTROL>

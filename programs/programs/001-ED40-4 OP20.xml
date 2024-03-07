@@ -1,0 +1,6 @@
+<PROGRAM description="Default program">
+    <PROGRAM_NAME type="recipe" name="010-PartED40 OP20"/>
+    <PROGRAM_NAME type="program_carac" name="STATOR_ED40"/>
+    <PROGRAM_NAME type="program_cycle" name="001-Acquisition"/>
+    <PROGRAM_NAME type="program_measure" name="001-Display"/>
+</PROGRAM>

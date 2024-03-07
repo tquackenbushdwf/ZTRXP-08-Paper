@@ -1,0 +1,1464 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CONTROL reference="213-0021-CalibV3" description="Zones d'extraction" process_dll=""  version="0.1.0">
+
+    <!-- ########### REFERENCE GEOMETRIES ########### -->
+
+    <PARAMETERS>
+	
+	        <!-- Lines for theta calibration -->
+		<POINT name="point_line_Py1_planeIntersection_theta_ref" reference="center_Py1_ref"/>
+        <LINE name="line_Py1_planeIntersection_theta_ref" axis="axis_y" origin="point_line_Py1_planeIntersection_theta_ref"/>	
+		
+	        <!-- Lines for theta calibration -->
+		<POINT name="point_line_Py2_planeIntersection_theta_ref" reference="center_Py2_ref"/>
+        <LINE name="line_Py2_planeIntersection_theta_ref" axis="axis_y" origin="point_line_Py2_planeIntersection_theta_ref"/>	
+		
+		<POINT name="point_line_Py3_planeIntersection_theta_ref" reference="center_Py3_ref"/>
+        <LINE name="line_Py3_planeIntersection_theta_ref" axis="axis_y" origin="point_line_Py3_planeIntersection_theta_ref"/>	<!--      added MDM  -->
+			
+		<POINT name="point_line_Py4_planeIntersection_theta_ref" reference="center_Py4_ref"/>
+        <LINE name="line_Py4_planeIntersection_theta_ref" axis="axis_y" origin="point_line_Py4_planeIntersection_theta_ref"/>	
+		
+		<POINT name="point_line_Py5_planeIntersection_theta_ref" reference="center_Py5_ref"/>
+        <LINE name="line_Py5_planeIntersection_theta_ref" axis="axis_y" origin="point_line_Py5_planeIntersection_theta_ref"/>
+			
+		<POINT name="point_line_Py6_planeIntersection_theta_ref" reference="center_Py6_ref"/>
+        <LINE name="line_Py6_planeIntersection_theta_ref" axis="axis_y" origin="point_line_Py6_planeIntersection_theta_ref"/>
+		
+		<POINT name="point_line_Py7_planeIntersection_theta_ref" reference="center_Py7_ref"/>
+        <LINE name="line_Py7_planeIntersection_theta_ref" axis="axis_y" origin="point_line_Py7_planeIntersection_theta_ref"/>
+		
+		<POINT name="point_line_Py8_planeIntersection_theta_ref" reference="center_Py8_ref"/>
+        <LINE name="line_Py8_planeIntersection_theta_ref" axis="axis_y" origin="point_line_Py8_planeIntersection_theta_ref"/>
+
+		<POINT name="point_line_Py9_planeIntersection_theta_ref" reference="center_Py9_ref"/>
+        <LINE name="line_Py9_planeIntersection_theta_ref" axis="axis_y" origin="point_line_Py9_planeIntersection_theta_ref"/>
+
+		<POINT name="point_line_Py10_planeIntersection_theta_ref" reference="center_Py10_ref"/>
+        <LINE name="line_Py10_planeIntersection_theta_ref" axis="axis_y" origin="point_line_Py10_planeIntersection_theta_ref"/>
+		
+		<POINT name="point_line_Px1_planeIntersection_theta_ref" reference="center_Px1_ref"/>
+        <LINE name="line_Px1_planeIntersection_theta_ref" axis="axis_x" origin="point_line_Px1_planeIntersection_theta_ref"/>
+			
+		<POINT name="point_line_Px2_planeIntersection_theta_ref" reference="center_Px2_ref"/>
+        <LINE name="line_Px2_planeIntersection_theta_ref" axis="axis_x" origin="point_line_Px2_planeIntersection_theta_ref"/>
+
+        <!-- Lines for Rz calibration -->
+        <POINT name="point_line_planeIntersection_rz_ref_top" x="0.0000" y="0.0000" z="-10.0"/>
+        <POINT name="point_line_planeIntersection_rz_ref_top2" x="0.0000" y="0.0000" z="-42.0"/>
+        <POINT name="point_line_planeIntersection_rz_ref_top3" x="0.0000" y="0.0000" z="-36.0"/>
+        <POINT name="point_line_planeIntersection_rz_ref_top4" x="0.0000" y="0.0000" z="-100.0"/>
+        <POINT name="point_line_planeIntersection_rz_ref_top5" x="0.0000" y="0.0000" z="-150.0"/>
+        <POINT name="point_line_planeIntersection_rz_ref_top6" x="0.0000" y="0.0000" z="-75.0"/>
+		
+        <POINT name="point_line_planeIntersection_rz_ref_bottom" x="0.0000" y="0.0000" z="-220.0"/>
+        <POINT name="point_line_planeIntersection_rz_ref_bottom2" x="0.0000" y="0.0000" z="-200.0"/>
+        <!-- <LINE name="line_planeIntersection_rz_ref" axis="axis_y" origin="point_line_planeIntersection_rz_ref"/> -->
+		<LINE name="line_planeIntersection_rz_ref_top" axis="axis_y" origin="point_line_planeIntersection_rz_ref_top"/>
+		<LINE name="line_planeIntersection_rz_ref_top2" axis="axis_y" origin="point_line_planeIntersection_rz_ref_top2"/>
+		<LINE name="line_planeIntersection_rz_ref_top3" axis="axis_y" origin="point_line_planeIntersection_rz_ref_top3"/>
+		<LINE name="line_planeIntersection_rz_ref_top4" axis="axis_x" origin="point_line_planeIntersection_rz_ref_top4"/>
+		<LINE name="line_planeIntersection_rz_ref_top4-2" axis="axis_y" origin="point_line_planeIntersection_rz_ref_top4"/>
+		<LINE name="line_planeIntersection_rz_ref_top5" axis="axis_x" origin="point_line_planeIntersection_rz_ref_top5"/>
+		<LINE name="line_planeIntersection_rz_ref_top5y" axis="axis_y" origin="point_line_planeIntersection_rz_ref_top5"/>
+		<LINE name="line_planeIntersection_rz_ref_top6" axis="axis_y" origin="point_line_planeIntersection_rz_ref_top6"/>
+		
+        <LINE name="line_planeIntersection_rz_ref_bottom" axis="axis_y" origin="point_line_planeIntersection_rz_ref_bottom"/>
+        <LINE name="line_planeIntersection_rz_ref_bottom2" axis="axis_x" origin="point_line_planeIntersection_rz_ref_bottom2"/>
+        <LINE name="line_planeIntersection_rz_ref_bottom2-y" axis="axis_y" origin="point_line_planeIntersection_rz_ref_bottom2"/>
+		
+        <!-- Circle for Theta calibration -->
+		<POINT name="center_align_rz_ref" x="0" y="0" z="10"/>		
+        <CIRCLE name="circle_align_theta_ref" radius="93.75" center="center_align_rz_ref" axis="axis_z"/>	
+		<!-- <CIRCLE name="innerCircle_planeIntersection_theta_ref" radius="11.5" center="point_line_planeIntersection_rz_ref" axis="axis_z"/> -->
+        <!-- <CIRCLE name="outerCircle_planeIntersection_theta_ref" radius="32" center="point_line_planeIntersection_rz_ref_bottom" axis="axis_z"/>	 -->
+        
+        <CIRCLE name="Circle_planeIntersection_theta_ref_top" radius="97.95" center="point_line_planeIntersection_rz_ref_top" axis="axis_z"/>
+        <CIRCLE name="Circle_planeIntersection_theta_ref_top2" radius="84" center="point_line_planeIntersection_rz_ref_top2" axis="axis_z"/>
+        <CIRCLE name="Circle_planeIntersection_theta_ref_top3" radius="97" center="point_line_planeIntersection_rz_ref_top3" axis="axis_z"/>
+        <CIRCLE name="Circle_planeIntersection_theta_ref_top4" radius="40" center="point_line_planeIntersection_rz_ref_top4" axis="axis_z"/>
+        <CIRCLE name="Circle_planeIntersection_theta_ref_top5" radius="40" center="point_line_planeIntersection_rz_ref_top4" axis="axis_z"/>
+        <CIRCLE name="Circle_planeIntersection_theta_ref_top5y" radius="50" center="point_line_planeIntersection_rz_ref_top5" axis="axis_z"/>
+        <CIRCLE name="Circle_planeIntersection_theta_ref_top6" radius="100" center="point_line_planeIntersection_rz_ref_top6" axis="axis_z"/>
+		
+        <CIRCLE name="Circle_planeIntersection_theta_ref_bottom" radius="97.95" center="point_line_planeIntersection_rz_ref_bottom" axis="axis_z"/>	
+        <CIRCLE name="Circle_planeIntersection_theta_ref_bottom2" radius="40" center="point_line_planeIntersection_rz_ref_bottom" axis="axis_z"/>	
+        <CIRCLE name="Circle_planeIntersection_theta_ref_bottom3" radius="46" center="point_line_planeIntersection_rz_ref_bottom" axis="axis_z"/>
+        <CIRCLE name="Circle_planeIntersection_theta_ref_bottom2-y" radius="50" center="point_line_planeIntersection_rz_ref_bottom2" axis="axis_z"/>	
+        <CIRCLE name="Circle_planeIntersection_theta_ref_bottom4" radius="97.95" center="point_line_planeIntersection_rz_ref_bottom2" axis="axis_z"/>			
+	
+	    <!--ORIENTED_BOX AT 45°-->
+	    <AXIS name="axis_u_45_deg" x="0.7071" y="0.7071" z="0"/>
+        <AXIS name="axis_v_45_deg" x="-0.7071" y="0.7071" z="0"/>
+        <AXIS name="axis_w_45_deg" x="0.7071" y="0.0" z="0.7071"/> 
+		
+        <AXIS name="axis_yz_1" x="0.0" y="0.707107" z="0.707107"/>
+		<AXIS name="axis_yz_2" x="0.0" y="-0.707107" z="0.707107"/>
+		<AXIS name="axis_xz_1" x="0.707107" y="0.0" z="0.707107"/>
+		<AXIS name="axis_xz_2" x="-0.707107" y="0.0" z="0.707107"/>
+	
+	    <!--PZ4 REFERENCE POINTS FOR EXTRACTION BOXES-->
+        <POINT name="point_Pz4_temp1" x="50.0000" y="50.0000" z="-235.0"/>
+        <POINT name="point_Pz4_temp2" x="50.0000" y="-50.0000" z="-235.0"/>
+        <POINT name="point_Pz4_temp3" x="-50.0000" y="-50.0000" z="-235.0"/>
+        <POINT name="point_Pz4_temp4" x="-50.0000" y="50.0000" z="-235.0"/>
+	
+	
+        <!-- Lines for theta calibration -->
+<!--         <POINT name="point_innerLine_planeIntersection_theta_ref" x="11.5" y="9.3" z="-18.5"/>
+        <LINE name="innerLine_planeIntersection_theta_ref" axis="axis_y" origin="point_innerLine_planeIntersection_theta_ref"/>
+        <POINT name="point_outerLine_planeIntersection_theta_ref" x="32" y="-2.5" z="-18.5"/>
+        <LINE name="outerLine_planeIntersection_theta_ref" axis="axis_y" origin="point_outerLine_planeIntersection_theta_ref"/>
+        <POINT name="point_line_Y_inside_ref" x="11.5" y="0" z="-18.5"/>
+        <LINE name="line_Y_inside_ref" axis="axis_y" origin="point_line_Y_inside_ref"/> -->
+
+        <!-- Lines for Rz calibration -->
+         <!--<POINT name="point_line_planeIntersection_rz_ref" x="0.0000" y="0.0000" z="-5/> --> <!--<POINT name="point_line_planeIntersection_rz_ref" x="0.0000" y="0.0000" z="-18.5"/>-->
+<!--        <POINT name="point_line_planeIntersection_rz_ref_bottom" x="0.0000" y="0.0000" z="-27.75"/>
+        <LINE name="line_planeIntersection_rz_ref" axis="axis_y" origin="point_line_planeIntersection_rz_ref"/>
+        <LINE name="line_planeIntersection_rz_ref_bottom" axis="axis_y" origin="point_line_planeIntersection_rz_ref_bottom"/>
+ -->
+        <!-- Circle for Theta calibration -->
+        <!-- <CIRCLE name="innerCircle_planeIntersection_theta_ref" radius="11.5" center="point_line_planeIntersection_rz_ref" axis="axis_z"/> -->
+        <!-- <CIRCLE name="circle_plane_intersection" radius="95" center="point_line_planeIntersection_rz_ref" axis="axis_z"/>	 -->
+		
+        <!-- Circle for Theta calibration -->
+		<!-- <POINT name="center_align_rz_ref" x="0" y="0" z="-14"/>		 -->
+        <!-- <CIRCLE name="circle_align_theta_ref" radius="97.95" center="center_align_rz_ref" axis="axis_z"/>	   <!--   radius="97.95" --> -->
+
+		
+    </PARAMETERS>
+
+    <!-- ########### PRE-TREATED ZONES ########### -->
+
+    <EXTRACTIONS>
+        <ZONE_AXIS_ALIGNED_BOX name="zone_cylinder_large" out_name="cloud_cylinder_large" cloud_ref="cloud_ref" cloud_min_size="10">
+            <AXIS_ALIGNED_BOX xmin="-23.5" xmax="23.5" ymin="-35" ymax="35" zmin="-999" zmax="+999"/>
+        </ZONE_AXIS_ALIGNED_BOX>
+        <ZONE_AXIS_ALIGNED_BOX name="zone_tooth_large" out_name="cloud_tooth_large" cloud_ref="cloud_ref" cloud_min_size="10" reverse_selection="true">
+            <AXIS_ALIGNED_BOX xmin="-23.5" xmax="23.5" ymin="-999" ymax="+999" zmin="-999" zmax="+999"/>
+        </ZONE_AXIS_ALIGNED_BOX>
+        <ZONE_AXIS_ALIGNED_BOX name="zone_cloud_cone_large" out_name="cloud_cone_large" cloud_ref="cloud_cylinder_large" cloud_min_size="10" reverse_selection="false">
+            <AXIS_ALIGNED_BOX xmin="-23.5" xmax="23.5" ymin="-33" ymax="33" zmin="-999" zmax="+999"/>
+        </ZONE_AXIS_ALIGNED_BOX>
+    </EXTRACTIONS>
+
+    <!-- ########### ALIGN ZONES ########### -->
+	
+     <!-- Cyl2 -->
+	   <EXTRACTIONS>
+	    <ZONE_ORIENTED_BOX out_name="cloud_plane_Cyl2_align_temp" cloud_ref="cloud_ref" cloud_min_size="10" reverse_selection="false">
+            <ORIENTED_BOX axis_u="axis_x" axis_v="axis_y" center="artefact_origin" half_width="74" half_length="999" half_height="999"/>
+        </ZONE_ORIENTED_BOX>
+        <ZONE_CYLINDER out_name="cloud_cylinder_Cyl2_align" cloud_ref="cloud_plane_Cyl2_align_temp" cloud_min_size="10">
+            <CYLINDER reference="cylinder_Cyl2_ref"/>
+            <INTERVAL target="distance" type="it" it="10"/>
+            <INTERVAL target="height" type="min_max" min="-10.0" max="10.0"/>
+        </ZONE_CYLINDER>
+    </EXTRACTIONS>
+    <FIT>
+        <CYLINDER_FIT out_name="cylinder_Cyl2_align" cloud_ref="cloud_cylinder_Cyl2_align" return_filtered_cloud="true">
+            <FIT_FILTER reference="fit_filter_3sigma"/>
+            <CYLINDER reference="cylinder_Cyl2_ref"/>
+        </CYLINDER_FIT>
+    </FIT> 
+	
+	    <!-- Py8 -->
+		
+	<!-- plane_Py8_align -->
+   <EXTRACTIONS>	
+		<ZONE_CYLINDER out_name="cloud_plane_Py8_align_temp" cloud_ref="cloud_ref" cloud_min_size="10"  reverse_selection="false">
+            <CYLINDER base_center="center_align_rz_ref" axis="axis_z" radius="0" height="0.0"/>
+            <INTERVAL target="distance" type="min_max" min="87" max="107"/>
+            <INTERVAL target="height" type="min_max" min="-5.0" max="5.0"/>
+        </ZONE_CYLINDER> 
+		
+	    <ZONE_AXIS_ALIGNED_BOX out_name="cloud_plane_Py8_align" cloud_ref="cloud_plane_Py8_align_temp" cloud_min_size="10" reverse_selection="false">
+            <AXIS_ALIGNED_BOX xmin="9" xmax="999" ymin="-999" ymax="999" zmin="-999" zmax="+999"/>
+        </ZONE_AXIS_ALIGNED_BOX>	
+		
+		</EXTRACTIONS>	
+		
+	<FIT>
+        <PLANE_FIT out_name="plane_Py8_align" cloud_ref="cloud_plane_Py8_align" return_filtered_cloud="true">
+            <FIT_FILTER reference="fit_filter_default"/>
+            <PLANE reference="plane_Py8_ref"/>
+        </PLANE_FIT>
+      
+    </FIT>	
+		
+<!-- 		
+		
+    <EXTRACTIONS>
+	    <ZONE_AXIS_ALIGNED_BOX out_name="cloud_plane_Py8_align_temp" cloud_ref="cloud_ref" cloud_min_size="10" reverse_selection="true">
+            <AXIS_ALIGNED_BOX xmin="-999" xmax="999" ymin="-999" ymax="999" zmin="-5" zmax="+999"/>
+        </ZONE_AXIS_ALIGNED_BOX>
+        <ZONE_ORIENTED_BOX out_name="cloud_plane_Py8_align" cloud_ref="cloud_plane_Py8_align_temp" cloud_min_size="10" reverse_selection="false">
+            <ORIENTED_BOX axis_u="axis_x" axis_v="axis_y" center="center_Py8_ref" half_width="20.0" half_length="4.0" half_height="30.0"/>
+        </ZONE_ORIENTED_BOX>
+    </EXTRACTIONS>
+    <FIT>
+        <PLANE_FIT out_name="plane_Py8_align" cloud_ref="cloud_plane_Py8_align" return_filtered_cloud="true">
+            <FIT_FILTER reference="fit_filter_3sigma"/>
+            <PLANE reference="plane_Py8_ref"/>
+        </PLANE_FIT>
+    </FIT> -->
+	
+	    <!-- Pz1 -->
+    <EXTRACTIONS>
+	    <ZONE_ORIENTED_BOX out_name="cloud_plane_Pz1_align_temp" cloud_ref="cloud_ref" cloud_min_size="10" reverse_selection="false">
+            <ORIENTED_BOX axis_u="axis_x" axis_v="axis_y" center="artefact_origin" half_width="74" half_length="999" half_height="999"/>
+        </ZONE_ORIENTED_BOX>
+        <ZONE_CYLINDER out_name="cloud_plane_Pz1_align" cloud_ref="cloud_plane_Pz1_align_temp" cloud_min_size="10">
+            <CYLINDER base_center="center_Pz1_ref" axis="axis_z" diameter="0" height="0"/>
+            <INTERVAL target="distance" type="min_max" min="100" max="102"/>
+            <INTERVAL target="height" type="it" it="4"/>
+        </ZONE_CYLINDER>
+
+    </EXTRACTIONS>
+
+
+       <!-- ########### COARSE ZONES ########### -->
+       <!-- Common extractions -->
+    <EXTRACTIONS>
+        <ZONE_CYLINDER out_name="cloud_Py1_8_coarse" cloud_ref="cloud_ref" cloud_min_size="10">
+            <CYLINDER base_center="cylinder_py1_8_center" axis="axis_z" diameter="155.0" height="0"/>
+            <INTERVAL target="distance" type="it" it="5"/>
+            <INTERVAL target="height" type="it" it="2.5"/>
+        </ZONE_CYLINDER>
+        <ZONE_CYLINDER out_name="cloud_Py9_16_coarse" cloud_ref="cloud_ref" cloud_min_size="10">
+            <CYLINDER base_center="cylinder_py9_16_center" axis="axis_z" diameter="155.0" height="0"/>
+            <INTERVAL target="distance" type="it" it="5"/>
+            <INTERVAL target="height" type="it" it="2.5"/>
+        </ZONE_CYLINDER>        
+        <ZONE_CYLINDER out_name="cloud_Pxz1_4_coarse" cloud_ref="cloud_ref" cloud_min_size="10">
+            <CYLINDER base_center="cylinder_Pxz1_4_center" axis="axis_z" diameter="179.0" height="0"/>
+            <INTERVAL target="distance" type="it" it="5"/>
+            <INTERVAL target="height" type="it" it="3.75"/>
+        </ZONE_CYLINDER>
+        <ZONE_CYLINDER out_name="cloud_Pxz5_8_coarse" cloud_ref="cloud_ref" cloud_min_size="10">
+            <CYLINDER base_center="cylinder_Pxz5_8_center" axis="axis_z" diameter="179.0" height="0"/>
+            <INTERVAL target="distance" type="it" it="5"/>
+            <INTERVAL target="height" type="it" it="3.75"/>
+        </ZONE_CYLINDER>
+    </EXTRACTIONS>	
+    
+	<!--************COARSE Px1 PLANES**********-->
+	<!-- Px1 -->
+    <EXTRACTIONS>
+	    <ZONE_AXIS_ALIGNED_BOX out_name="cloud_plane_Px1_coarse_temp" cloud_ref="cloud_ref" cloud_min_size="10" reverse_selection="true">
+            <AXIS_ALIGNED_BOX xmin="-999" xmax="999" ymin="-999" ymax="999" zmin="-80" zmax="+999"/>
+        </ZONE_AXIS_ALIGNED_BOX>	
+        <ZONE_ORIENTED_BOX out_name="cloud_plane_Px1_coarse" cloud_ref="cloud_plane_Px1_coarse_temp" cloud_min_size="10" reverse_selection="false">
+            <ORIENTED_BOX axis_u="axis_x" axis_v="axis_y" center="center_Px1_ref" half_width="10.0" half_length="10.0" half_height="100.0"/>
+        </ZONE_ORIENTED_BOX>
+    </EXTRACTIONS>
+	
+    <FIT>
+        <PLANE_FIT out_name="plane_Px1_coarse" cloud_ref="cloud_plane_Px1_coarse" return_filtered_cloud="true">
+            <FIT_FILTER reference="fit_filter_3sigma"/>
+            <PLANE reference="plane_Px1_ref"/>
+        </PLANE_FIT>
+    </FIT>
+	
+	<!-- Px2 -->
+    <EXTRACTIONS>
+	    <ZONE_AXIS_ALIGNED_BOX out_name="cloud_plane_Px2_coarse_temp" cloud_ref="cloud_ref" cloud_min_size="10" reverse_selection="true">
+            <AXIS_ALIGNED_BOX xmin="-999" xmax="999" ymin="-999" ymax="999" zmin="-80" zmax="+999"/>
+        </ZONE_AXIS_ALIGNED_BOX>
+        <ZONE_ORIENTED_BOX out_name="cloud_plane_Px2_coarse" cloud_ref="cloud_plane_Px2_coarse_temp" cloud_min_size="10" reverse_selection="false">
+            <ORIENTED_BOX axis_u="axis_x" axis_v="axis_y" center="center_Px2_ref" half_width="10.0" half_length="10.0" half_height="100.0"/>
+        </ZONE_ORIENTED_BOX>
+    </EXTRACTIONS>
+    <FIT>
+        <PLANE_FIT out_name="plane_Px2_coarse" cloud_ref="cloud_plane_Px2_coarse" return_filtered_cloud="true">
+            <FIT_FILTER reference="fit_filter_3sigma"/>
+            <PLANE reference="plane_Px2_ref"/>
+        </PLANE_FIT>
+    </FIT>
+	
+	<!--*********************COARSE PY PLANES*****************-->
+    <!-- Py1 -->
+    <EXTRACTIONS>
+        <ZONE_ORIENTED_BOX out_name="cloud_plane_Py1_coarse" cloud_ref="cloud_ref" cloud_min_size="10" reverse_selection="false">
+            <ORIENTED_BOX axis_u="axis_x" axis_v="axis_y" center="center_Py1_ref" half_width="20.0" half_length="10.0" half_height="110.0"/>
+        </ZONE_ORIENTED_BOX>
+    </EXTRACTIONS>
+    <FIT>
+        <PLANE_FIT out_name="plane_Py1_coarse" cloud_ref="cloud_plane_Py1_coarse" return_filtered_cloud="true">
+            <FIT_FILTER reference="fit_filter_3sigma"/>
+            <PLANE reference="plane_Py1_ref"/>
+        </PLANE_FIT>
+     </FIT>
+
+    <!-- Py2 -->
+    <EXTRACTIONS>		
+        <ZONE_ORIENTED_BOX out_name="cloud_plane_Py2_coarse" cloud_ref="cloud_ref" cloud_min_size="10" reverse_selection="false">
+            <ORIENTED_BOX axis_u="axis_x" axis_v="axis_y" center="center_Py2_ref" half_width="20.0" half_length="10.0" half_height="110.0"/>
+        </ZONE_ORIENTED_BOX>
+    </EXTRACTIONS>
+    <FIT>
+        <PLANE_FIT out_name="plane_Py2_coarse" cloud_ref="cloud_plane_Py2_coarse" return_filtered_cloud="true">
+            <FIT_FILTER reference="fit_filter_3sigma"/>
+            <PLANE reference="plane_Py2_ref"/>
+        </PLANE_FIT>
+    </FIT>
+
+    <!-- Py3 -->
+    <EXTRACTIONS>
+
+        <ZONE_ORIENTED_BOX out_name="cloud_plane_Py3_coarse" cloud_ref="cloud_ref" cloud_min_size="10" reverse_selection="false">
+            <ORIENTED_BOX axis_u="axis_x" axis_v="axis_y" center="center_Py3_ref" half_width="10.0" half_length="4.0" half_height="100.0"/>
+        </ZONE_ORIENTED_BOX>
+    </EXTRACTIONS>
+    <FIT>
+        <PLANE_FIT out_name="plane_Py3_coarse" cloud_ref="cloud_plane_Py3_coarse" return_filtered_cloud="true">
+            <FIT_FILTER reference="fit_filter_3sigma"/>
+            <PLANE reference="plane_Py3_ref"/>
+        </PLANE_FIT>
+    </FIT>
+
+    <!-- Py4 -->
+    <EXTRACTIONS>		
+        <ZONE_ORIENTED_BOX out_name="cloud_plane_Py4_coarse" cloud_ref="cloud_ref" cloud_min_size="10" reverse_selection="false">
+            <ORIENTED_BOX axis_u="axis_x" axis_v="axis_y" center="center_Py4_ref" half_width="10.0" half_length="4.0" half_height="100.0"/>
+        </ZONE_ORIENTED_BOX>
+    </EXTRACTIONS>
+    <FIT>
+        <PLANE_FIT out_name="plane_Py4_coarse" cloud_ref="cloud_plane_Py4_coarse" return_filtered_cloud="true">
+            <FIT_FILTER reference="fit_filter_3sigma"/>
+            <PLANE reference="plane_Py4_ref"/>
+        </PLANE_FIT>
+    </FIT>
+	
+    <!-- Py5 -->
+    <EXTRACTIONS>
+        <ZONE_ORIENTED_BOX out_name="cloud_plane_Py5_coarse" cloud_ref="cloud_ref" cloud_min_size="10" reverse_selection="false">
+            <ORIENTED_BOX axis_u="axis_x" axis_v="axis_y" center="center_Py5_ref" half_width="10.0" half_length="4.0" half_height="100.0"/> 
+        </ZONE_ORIENTED_BOX>
+    </EXTRACTIONS>
+    <FIT>
+        <PLANE_FIT out_name="plane_Py5_coarse" cloud_ref="cloud_plane_Py5_coarse" return_filtered_cloud="true">
+            <FIT_FILTER reference="fit_filter_3sigma"/>
+            <PLANE reference="plane_Py5_ref"/>
+        </PLANE_FIT>
+    </FIT>
+
+    <!-- Py6 -->
+    <EXTRACTIONS>
+        <ZONE_ORIENTED_BOX out_name="cloud_plane_Py6_coarse" cloud_ref="cloud_ref" cloud_min_size="10" reverse_selection="false">
+            <ORIENTED_BOX axis_u="axis_x" axis_v="axis_y" center="center_Py6_ref" half_width="10.0" half_length="4.0" half_height="100.0"/>
+        </ZONE_ORIENTED_BOX>
+    </EXTRACTIONS>
+    <FIT>
+        <PLANE_FIT out_name="plane_Py6_coarse" cloud_ref="cloud_plane_Py6_coarse" return_filtered_cloud="true">
+            <FIT_FILTER reference="fit_filter_3sigma"/>
+            <PLANE reference="plane_Py6_ref"/>
+        </PLANE_FIT>
+    </FIT>
+
+    <!-- Py7 -->
+    <EXTRACTIONS>
+        <ZONE_ORIENTED_BOX out_name="cloud_plane_Py7_coarse_temp1" cloud_ref="cloud_ref" cloud_min_size="10" reverse_selection="false">
+            <ORIENTED_BOX axis_u="axis_x" axis_v="axis_y" center="center_Py7_ref" half_width="5.0" half_length="4.0" half_height="28.0"/>
+        </ZONE_ORIENTED_BOX>
+	    <ZONE_AXIS_ALIGNED_BOX out_name="cloud_plane_Py7_coarse" cloud_ref="cloud_plane_Py7_coarse_temp1" cloud_min_size="10" reverse_selection="true">
+            <AXIS_ALIGNED_BOX xmin="92" xmax="999" ymin="0" ymax="999" zmin="-29" zmax="999"/>
+        </ZONE_AXIS_ALIGNED_BOX>
+    </EXTRACTIONS>
+    <FIT>
+        <PLANE_FIT out_name="plane_Py7_coarse" cloud_ref="cloud_plane_Py7_coarse" return_filtered_cloud="true">
+            <FIT_FILTER reference="fit_filter_3sigma"/>
+            <PLANE reference="plane_Py7_ref"/>
+        </PLANE_FIT>
+    </FIT>
+
+    <!-- Py8 -->
+	<EXTRACTIONS>
+		<ZONE_AXIS_ALIGNED_BOX out_name="cloud_plane_Py8_coarse_temp1" cloud_ref="cloud_ref" cloud_min_size="10" reverse_selection="false">
+			<AXIS_ALIGNED_BOX xmin="72" xmax="110" ymin="0" ymax="-999" zmin="-2" zmax="-65"/>
+        </ZONE_AXIS_ALIGNED_BOX>
+
+		<ZONE_ORIENTED_BOX out_name="cloud_plane_Py8_coarse" cloud_ref="cloud_plane_Py8_coarse_temp1" cloud_min_size="10" reverse_selection="false">
+			<ORIENTED_BOX axis_u="axis_x" axis_v="axis_xz_2" center="center_Py8_ref" half_width="20" half_length="20" Half_height="20"/>
+		</ZONE_ORIENTED_BOX> 
+	</EXTRACTIONS>
+   <FIT>
+        <PLANE_FIT out_name="plane_Py8_coarse" cloud_ref="cloud_plane_Py8_coarse" return_filtered_cloud="true">
+            <FIT_FILTER reference="fit_filter_3sigma"/>
+            <PLANE reference="plane_Py8_ref"/>
+        </PLANE_FIT>
+    </FIT>
+	
+    <!-- <EXTRACTIONS> -->
+	    <!-- <ZONE_AXIS_ALIGNED_BOX out_name="cloud_plane_Py8_coarse_temp" cloud_ref="cloud_ref" cloud_min_size="10" reverse_selection="true"> -->
+            <!-- <AXIS_ALIGNED_BOX xmin="-999" xmax="999" ymin="-999" ymax="999" zmin="-5" zmax="+999"/> -->
+        <!-- </ZONE_AXIS_ALIGNED_BOX> -->
+        <!-- <ZONE_ORIENTED_BOX out_name="cloud_plane_Py8_coarse" cloud_ref="cloud_plane_Py8_coarse_temp" cloud_min_size="10" reverse_selection="false"> -->
+            <!-- <ORIENTED_BOX axis_u="axis_x" axis_v="axis_y" center="center_Py8_ref" half_width="30.0" half_length="12.0" half_height="30.0"/> -->
+        <!-- </ZONE_ORIENTED_BOX> -->
+    <!-- </EXTRACTIONS> -->
+    <!-- <FIT> -->
+        <!-- <PLANE_FIT out_name="plane_Py8_coarse" cloud_ref="cloud_plane_Py8_coarse" return_filtered_cloud="true"> -->
+            <!-- <FIT_FILTER reference="fit_filter_3sigma"/> -->
+            <!-- <PLANE reference="plane_Py8_ref"/> -->
+        <!-- </PLANE_FIT> -->
+    <!-- </FIT> -->
+
+    <!-- Py9 -->
+    <EXTRACTIONS>
+        <ZONE_ORIENTED_BOX out_name="cloud_plane_Py9_coarse_temp1" cloud_ref="cloud_ref" cloud_min_size="10" reverse_selection="false">
+            <ORIENTED_BOX axis_u="axis_x" axis_v="axis_y" center="center_Py9_ref" half_width="5.0" half_length="4.0" half_height="28.0"/>
+        </ZONE_ORIENTED_BOX>
+	    <ZONE_AXIS_ALIGNED_BOX out_name="cloud_plane_Py9_coarse" cloud_ref="cloud_plane_Py9_coarse_temp1" cloud_min_size="10" reverse_selection="true">
+            <AXIS_ALIGNED_BOX xmin="-92" xmax="-999" ymin="0" ymax="-999" zmin="-29" zmax="999"/>
+        </ZONE_AXIS_ALIGNED_BOX>
+    </EXTRACTIONS>
+    <FIT>
+        <PLANE_FIT out_name="plane_Py9_coarse" cloud_ref="cloud_plane_Py9_coarse" return_filtered_cloud="true">
+            <FIT_FILTER reference="fit_filter_3sigma"/>
+            <PLANE reference="plane_Py9_ref"/>
+        </PLANE_FIT>
+    </FIT>
+
+    <!-- Py10 -->
+	<EXTRACTIONS>
+		<ZONE_AXIS_ALIGNED_BOX out_name="cloud_plane_Py10_coarse_temp1" cloud_ref="cloud_ref" cloud_min_size="10" reverse_selection="false">
+			<AXIS_ALIGNED_BOX xmin="-72" xmax="-110" ymin="0" ymax="999" zmin="-2" zmax="-65"/>
+        </ZONE_AXIS_ALIGNED_BOX>
+
+		<ZONE_ORIENTED_BOX out_name="cloud_plane_Py10_coarse" cloud_ref="cloud_plane_Py10_coarse_temp1" cloud_min_size="10" reverse_selection="false">
+			<ORIENTED_BOX axis_u="axis_x" axis_v="axis_xz_1" center="center_Py10_ref" half_width="20" half_length="20" Half_height="20"/>
+		</ZONE_ORIENTED_BOX> 
+	</EXTRACTIONS>
+   <FIT>
+        <PLANE_FIT out_name="plane_Py10_coarse" cloud_ref="cloud_plane_Py10_coarse" return_filtered_cloud="true">
+            <FIT_FILTER reference="fit_filter_3sigma"/>
+            <PLANE reference="plane_Py10_ref"/>
+        </PLANE_FIT>
+    </FIT>
+	
+    <!-- <EXTRACTIONS> -->
+	    <!-- <ZONE_AXIS_ALIGNED_BOX out_name="cloud_plane_Py10_coarse_temp" cloud_ref="cloud_ref" cloud_min_size="10" reverse_selection="true"> -->
+            <!-- <AXIS_ALIGNED_BOX xmin="-999" xmax="999" ymin="-999" ymax="999" zmin="-5" zmax="+999"/> -->
+        <!-- </ZONE_AXIS_ALIGNED_BOX> -->
+        <!-- <ZONE_ORIENTED_BOX out_name="cloud_plane_Py10_coarse" cloud_ref="cloud_plane_Py10_coarse_temp" cloud_min_size="10" reverse_selection="false"> -->
+            <!-- <ORIENTED_BOX axis_u="axis_x" axis_v="axis_y" center="center_Py10_ref" half_width="30.0" half_length="12.0" half_height="30.0"/> -->
+        <!-- </ZONE_ORIENTED_BOX> -->
+    <!-- </EXTRACTIONS> -->
+    <!-- <FIT> -->
+        <!-- <PLANE_FIT out_name="plane_Py10_coarse" cloud_ref="cloud_plane_Py10_coarse" return_filtered_cloud="true"> -->
+            <!-- <FIT_FILTER reference="fit_filter_3sigma"/> -->
+            <!-- <PLANE reference="plane_Py10_ref"/> -->
+        <!-- </PLANE_FIT> -->
+    <!-- </FIT> -->
+
+   
+	
+	<!-- *********************COARSE PZ PLANES*************************-->
+    <!-- Pz1 -->
+    <EXTRACTIONS>
+	    <ZONE_ORIENTED_BOX out_name="cloud_plane_Pz1_coarse_temp" cloud_ref="cloud_ref" cloud_min_size="10" reverse_selection="false">
+            <ORIENTED_BOX axis_u="axis_x" axis_v="axis_y" center="artefact_origin" half_width="70" half_length="999" half_height="999"/>
+        </ZONE_ORIENTED_BOX>
+        <ZONE_CYLINDER out_name="cloud_plane_Pz1_coarse" cloud_ref="cloud_plane_Pz1_coarse_temp" cloud_min_size="10">
+            <CYLINDER base_center="center_Pz1_ref" axis="axis_z" diameter="0" height="0"/>
+            <INTERVAL target="distance" type="min_max" min="100" max="102"/>
+            <INTERVAL target="height" type="it" it="4"/>
+        </ZONE_CYLINDER>
+    </EXTRACTIONS>
+    <FIT>
+        <PLANE_FIT out_name="plane_Pz1_coarse" cloud_ref="cloud_plane_Pz1_coarse" return_filtered_cloud="true">
+            <FIT_FILTER reference="fit_filter_3sigma"/>
+            <PLANE reference="plane_Pz1_ref"/>
+        </PLANE_FIT>
+    </FIT>
+	
+    <!-- Pz2 -->
+    <EXTRACTIONS>
+		<ZONE_ORIENTED_BOX out_name="cloud_plane_Pz2_coarse_temp" cloud_ref="cloud_ref" cloud_min_size="10" reverse_selection="false">
+            <ORIENTED_BOX axis_u="axis_x" axis_v="axis_y" center="artefact_origin" half_width="70" half_length="999" half_height="999"/>
+        </ZONE_ORIENTED_BOX>
+        <ZONE_CYLINDER out_name="cloud_plane_Pz2_coarse" cloud_ref="cloud_plane_Pz2_coarse_temp" cloud_min_size="10">
+            <CYLINDER base_center="center_Pz2_ref" axis="axis_z" diameter="0" height="0"/>
+            <INTERVAL target="distance" type="min_max" min="85" max="90"/>
+            <INTERVAL target="height" type="it" it="4"/>
+        </ZONE_CYLINDER>
+
+    </EXTRACTIONS>
+    <FIT>
+        <PLANE_FIT out_name="plane_Pz2_coarse" cloud_ref="cloud_plane_Pz2_coarse" return_filtered_cloud="true">
+            <FIT_FILTER reference="fit_filter_3sigma"/>
+            <PLANE reference="plane_Pz2_ref"/>
+        </PLANE_FIT>
+    </FIT>
+    
+	 <!-- Pz3 -->
+    <EXTRACTIONS>
+        <ZONE_CYLINDER out_name="cloud_plane_Pz3_coarse_temp1" cloud_ref="cloud_ref" cloud_min_size="10">
+            <CYLINDER base_center="center_Pz3_ref" axis="normal_Pz3_ref" diameter="140" height="0"/>
+            <INTERVAL target="distance" type="it" it="10"/>
+            <INTERVAL target="height" type="it" it="10"/>
+        </ZONE_CYLINDER>
+        <ZONE_ORIENTED_BOX out_name="cloud_plane_Pz3_coarse" cloud_ref="cloud_plane_Pz3_coarse_temp1" cloud_min_size="10" reverse_selection="true">
+            <ORIENTED_BOX axis_u="axis_x" axis_v="axis_y" center="artefact_origin" half_width="999" half_length="30" half_height="999"/>
+        </ZONE_ORIENTED_BOX>
+    </EXTRACTIONS>
+    <FIT>
+        <PLANE_FIT out_name="plane_Pz3_coarse" cloud_ref="cloud_plane_Pz3_coarse" return_filtered_cloud="true">
+            <FIT_FILTER reference="fit_filter_3sigma"/>
+            <PLANE reference="plane_Pz3_ref"/>
+        </PLANE_FIT>
+    </FIT>
+	
+	 <!-- Pz4 -->
+ 	<EXTRACTIONS>
+	    <ZONE_AXIS_ALIGNED_BOX out_name="cloud_plane_Pz4_coarse_temp1" cloud_ref="cloud_ref" cloud_min_size="10" reverse_selection="true">
+            <AXIS_ALIGNED_BOX xmin="73" xmax="999" ymin="-999" ymax="999" zmin="-999" zmax="999"/>
+        </ZONE_AXIS_ALIGNED_BOX>
+	    <ZONE_AXIS_ALIGNED_BOX out_name="cloud_plane_Pz4_coarse_temp2" cloud_ref="cloud_plane_Pz4_coarse_temp1" cloud_min_size="10" reverse_selection="true">
+            <AXIS_ALIGNED_BOX xmin="-73" xmax="-999" ymin="-999" ymax="999" zmin="-999" zmax="999"/>
+        </ZONE_AXIS_ALIGNED_BOX>
+	    <ZONE_AXIS_ALIGNED_BOX out_name="cloud_plane_Pz4_coarse_temp3" cloud_ref="cloud_plane_Pz4_coarse_temp2" cloud_min_size="10" reverse_selection="true">
+            <AXIS_ALIGNED_BOX xmin="-43" xmax="-59" ymin="55" ymax="73" zmin="-999" zmax="999"/>
+        </ZONE_AXIS_ALIGNED_BOX>
+	    <ZONE_AXIS_ALIGNED_BOX out_name="cloud_plane_Pz4_coarse_temp4" cloud_ref="cloud_plane_Pz4_coarse_temp3" cloud_min_size="10" reverse_selection="true">
+            <AXIS_ALIGNED_BOX xmin="-10" xmax="-18" ymin="55" ymax="73" zmin="-999" zmax="999"/>
+        </ZONE_AXIS_ALIGNED_BOX>
+	    <ZONE_AXIS_ALIGNED_BOX out_name="cloud_plane_Pz4_coarse_temp5" cloud_ref="cloud_plane_Pz4_coarse_temp4" cloud_min_size="10" reverse_selection="true">
+            <AXIS_ALIGNED_BOX xmin="-32" xmax="-48" ymin="35" ymax="60" zmin="-999" zmax="999"/>
+        </ZONE_AXIS_ALIGNED_BOX>
+	    <ZONE_AXIS_ALIGNED_BOX out_name="cloud_plane_Pz4_coarse_temp6" cloud_ref="cloud_plane_Pz4_coarse_temp5" cloud_min_size="10" reverse_selection="true">
+            <AXIS_ALIGNED_BOX xmin="28" xmax="59" ymin="41" ymax="75" zmin="-999" zmax="999"/>
+        </ZONE_AXIS_ALIGNED_BOX>
+	    <ZONE_AXIS_ALIGNED_BOX out_name="cloud_plane_Pz4_coarse_temp7" cloud_ref="cloud_plane_Pz4_coarse_temp6" cloud_min_size="10" reverse_selection="true">
+            <AXIS_ALIGNED_BOX xmin="-55" xmax="-75" ymin="-5" ymax="9" zmin="-999" zmax="999"/>
+        </ZONE_AXIS_ALIGNED_BOX>
+	    <ZONE_AXIS_ALIGNED_BOX out_name="cloud_plane_Pz4_coarse_temp8" cloud_ref="cloud_plane_Pz4_coarse_temp7" cloud_min_size="10" reverse_selection="true">
+            <AXIS_ALIGNED_BOX xmin="50" xmax="75" ymin="-17" ymax="-31" zmin="-999" zmax="999"/>
+        </ZONE_AXIS_ALIGNED_BOX>
+	    <ZONE_AXIS_ALIGNED_BOX out_name="cloud_plane_Pz4_coarse_temp9" cloud_ref="cloud_plane_Pz4_coarse_temp8" cloud_min_size="10" reverse_selection="true">
+            <AXIS_ALIGNED_BOX xmin="-17" xmax="-51" ymin="-55" ymax="-75" zmin="-999" zmax="999"/>
+        </ZONE_AXIS_ALIGNED_BOX>
+	    <ZONE_AXIS_ALIGNED_BOX out_name="cloud_plane_Pz4_coarse_temp10" cloud_ref="cloud_plane_Pz4_coarse_temp9" cloud_min_size="10" reverse_selection="true">
+            <AXIS_ALIGNED_BOX xmin="40" xmax="60" ymin="-55" ymax="-75" zmin="-999" zmax="999"/>
+        </ZONE_AXIS_ALIGNED_BOX>
+	    <ZONE_AXIS_ALIGNED_BOX out_name="cloud_plane_Pz4_coarse_temp11" cloud_ref="cloud_plane_Pz4_coarse_temp10" cloud_min_size="10" reverse_selection="true">
+            <AXIS_ALIGNED_BOX xmin="55" xmax="70" ymin="3" ymax="8" zmin="-999" zmax="999"/>
+        </ZONE_AXIS_ALIGNED_BOX>
+        <ZONE_CYLINDER out_name="cloud_plane_Pz4_coarse_temp12" cloud_ref="cloud_plane_Pz4_coarse_temp11" cloud_min_size="10"  reverse_selection="true">
+            <CYLINDER base_center="center_Pz4_ref" axis="axis_z" radius="0" height="0.0"/>
+            <INTERVAL target="distance" type="min_max" min="68" max="72"/>
+            <INTERVAL target="height" type="min_max" min="-1.0" max="1.0"/>
+		</ZONE_CYLINDER>	
+        <ZONE_CYLINDER out_name="cloud_plane_Pz4_coarse" cloud_ref="cloud_plane_Pz4_coarse_temp12" cloud_min_size="10"  reverse_selection="false">
+            <CYLINDER base_center="center_Pz4_ref" axis="axis_z" radius="0" height="0.0"/>
+            <INTERVAL target="distance" type="min_max" min="62" max="88"/>
+            <INTERVAL target="height" type="min_max" min="-5.0" max="5.0"/>
+		</ZONE_CYLINDER>		
+	</EXTRACTIONS>
+	<FIT>
+		<PLANE_FIT out_name="plane_Pz4_coarse" cloud_ref="cloud_plane_Pz4_coarse" return_filtered_cloud="true">
+			<FIT_FILTER reference="fit_filter_3sigma"/>   <!-- fit_filter_3sigma -->
+			<PLANE reference="plane_Pz4_ref"/>
+        </PLANE_FIT>
+	</FIT>
+	
+    <!-- <EXTRACTIONS> -->
+        <!-- <ZONE_CYLINDER out_name="cloud_plane_Pz4_coarse" cloud_ref="cloud_ref" cloud_min_size="10"  reverse_selection="false"> -->
+            <!-- <CYLINDER base_center="center_Pz4_ref" axis="axis_z" radius="0" height="0.0"/> -->
+            <!-- <INTERVAL target="distance" type="min_max" min="62" max="67"/> -->
+            <!-- <INTERVAL target="height" type="min_max" min="-1.0" max="1.0"/> -->
+        <!-- </ZONE_CYLINDER>  -->
+	<!-- </EXTRACTIONS> -->
+    <!-- <FIT> -->
+        <!-- <PLANE_FIT out_name="plane_Pz4_coarse" cloud_ref="cloud_plane_Pz4_coarse" return_filtered_cloud="true"> -->
+            <!-- <FIT_FILTER reference="fit_filter_3sigma"/> -->
+            <!-- <PLANE reference="plane_Pz4_ref"/> -->
+        <!-- </PLANE_FIT> -->
+    <!-- </FIT> -->
+	
+	 <!-- Pz5 -->
+    <EXTRACTIONS>
+		<ZONE_AXIS_ALIGNED_BOX out_name="cloud_plane_Pz5_coarse_temp1" cloud_ref="cloud_ref" cloud_min_size="10" reverse_selection="true">
+            <AXIS_ALIGNED_BOX xmin="80" xmax="999" ymin="-12" ymax="2" zmin="-999" zmax="5"/>
+        </ZONE_AXIS_ALIGNED_BOX>
+ 	    <ZONE_AXIS_ALIGNED_BOX out_name="cloud_plane_Pz5_coarse" cloud_ref="cloud_plane_Pz5_coarse_temp1" cloud_min_size="10" reverse_selection="false">
+            <AXIS_ALIGNED_BOX xmin="80" xmax="95" ymin="-20" ymax="20" zmin="-999" zmax="5"/>
+        </ZONE_AXIS_ALIGNED_BOX>
+    </EXTRACTIONS>
+    <FIT>
+        <PLANE_FIT out_name="plane_Pz5_coarse" cloud_ref="cloud_plane_Pz5_coarse" return_filtered_cloud="true">
+            <FIT_FILTER reference="fit_filter_3sigma"/>
+            <PLANE reference="plane_Pz5_ref"/>
+        </PLANE_FIT>
+    </FIT>
+	
+		 <!-- Pz6 -->
+    <EXTRACTIONS>
+  	    <ZONE_AXIS_ALIGNED_BOX out_name="cloud_plane_Pz6_coarse" cloud_ref="cloud_ref" cloud_min_size="10" reverse_selection="false">
+            <AXIS_ALIGNED_BOX xmin="-80" xmax="-95" ymin="-20" ymax="20" zmin="-999" zmax="5"/>
+        </ZONE_AXIS_ALIGNED_BOX>
+		
+    </EXTRACTIONS>
+    <FIT>
+        <PLANE_FIT out_name="plane_Pz6_coarse" cloud_ref="cloud_plane_Pz6_coarse" return_filtered_cloud="true">
+            <FIT_FILTER reference="fit_filter_3sigma"/>
+            <PLANE reference="plane_Pz6_ref"/>
+        </PLANE_FIT>
+    </FIT>
+	
+	
+	<!-- *********************COARSE PXZ PLANES*************************-->
+	
+    <!-- Pxz1 -->
+     <EXTRACTIONS>
+        <ZONE_ORIENTED_BOX out_name="cloud_plane_Pxz1_coarse" cloud_ref="cloud_ref" cloud_min_size="10" reverse_selection="false">
+            <ORIENTED_BOX axis_u="axis_x" axis_v="axis_y" center="center_Pxz1_ref" half_width="10.0" half_length="20" half_height="7.0"/>
+        </ZONE_ORIENTED_BOX>
+    </EXTRACTIONS>
+    <FIT>
+        <PLANE_FIT out_name="plane_Pxz1_coarse" cloud_ref="cloud_plane_Pxz1_coarse" return_filtered_cloud="true">
+            <FIT_FILTER reference="fit_filter_3sigma"/>
+            <PLANE reference="plane_Pxz1_ref"/>
+        </PLANE_FIT>
+    </FIT>
+	
+	 <!-- Pxz2 -->
+    <EXTRACTIONS>
+        <ZONE_ORIENTED_BOX out_name="cloud_plane_Pxz2_coarse" cloud_ref="cloud_ref" cloud_min_size="10" reverse_selection="false">
+            <ORIENTED_BOX axis_u="axis_x" axis_v="axis_y" center="center_Pxz2_ref" half_width="10.0" half_length="20" half_height="7.0"/>
+        </ZONE_ORIENTED_BOX>
+    </EXTRACTIONS>
+    <FIT>
+        <PLANE_FIT out_name="plane_Pxz2_coarse" cloud_ref="cloud_plane_Pxz2_coarse" return_filtered_cloud="true">
+            <FIT_FILTER reference="fit_filter_3sigma"/>
+            <PLANE reference="plane_Pxz2_ref"/>
+        </PLANE_FIT>
+    </FIT>
+
+	<!-- Pxz3 -->
+      <EXTRACTIONS>
+        <ZONE_ORIENTED_BOX out_name="cloud_plane_Pxz3_coarse" cloud_ref="cloud_ref" cloud_min_size="10" reverse_selection="false">
+            <ORIENTED_BOX axis_u="axis_x" axis_v="axis_y" center="center_Pxz3_ref" half_width="10.0" half_length="20" half_height="7.0"/>
+        </ZONE_ORIENTED_BOX>
+    </EXTRACTIONS>
+    <FIT>
+        <PLANE_FIT out_name="plane_Pxz3_coarse" cloud_ref="cloud_plane_Pxz3_coarse" return_filtered_cloud="true">
+            <FIT_FILTER reference="fit_filter_3sigma"/>
+            <PLANE reference="plane_Pxz3_ref"/>
+        </PLANE_FIT>
+    </FIT>
+	
+	<!-- Pxz4 -->
+     <EXTRACTIONS>
+        <ZONE_ORIENTED_BOX out_name="cloud_plane_Pxz4_coarse" cloud_ref="cloud_ref" cloud_min_size="10" reverse_selection="false">
+            <ORIENTED_BOX axis_u="axis_x" axis_v="axis_y" center="center_Pxz4_ref" half_width="10.0" half_length="20" half_height="7.0"/>
+        </ZONE_ORIENTED_BOX>
+    </EXTRACTIONS>
+    <FIT>
+        <PLANE_FIT out_name="plane_Pxz4_coarse" cloud_ref="cloud_plane_Pxz4_coarse" return_filtered_cloud="true">
+            <FIT_FILTER reference="fit_filter_3sigma"/>
+            <PLANE reference="plane_Pxz4_ref"/>
+        </PLANE_FIT>
+    </FIT>
+	
+    <!-- Pxz5 -->
+     <EXTRACTIONS>
+        <ZONE_ORIENTED_BOX out_name="cloud_plane_Pxz5_coarse" cloud_ref="cloud_ref" cloud_min_size="10" reverse_selection="false">
+            <ORIENTED_BOX axis_u="axis_x" axis_v="axis_y" center="center_Pxz5_ref" half_width="10.0" half_length="20" half_height="7.0"/>
+        </ZONE_ORIENTED_BOX>
+    </EXTRACTIONS>
+    <FIT>
+        <PLANE_FIT out_name="plane_Pxz5_coarse" cloud_ref="cloud_plane_Pxz5_coarse" return_filtered_cloud="true">
+            <FIT_FILTER reference="fit_filter_3sigma"/>
+            <PLANE reference="plane_Pxz5_ref"/>
+        </PLANE_FIT>
+    </FIT>
+	
+    <!-- Pxz6 -->
+      <EXTRACTIONS>
+        <ZONE_ORIENTED_BOX out_name="cloud_plane_Pxz6_coarse" cloud_ref="cloud_ref" cloud_min_size="10" reverse_selection="false">
+            <ORIENTED_BOX axis_u="axis_x" axis_v="axis_y" center="center_Pxz6_ref" half_width="10.0" half_length="20" half_height="7.0"/>
+        </ZONE_ORIENTED_BOX>
+    </EXTRACTIONS>
+    <FIT>
+        <PLANE_FIT out_name="plane_Pxz6_coarse" cloud_ref="cloud_plane_Pxz6_coarse" return_filtered_cloud="true">
+            <FIT_FILTER reference="fit_filter_3sigma"/>
+            <PLANE reference="plane_Pxz6_ref"/>
+        </PLANE_FIT>
+    </FIT>
+    
+    <!-- Pxz7 -->
+     <EXTRACTIONS>
+        <ZONE_ORIENTED_BOX out_name="cloud_plane_Pxz7_coarse" cloud_ref="cloud_ref" cloud_min_size="10" reverse_selection="false">
+            <ORIENTED_BOX axis_u="axis_x" axis_v="axis_y" center="center_Pxz7_ref" half_width="10.0" half_length="20" half_height="7.0"/>
+        </ZONE_ORIENTED_BOX>
+    </EXTRACTIONS>
+    <FIT>
+        <PLANE_FIT out_name="plane_Pxz7_coarse" cloud_ref="cloud_plane_Pxz7_coarse" return_filtered_cloud="true">
+            <FIT_FILTER reference="fit_filter_3sigma"/>
+            <PLANE reference="plane_Pxz7_ref"/>
+        </PLANE_FIT>
+    </FIT>
+	
+	  <!-- Pxz8 -->
+     <EXTRACTIONS>
+        <ZONE_ORIENTED_BOX out_name="cloud_plane_Pxz8_coarse" cloud_ref="cloud_ref" cloud_min_size="10" reverse_selection="false">
+            <ORIENTED_BOX axis_u="axis_x" axis_v="axis_y" center="center_Pxz8_ref" half_width="10.0" half_length="20" half_height="7.0"/>
+        </ZONE_ORIENTED_BOX>
+    </EXTRACTIONS>
+    <FIT>
+        <PLANE_FIT out_name="plane_Pxz8_coarse" cloud_ref="cloud_plane_Pxz8_coarse" return_filtered_cloud="true">
+            <FIT_FILTER reference="fit_filter_3sigma"/>
+            <PLANE reference="plane_Pxz8_ref"/>
+        </PLANE_FIT>
+    </FIT>
+	
+	  <!-- Pxz9 -->
+      <EXTRACTIONS>
+        <ZONE_ORIENTED_BOX out_name="cloud_plane_Pxz9_coarse" cloud_ref="cloud_ref" cloud_min_size="10" reverse_selection="false">
+            <ORIENTED_BOX axis_u="axis_x" axis_v="axis_y" center="center_Pxz9_ref" half_width="10.0" half_length="20" half_height="7.0"/>
+        </ZONE_ORIENTED_BOX>
+    </EXTRACTIONS>
+    <FIT>
+        <PLANE_FIT out_name="plane_Pxz9_coarse" cloud_ref="cloud_plane_Pxz9_coarse" return_filtered_cloud="true">
+            <FIT_FILTER reference="fit_filter_3sigma"/>
+            <PLANE reference="plane_Pxz9_ref"/>
+        </PLANE_FIT>
+    </FIT>
+	
+	  <!-- Pxz10 -->
+     <EXTRACTIONS>
+        <ZONE_ORIENTED_BOX out_name="cloud_plane_Pxz10_coarse" cloud_ref="cloud_ref" cloud_min_size="10" reverse_selection="false">
+            <ORIENTED_BOX axis_u="axis_x" axis_v="axis_y" center="center_Pxz10_ref" half_width="10.0" half_length="20" half_height="7.0"/>
+        </ZONE_ORIENTED_BOX>
+    </EXTRACTIONS>
+    <FIT>
+        <PLANE_FIT out_name="plane_Pxz10_coarse" cloud_ref="cloud_plane_Pxz10_coarse" return_filtered_cloud="true">
+            <FIT_FILTER reference="fit_filter_3sigma"/>
+            <PLANE reference="plane_Pxz10_ref"/>
+        </PLANE_FIT>
+    </FIT>
+
+<!-- *********************COARSE CYLINDERS*************************-->
+    <!-- Cyl1 -->
+<!--       <EXTRACTIONS>
+	    <ZONE_AXIS_ALIGNED_BOX out_name="cloud_plane_Cyl1_coarse_temp" cloud_ref="cloud_ref" cloud_min_size="10" reverse_selection="true">
+            <AXIS_ALIGNED_BOX xmin="-999" xmax="999" ymin="-999" ymax="999" zmin="-20" zmax="+999"/>
+        </ZONE_AXIS_ALIGNED_BOX>
+		
+	    <ZONE_AXIS_ALIGNED_BOX out_name="cloud_plane_Cyl1_coarse_temp2" cloud_ref="cloud_plane_Cyl1_coarse_temp" cloud_min_size="10" reverse_selection="false">
+            <AXIS_ALIGNED_BOX xmin="-999" xmax="999" ymin="-999" ymax="999" zmin="-180" zmax="+999"/>
+        </ZONE_AXIS_ALIGNED_BOX>
+		
+	    <ZONE_ORIENTED_BOX out_name="cloud_plane_Cyl1_coarse_temp3" cloud_ref="cloud_plane_Cyl1_coarse_temp2" cloud_min_size="10" reverse_selection="false">
+            <ORIENTED_BOX axis_u="axis_x" axis_v="axis_y" center="artefact_origin" half_width="40" half_length="999" half_height="999"/>
+        </ZONE_ORIENTED_BOX>
+		
+        <ZONE_CYLINDER out_name="cloud_cylinder_Cyl1_coarse" cloud_ref="cloud_plane_Cyl1_coarse_temp3" cloud_min_size="10">
+            <CYLINDER base_center="base_center_Cyl1_ref" axis="axis_z" diameter="215" height="0"/>
+            <INTERVAL target="distance"  type="min_max" min="-10.0" max="10.0"/>
+            <INTERVAL target="height" type="min_max" min="20" max="200"/>
+        </ZONE_CYLINDER>
+    </EXTRACTIONS>
+    <FIT>
+        <CYLINDER_FIT out_name="cylinder_Cyl1_coarse" cloud_ref="cloud_cylinder_Cyl1_coarse" return_filtered_cloud="true">
+            <FIT_FILTER reference="fit_filter_gt_3"/>
+            <CYLINDER reference="cylinder_Cyl1_ref"/>
+        </CYLINDER_FIT>
+    </FIT>  -->
+<!-- 	
+    <EXTRACTIONS>
+	    <ZONE_AXIS_ALIGNED_BOX out_name="cloud_plane_Cyl1_coarse_temp" cloud_ref="cloud_ref" cloud_min_size="10" reverse_selection="true">
+            <AXIS_ALIGNED_BOX xmin="-999" xmax="999" ymin="-999" ymax="999" zmin="-5" zmax="+999"/>
+        </ZONE_AXIS_ALIGNED_BOX>
+	    <ZONE_AXIS_ALIGNED_BOX out_name="cloud_plane_Cyl1_coarse_temp2" cloud_ref="cloud_plane_Cyl1_coarse_temp" cloud_min_size="10" reverse_selection="false">
+            <AXIS_ALIGNED_BOX xmin="-999" xmax="999" ymin="-999" ymax="999" zmin="-190" zmax="+999"/>
+        </ZONE_AXIS_ALIGNED_BOX>
+	    <ZONE_ORIENTED_BOX out_name="cloud_plane_Cyl1_coarse_temp3" cloud_ref="cloud_plane_Cyl1_coarse_temp2" cloud_min_size="10" reverse_selection="false">
+            <ORIENTED_BOX axis_u="axis_x" axis_v="axis_y" center="artefact_origin" half_width="40" half_length="999" half_height="999"/>
+        </ZONE_ORIENTED_BOX>
+        <ZONE_CYLINDER out_name="cloud_cylinder_Cyl1_coarse" cloud_ref="cloud_plane_Cyl1_coarse_temp3" cloud_min_size="10">
+            <CYLINDER reference="cylinder_Cyl1_ref"/>
+            <INTERVAL target="distance"  type="min_max" min="-10.0" max="10.0"/>
+            <INTERVAL target="height" type="min_max" min="-235" max="235.0"/>
+        </ZONE_CYLINDER>
+    </EXTRACTIONS>
+    <FIT>
+        <CYLINDER_FIT out_name="cylinder_Cyl1_coarse" cloud_ref="cloud_cylinder_Cyl1_coarse" return_filtered_cloud="true">
+            <FIT_FILTER reference="fit_filter_3sigma"/>
+            <CYLINDER reference="cylinder_Cyl1_ref"/>
+        </CYLINDER_FIT>
+    </FIT>  -->
+	
+	  <EXTRACTIONS>
+	    <ZONE_AXIS_ALIGNED_BOX out_name="cloud_plane_Cyl1_coarse_temp" cloud_ref="cloud_ref" cloud_min_size="10" reverse_selection="true">
+            <AXIS_ALIGNED_BOX xmin="-999" xmax="999" ymin="-999" ymax="999" zmin="-5" zmax="+999"/>
+        </ZONE_AXIS_ALIGNED_BOX>
+	    <ZONE_AXIS_ALIGNED_BOX out_name="cloud_plane_Cyl1_coarse_temp2" cloud_ref="cloud_plane_Cyl1_coarse_temp" cloud_min_size="10" reverse_selection="false">
+            <AXIS_ALIGNED_BOX xmin="-999" xmax="999" ymin="-999" ymax="999" zmin="-190" zmax="+999"/>
+        </ZONE_AXIS_ALIGNED_BOX>
+	    <ZONE_ORIENTED_BOX out_name="cloud_plane_Cyl1_coarse_temp3" cloud_ref="cloud_plane_Cyl1_coarse_temp2" cloud_min_size="10" reverse_selection="false">
+            <ORIENTED_BOX axis_u="axis_x" axis_v="axis_y" center="base_center_Cyl1_ref" half_width="40" half_length="999" half_height="999"/>
+        </ZONE_ORIENTED_BOX>
+        <ZONE_CYLINDER out_name="cloud_cylinder_Cyl1_coarse" cloud_ref="cloud_plane_Cyl1_coarse_temp3" cloud_min_size="10">
+            <CYLINDER reference="cylinder_Cyl1_ref"/>
+            <INTERVAL target="distance"  type="min_max" min="-10.0" max="10.0"/>
+            <INTERVAL target="height" type="min_max" min="-999" max="999"/>
+        </ZONE_CYLINDER>
+    </EXTRACTIONS>
+    <FIT>
+        <CYLINDER_FIT out_name="cylinder_Cyl1_coarse" cloud_ref="cloud_cylinder_Cyl1_coarse" return_filtered_cloud="true">
+            <FIT_FILTER reference="fit_filter_gt_3"/>
+            <CYLINDER reference="cylinder_Cyl1_ref"/>
+        </CYLINDER_FIT>
+    </FIT> 
+	
+	
+     <!-- Cyl2 -->
+	   <EXTRACTIONS>
+	    <ZONE_ORIENTED_BOX out_name="cloud_plane_Cyl2_coarse_temp" cloud_ref="cloud_ref" cloud_min_size="10" reverse_selection="false">
+            <ORIENTED_BOX axis_u="axis_x" axis_v="axis_y" center="base_center_Cyl2_ref" half_width="70" half_length="999" half_height="999"/>
+        </ZONE_ORIENTED_BOX>
+        <ZONE_CYLINDER out_name="cloud_cylinder_Cyl2_coarse" cloud_ref="cloud_plane_Cyl2_coarse_temp" cloud_min_size="10">
+            <CYLINDER reference="cylinder_Cyl2_ref"/>
+            <INTERVAL target="distance" type="it" it="10"/>
+            <INTERVAL target="height" type="min_max" min="-10.0" max="10.0"/>
+        </ZONE_CYLINDER>
+    </EXTRACTIONS>
+    <FIT>
+        <CYLINDER_FIT out_name="cylinder_Cyl2_coarse" cloud_ref="cloud_cylinder_Cyl2_coarse" return_filtered_cloud="true">
+            <FIT_FILTER reference="fit_filter_gt_3"/>
+            <CYLINDER reference="cylinder_Cyl2_ref"/>
+        </CYLINDER_FIT>
+    </FIT> 
+	
+    <!-- Cyl3 -->
+	 	   <EXTRACTIONS>
+	    <ZONE_ORIENTED_BOX out_name="cloud_plane_Cyl3_coarse_temp" cloud_ref="cloud_ref" cloud_min_size="10" reverse_selection="false">
+            <ORIENTED_BOX axis_u="axis_x" axis_v="axis_y" center="base_center_Cyl3_ref" half_width="70" half_length="999" half_height="999"/>
+        </ZONE_ORIENTED_BOX>
+        <ZONE_CYLINDER out_name="cloud_cylinder_Cyl3_coarse" cloud_ref="cloud_plane_Cyl3_coarse_temp" cloud_min_size="10">
+            <CYLINDER reference="cylinder_Cyl3_ref"/>
+            <INTERVAL target="distance" type="it" it="5"/>
+            <INTERVAL target="height" type="min_max" min="-10.0" max="10.0"/>
+        </ZONE_CYLINDER>
+    </EXTRACTIONS>
+    <FIT>
+        <CYLINDER_FIT out_name="cylinder_Cyl3_coarse" cloud_ref="cloud_cylinder_Cyl3_coarse" return_filtered_cloud="true">
+            <FIT_FILTER reference="fit_filter_gt_3"/>
+            <CYLINDER reference="cylinder_Cyl3_ref"/>
+        </CYLINDER_FIT>
+    </FIT> 
+	
+ <!-- Cyl4 -->
+	   <EXTRACTIONS>
+	    <ZONE_ORIENTED_BOX out_name="cloud_plane_Cyl4_coarse_temp" cloud_ref="cloud_ref" cloud_min_size="10" reverse_selection="false">
+            <ORIENTED_BOX axis_u="axis_x" axis_v="axis_y" center="base_center_Cyl4_ref" half_width="32" half_length="999" half_height="999"/>
+        </ZONE_ORIENTED_BOX>
+        <ZONE_CYLINDER out_name="cloud_cylinder_Cyl4_coarse" cloud_ref="cloud_plane_Cyl4_coarse_temp" cloud_min_size="10">
+            <CYLINDER reference="cylinder_Cyl4_ref"/>
+            <INTERVAL target="distance" type="it" it="10"/>
+            <INTERVAL target="height" type="min_max" min="-60.0" max="60.0"/>
+        </ZONE_CYLINDER>
+    </EXTRACTIONS>
+    <FIT>
+        <CYLINDER_FIT out_name="cylinder_Cyl4_coarse" cloud_ref="cloud_cylinder_Cyl4_coarse" return_filtered_cloud="true">
+            <FIT_FILTER reference="fit_filter_gt_3"/>
+            <CYLINDER reference="cylinder_Cyl4_ref"/>
+        </CYLINDER_FIT>
+    </FIT> 
+	
+	
+    <!-- ########### NEAT ZONES ########### -->
+
+   <!-- Common extractions *****EDIT THE FIRST EXTRACTION CYLINDERS -->
+    <!-- <EXTRACTIONS> -->
+        <!-- <ZONE_CYLINDER out_name="cloud_Py1_8" cloud_ref="cloud_ref" cloud_min_size="10"> -->
+            <!-- <CYLINDER base_center="cylinder_py1_8_center" axis="axis_z" diameter="215.0" height="0"/> -->
+            <!-- <INTERVAL target="distance" type="it" it="20"/> -->
+            <!-- <INTERVAL target="height" type="it" it="10"/> -->
+        <!-- </ZONE_CYLINDER> -->
+        <!-- <ZONE_CYLINDER out_name="cloud_Py9_16" cloud_ref="cloud_ref" cloud_min_size="10"> -->
+            <!-- <CYLINDER base_center="cylinder_py9_16_center" axis="axis_z" diameter="155.0" height="0"/> -->
+            <!-- <INTERVAL target="distance" type="it" it="20"/> -->
+            <!-- <INTERVAL target="height" type="it" it="10"/> -->
+        <!-- </ZONE_CYLINDER> -->
+        <!-- <ZONE_CYLINDER out_name="cloud_Pxz1_4" cloud_ref="cloud_ref" cloud_min_size="10"> -->
+            <!-- <CYLINDER base_center="cylinder_Pxz1_4_center" axis="axis_z" diameter="179.0" height="0"/> -->
+            <!-- <INTERVAL target="distance" type="it" it="20"/> -->
+            <!-- <INTERVAL target="height" type="it" it="15"/> -->
+        <!-- </ZONE_CYLINDER> -->
+        <!-- <ZONE_CYLINDER out_name="cloud_Pxz5_8" cloud_ref="cloud_ref" cloud_min_size="10"> -->
+            <!-- <CYLINDER base_center="cylinder_Pxz5_8_center" axis="axis_z" diameter="179.0" height="0"/> -->
+            <!-- <INTERVAL target="distance" type="it" it="20"/> -->
+            <!-- <INTERVAL target="height" type="it" it="15"/> -->
+        <!-- </ZONE_CYLINDER> -->
+    <!-- </EXTRACTIONS> -->
+
+	<!--************Neat Px1 PLANES**********-->
+	<!-- Px1 -->
+    <EXTRACTIONS>
+	    <ZONE_AXIS_ALIGNED_BOX out_name="cloud_plane_Px1_temp" cloud_ref="cloud_ref" cloud_min_size="10" reverse_selection="true">
+            <AXIS_ALIGNED_BOX xmin="-999" xmax="999" ymin="-999" ymax="999" zmin="-80" zmax="+999"/>
+        </ZONE_AXIS_ALIGNED_BOX>	
+        <ZONE_ORIENTED_BOX out_name="cloud_plane_Px1" cloud_ref="cloud_plane_Px1_temp" cloud_min_size="10" reverse_selection="false">
+            <ORIENTED_BOX axis_u="axis_x" axis_v="axis_y" center="center_Px1_ref" half_width="2.0" half_length="10.0" half_height="100.0"/>
+        </ZONE_ORIENTED_BOX>
+    </EXTRACTIONS>
+	
+    <FIT>
+        <PLANE_FIT out_name="plane_Px1" cloud_ref="cloud_plane_Px1" return_filtered_cloud="true">
+            <FIT_FILTER reference="fit_filter_3sigma"/>
+            <PLANE reference="plane_Px1_ref"/>
+        </PLANE_FIT>
+    </FIT>
+	
+	<!-- Px2 -->
+    <EXTRACTIONS>
+	    <ZONE_AXIS_ALIGNED_BOX out_name="cloud_plane_Px2_temp" cloud_ref="cloud_ref" cloud_min_size="10" reverse_selection="true">
+            <AXIS_ALIGNED_BOX xmin="-999" xmax="999" ymin="-999" ymax="999" zmin="-80" zmax="+999"/>
+        </ZONE_AXIS_ALIGNED_BOX>	
+        <ZONE_ORIENTED_BOX out_name="cloud_plane_Px2" cloud_ref="cloud_plane_Px2_temp" cloud_min_size="10" reverse_selection="false">
+            <ORIENTED_BOX axis_u="axis_x" axis_v="axis_y" center="center_Px2_ref" half_width="2.0" half_length="10.0" half_height="100.0"/>
+        </ZONE_ORIENTED_BOX>
+    </EXTRACTIONS>
+    <FIT>
+        <PLANE_FIT out_name="plane_Px2" cloud_ref="cloud_plane_Px2" return_filtered_cloud="true">
+            <FIT_FILTER reference="fit_filter_3sigma"/>
+            <PLANE reference="plane_Px2_ref"/>
+        </PLANE_FIT>
+    </FIT>
+	
+
+
+<!--********************************FINAL "NEAT" PY PLANES*******************************-->
+    <!-- Py1 -->
+    <EXTRACTIONS>
+        <ZONE_ORIENTED_BOX out_name="cloud_plane_Py1" cloud_ref="cloud_ref" cloud_min_size="10" reverse_selection="false">
+            <ORIENTED_BOX axis_u="axis_x" axis_v="axis_y" center="center_Py1_ref" half_width="20.0" half_length="10.0" half_height="110.0"/>
+        </ZONE_ORIENTED_BOX>
+    </EXTRACTIONS>
+    <FIT>
+        <PLANE_FIT out_name="plane_Py1" cloud_ref="cloud_plane_Py1" return_filtered_cloud="true">
+            <FIT_FILTER reference="fit_filter_3sigma"/>
+            <PLANE reference="plane_Py1_ref"/>
+        </PLANE_FIT>
+     </FIT>
+
+    <!-- Py2 -->
+    <EXTRACTIONS>		
+        <ZONE_ORIENTED_BOX out_name="cloud_plane_Py2" cloud_ref="cloud_ref" cloud_min_size="10" reverse_selection="false">
+            <ORIENTED_BOX axis_u="axis_x" axis_v="axis_y" center="center_Py2_ref" half_width="20.0" half_length="10.0" half_height="110.0"/>
+        </ZONE_ORIENTED_BOX>
+    </EXTRACTIONS>
+    <FIT>
+        <PLANE_FIT out_name="plane_Py2" cloud_ref="cloud_plane_Py2" return_filtered_cloud="true">
+            <FIT_FILTER reference="fit_filter_3sigma"/>
+            <PLANE reference="plane_Py2_ref"/>
+        </PLANE_FIT>
+    </FIT>
+
+    <!-- Py3 -->
+    <EXTRACTIONS>
+
+        <ZONE_ORIENTED_BOX out_name="cloud_plane_Py3" cloud_ref="cloud_ref" cloud_min_size="10" reverse_selection="false">
+            <ORIENTED_BOX axis_u="axis_x" axis_v="axis_y" center="center_Py3_ref" half_width="10.0" half_length="4.0" half_height="100.0"/>
+        </ZONE_ORIENTED_BOX>
+    </EXTRACTIONS>
+    <FIT>
+        <PLANE_FIT out_name="plane_Py3" cloud_ref="cloud_plane_Py3" return_filtered_cloud="true">
+            <FIT_FILTER reference="fit_filter_3sigma"/>
+            <PLANE reference="plane_Py3_ref"/>
+        </PLANE_FIT>
+    </FIT>
+
+    <!-- Py4 -->
+    <EXTRACTIONS>		
+        <ZONE_ORIENTED_BOX out_name="cloud_plane_Py4" cloud_ref="cloud_ref" cloud_min_size="10" reverse_selection="false">
+            <ORIENTED_BOX axis_u="axis_x" axis_v="axis_y" center="center_Py4_ref" half_width="10.0" half_length="4.0" half_height="100.0"/>
+        </ZONE_ORIENTED_BOX>
+    </EXTRACTIONS>
+    <FIT>
+        <PLANE_FIT out_name="plane_Py4" cloud_ref="cloud_plane_Py4" return_filtered_cloud="true">
+            <FIT_FILTER reference="fit_filter_3sigma"/>
+            <PLANE reference="plane_Py4_ref"/>
+        </PLANE_FIT>
+    </FIT>
+	
+    <!-- Py5 -->
+    <EXTRACTIONS>
+        <ZONE_ORIENTED_BOX out_name="cloud_plane_Py5" cloud_ref="cloud_ref" cloud_min_size="10" reverse_selection="false">
+            <ORIENTED_BOX axis_u="axis_x" axis_v="axis_y" center="center_Py5_ref" half_width="10.0" half_length="4.0" half_height="100.0"/> 
+        </ZONE_ORIENTED_BOX>
+    </EXTRACTIONS>
+    <FIT>
+        <PLANE_FIT out_name="plane_Py5" cloud_ref="cloud_plane_Py5" return_filtered_cloud="true">
+            <FIT_FILTER reference="fit_filter_3sigma"/>
+            <PLANE reference="plane_Py5_ref"/>
+        </PLANE_FIT>
+    </FIT>
+
+    <!-- Py6 -->
+    <EXTRACTIONS>
+        <ZONE_ORIENTED_BOX out_name="cloud_plane_Py6" cloud_ref="cloud_ref" cloud_min_size="10" reverse_selection="false">
+            <ORIENTED_BOX axis_u="axis_x" axis_v="axis_y" center="center_Py6_ref" half_width="10.0" half_length="4.0" half_height="100.0"/>
+        </ZONE_ORIENTED_BOX>
+    </EXTRACTIONS>
+    <FIT>
+        <PLANE_FIT out_name="plane_Py6" cloud_ref="cloud_plane_Py6" return_filtered_cloud="true">
+            <FIT_FILTER reference="fit_filter_3sigma"/>
+            <PLANE reference="plane_Py6_ref"/>
+        </PLANE_FIT>
+    </FIT>
+
+    <!-- Py7 -->
+    <!-- Py7 -->
+    <EXTRACTIONS>
+        <ZONE_ORIENTED_BOX out_name="cloud_plane_Py7_temp1" cloud_ref="cloud_ref" cloud_min_size="10" reverse_selection="false">
+            <ORIENTED_BOX axis_u="axis_x" axis_v="axis_y" center="center_Py7_ref" half_width="5.0" half_length="4.0" half_height="28.0"/>
+        </ZONE_ORIENTED_BOX>
+	    <ZONE_AXIS_ALIGNED_BOX out_name="cloud_plane_Py7" cloud_ref="cloud_plane_Py7_temp1" cloud_min_size="10" reverse_selection="true">
+            <AXIS_ALIGNED_BOX xmin="92" xmax="999" ymin="0" ymax="999" zmin="-29" zmax="999"/>
+        </ZONE_AXIS_ALIGNED_BOX>
+    </EXTRACTIONS>
+    <FIT>
+        <PLANE_FIT out_name="plane_Py7" cloud_ref="cloud_plane_Py7" return_filtered_cloud="true">
+            <FIT_FILTER reference="fit_filter_3sigma"/>
+            <PLANE reference="plane_Py7_ref"/>
+        </PLANE_FIT>
+    </FIT>
+
+    <!-- Py8 -->
+	<EXTRACTIONS>
+		<ZONE_AXIS_ALIGNED_BOX out_name="cloud_plane_Py8_temp1" cloud_ref="cloud_ref" cloud_min_size="10" reverse_selection="false">
+			<AXIS_ALIGNED_BOX xmin="72" xmax="110" ymin="0" ymax="-999" zmin="-2" zmax="-65"/>
+        </ZONE_AXIS_ALIGNED_BOX>
+
+		<ZONE_ORIENTED_BOX out_name="cloud_plane_Py8" cloud_ref="cloud_plane_Py8_temp1" cloud_min_size="10" reverse_selection="false">
+			<ORIENTED_BOX axis_u="axis_x" axis_v="axis_xz_2" center="center_Py8_ref" half_width="20" half_length="20" Half_height="20"/>
+		</ZONE_ORIENTED_BOX> 
+	</EXTRACTIONS>
+   <FIT>
+        <PLANE_FIT out_name="plane_Py8" cloud_ref="cloud_plane_Py8" return_filtered_cloud="true">
+            <FIT_FILTER reference="fit_filter_3sigma"/>
+            <PLANE reference="plane_Py8_ref"/>
+        </PLANE_FIT>
+    </FIT>
+    <!-- <EXTRACTIONS> -->
+	    <!-- <ZONE_AXIS_ALIGNED_BOX out_name="cloud_plane_Py8_temp" cloud_ref="cloud_ref" cloud_min_size="10" reverse_selection="true"> -->
+            <!-- <AXIS_ALIGNED_BOX xmin="-999" xmax="999" ymin="-999" ymax="999" zmin="-5" zmax="+999"/> -->
+        <!-- </ZONE_AXIS_ALIGNED_BOX> -->
+        <!-- <ZONE_ORIENTED_BOX out_name="cloud_plane_Py8" cloud_ref="cloud_plane_Py8_temp" cloud_min_size="10" reverse_selection="false"> -->
+            <!-- <ORIENTED_BOX axis_u="axis_x" axis_v="axis_y" center="center_Py8_ref" half_width="20.0" half_length="4.0" half_height="30.0"/> -->
+        <!-- </ZONE_ORIENTED_BOX> -->
+    <!-- </EXTRACTIONS> -->
+    <!-- <FIT> -->
+        <!-- <PLANE_FIT out_name="plane_Py8" cloud_ref="cloud_plane_Py8" return_filtered_cloud="true"> -->
+            <!-- <FIT_FILTER reference="fit_filter_3sigma"/> -->
+            <!-- <PLANE reference="plane_Py8_ref"/> -->
+        <!-- </PLANE_FIT> -->
+    <!-- </FIT> -->
+
+    <!-- Py9 -->
+    <EXTRACTIONS>
+        <ZONE_ORIENTED_BOX out_name="cloud_plane_Py9_temp1" cloud_ref="cloud_ref" cloud_min_size="10" reverse_selection="false">
+            <ORIENTED_BOX axis_u="axis_x" axis_v="axis_y" center="center_Py9_ref" half_width="5.0" half_length="4.0" half_height="28.0"/>
+        </ZONE_ORIENTED_BOX>
+	    <ZONE_AXIS_ALIGNED_BOX out_name="cloud_plane_Py9" cloud_ref="cloud_plane_Py9_temp1" cloud_min_size="10" reverse_selection="true">
+            <AXIS_ALIGNED_BOX xmin="-92" xmax="-999" ymin="0" ymax="-999" zmin="-29" zmax="999"/>
+        </ZONE_AXIS_ALIGNED_BOX>
+    </EXTRACTIONS>
+    <FIT>
+        <PLANE_FIT out_name="plane_Py9" cloud_ref="cloud_plane_Py9" return_filtered_cloud="true">
+            <FIT_FILTER reference="fit_filter_3sigma"/>
+            <PLANE reference="plane_Py9_ref"/>
+        </PLANE_FIT>
+    </FIT>
+	
+	<EXTRACTIONS>
+		<ZONE_AXIS_ALIGNED_BOX out_name="cloud_plane_Py10_temp1" cloud_ref="cloud_ref" cloud_min_size="10" reverse_selection="false">
+			<AXIS_ALIGNED_BOX xmin="-72" xmax="-110" ymin="0" ymax="999" zmin="-2" zmax="-65"/>
+        </ZONE_AXIS_ALIGNED_BOX>
+
+		<ZONE_ORIENTED_BOX out_name="cloud_plane_Py10" cloud_ref="cloud_plane_Py10_temp1" cloud_min_size="10" reverse_selection="false">
+			<ORIENTED_BOX axis_u="axis_x" axis_v="axis_xz_1" center="center_Py10_ref" half_width="20" half_length="20" Half_height="20"/>
+		</ZONE_ORIENTED_BOX> 
+	</EXTRACTIONS>
+   <FIT>
+        <PLANE_FIT out_name="plane_Py10" cloud_ref="cloud_plane_Py10" return_filtered_cloud="true">
+            <FIT_FILTER reference="fit_filter_3sigma"/>
+            <PLANE reference="plane_Py10_ref"/>
+        </PLANE_FIT>
+    </FIT>
+    <!-- Py10 -->
+    <!-- <EXTRACTIONS> -->
+	    <!-- <ZONE_AXIS_ALIGNED_BOX out_name="cloud_plane_Py10_temp" cloud_ref="cloud_ref" cloud_min_size="10" reverse_selection="true"> -->
+            <!-- <AXIS_ALIGNED_BOX xmin="-999" xmax="999" ymin="-999" ymax="999" zmin="-5" zmax="+999"/> -->
+        <!-- </ZONE_AXIS_ALIGNED_BOX> -->
+        <!-- <ZONE_ORIENTED_BOX out_name="cloud_plane_Py10" cloud_ref="cloud_plane_Py10_temp" cloud_min_size="10" reverse_selection="false"> -->
+            <!-- <ORIENTED_BOX axis_u="axis_x" axis_v="axis_y" center="center_Py10_ref" half_width="20.0" half_length="4.0" half_height="30.0"/> -->
+        <!-- </ZONE_ORIENTED_BOX> -->
+    <!-- </EXTRACTIONS> -->
+    <!-- <FIT> -->
+        <!-- <PLANE_FIT out_name="plane_Py10" cloud_ref="cloud_plane_Py10" return_filtered_cloud="true"> -->
+            <!-- <FIT_FILTER reference="fit_filter_3sigma"/> -->
+            <!-- <PLANE reference="plane_Py10_ref"/> -->
+        <!-- </PLANE_FIT> -->
+    <!-- </FIT> -->
+
+	<!-- ********************************FINAL "NEAT" PZ PLANES******************************* -->
+    <!-- Pz1 -->
+    <EXTRACTIONS>
+	    <ZONE_ORIENTED_BOX out_name="cloud_plane_Pz1_temp" cloud_ref="cloud_ref" cloud_min_size="10" reverse_selection="false">
+            <ORIENTED_BOX axis_u="axis_x" axis_v="axis_y" center="artefact_origin" half_width="70" half_length="999" half_height="999"/>
+        </ZONE_ORIENTED_BOX>
+        <ZONE_CYLINDER out_name="cloud_plane_Pz1" cloud_ref="cloud_plane_Pz1_temp" cloud_min_size="10">
+            <CYLINDER base_center="center_Pz1_ref" axis="axis_z" diameter="0" height="0"/>
+            <INTERVAL target="distance" type="min_max" min="97" max="105.5"/>
+            <INTERVAL target="height" type="it" it="4"/>
+        </ZONE_CYLINDER>
+
+    </EXTRACTIONS>
+    <FIT>
+        <PLANE_FIT out_name="plane_Pz1" cloud_ref="cloud_plane_Pz1" return_filtered_cloud="true">
+            <FIT_FILTER reference="fit_filter_3sigma"/>
+            <PLANE reference="plane_Pz1_ref"/>
+        </PLANE_FIT>
+    </FIT>
+	
+    <!-- Pz2 -->
+    <EXTRACTIONS>
+		<ZONE_ORIENTED_BOX out_name="cloud_plane_Pz2_temp" cloud_ref="cloud_ref" cloud_min_size="10" reverse_selection="false">
+            <ORIENTED_BOX axis_u="axis_x" axis_v="axis_y" center="artefact_origin" half_width="70" half_length="999" half_height="999"/>
+        </ZONE_ORIENTED_BOX>
+        <ZONE_CYLINDER out_name="cloud_plane_Pz2" cloud_ref="cloud_plane_Pz2_temp" cloud_min_size="10">
+            <CYLINDER base_center="center_Pz2_ref" axis="axis_z" diameter="0" height="0"/>
+            <INTERVAL target="distance" type="min_max" min="82" max="93"/>
+            <INTERVAL target="height" type="it" it="4"/>
+        </ZONE_CYLINDER>
+
+    </EXTRACTIONS>
+    <FIT>
+        <PLANE_FIT out_name="plane_Pz2" cloud_ref="cloud_plane_Pz2" return_filtered_cloud="true">
+            <FIT_FILTER reference="fit_filter_3sigma"/>
+            <PLANE reference="plane_Pz2_ref"/>
+        </PLANE_FIT>
+    </FIT>
+    
+	 <!-- Pz3 -->
+    <EXTRACTIONS>
+        <ZONE_CYLINDER out_name="cloud_plane_Pz3_temp1" cloud_ref="cloud_ref" cloud_min_size="10">
+            <CYLINDER base_center="center_Pz3_ref" axis="normal_Pz3_ref" diameter="140" height="0"/>
+            <INTERVAL target="distance" type="it" it="5"/>
+            <INTERVAL target="height" type="it" it="4"/>
+        </ZONE_CYLINDER>
+        <ZONE_ORIENTED_BOX out_name="cloud_plane_Pz3" cloud_ref="cloud_plane_Pz3_temp1" cloud_min_size="10" reverse_selection="true">
+            <ORIENTED_BOX axis_u="axis_x" axis_v="axis_y" center="artefact_origin" half_width="999" half_length="30" half_height="999"/>
+        </ZONE_ORIENTED_BOX>
+    </EXTRACTIONS>
+    <FIT>
+        <PLANE_FIT out_name="plane_Pz3" cloud_ref="cloud_plane_Pz3" return_filtered_cloud="true">
+            <FIT_FILTER reference="fit_filter_3sigma"/>
+            <PLANE reference="plane_Pz3_ref"/>
+        </PLANE_FIT>
+    </FIT>
+	
+	 <!-- Pz4 -->
+	<EXTRACTIONS>
+	    <ZONE_AXIS_ALIGNED_BOX out_name="cloud_plane_Pz4_temp1" cloud_ref="cloud_ref" cloud_min_size="10" reverse_selection="true">
+            <AXIS_ALIGNED_BOX xmin="73" xmax="999" ymin="-999" ymax="999" zmin="-999" zmax="999"/>
+        </ZONE_AXIS_ALIGNED_BOX>
+	    <ZONE_AXIS_ALIGNED_BOX out_name="cloud_plane_Pz4_temp2" cloud_ref="cloud_plane_Pz4_temp1" cloud_min_size="10" reverse_selection="true">
+            <AXIS_ALIGNED_BOX xmin="-73" xmax="-999" ymin="-999" ymax="999" zmin="-999" zmax="999"/>
+        </ZONE_AXIS_ALIGNED_BOX>
+	    <ZONE_AXIS_ALIGNED_BOX out_name="cloud_plane_Pz4_temp3" cloud_ref="cloud_plane_Pz4_temp2" cloud_min_size="10" reverse_selection="true">
+            <AXIS_ALIGNED_BOX xmin="-43" xmax="-59" ymin="55" ymax="73" zmin="-999" zmax="999"/>
+        </ZONE_AXIS_ALIGNED_BOX>
+	    <ZONE_AXIS_ALIGNED_BOX out_name="cloud_plane_Pz4_temp4" cloud_ref="cloud_plane_Pz4_temp3" cloud_min_size="10" reverse_selection="true">
+            <AXIS_ALIGNED_BOX xmin="-10" xmax="-18" ymin="55" ymax="73" zmin="-999" zmax="999"/>
+        </ZONE_AXIS_ALIGNED_BOX>
+	    <ZONE_AXIS_ALIGNED_BOX out_name="cloud_plane_Pz4_temp5" cloud_ref="cloud_plane_Pz4_temp4" cloud_min_size="10" reverse_selection="true">
+            <AXIS_ALIGNED_BOX xmin="-32" xmax="-48" ymin="35" ymax="60" zmin="-999" zmax="999"/>
+        </ZONE_AXIS_ALIGNED_BOX>
+	    <ZONE_AXIS_ALIGNED_BOX out_name="cloud_plane_Pz4_temp6" cloud_ref="cloud_plane_Pz4_temp5" cloud_min_size="10" reverse_selection="true">
+            <AXIS_ALIGNED_BOX xmin="28" xmax="59" ymin="41" ymax="75" zmin="-999" zmax="999"/>
+        </ZONE_AXIS_ALIGNED_BOX>
+	    <ZONE_AXIS_ALIGNED_BOX out_name="cloud_plane_Pz4_temp7" cloud_ref="cloud_plane_Pz4_temp6" cloud_min_size="10" reverse_selection="true">
+            <AXIS_ALIGNED_BOX xmin="-55" xmax="-75" ymin="-5" ymax="9" zmin="-999" zmax="999"/>
+        </ZONE_AXIS_ALIGNED_BOX>
+	    <ZONE_AXIS_ALIGNED_BOX out_name="cloud_plane_Pz4_temp8" cloud_ref="cloud_plane_Pz4_temp7" cloud_min_size="10" reverse_selection="true">
+            <AXIS_ALIGNED_BOX xmin="50" xmax="75" ymin="-17" ymax="-31" zmin="-999" zmax="999"/>
+        </ZONE_AXIS_ALIGNED_BOX>
+	    <ZONE_AXIS_ALIGNED_BOX out_name="cloud_plane_Pz4_temp9" cloud_ref="cloud_plane_Pz4_temp8" cloud_min_size="10" reverse_selection="true">
+            <AXIS_ALIGNED_BOX xmin="-17" xmax="-51" ymin="-55" ymax="-75" zmin="-999" zmax="999"/>
+        </ZONE_AXIS_ALIGNED_BOX>
+	    <ZONE_AXIS_ALIGNED_BOX out_name="cloud_plane_Pz4_temp10" cloud_ref="cloud_plane_Pz4_temp9" cloud_min_size="10" reverse_selection="true">
+            <AXIS_ALIGNED_BOX xmin="40" xmax="60" ymin="-55" ymax="-75" zmin="-999" zmax="999"/>
+        </ZONE_AXIS_ALIGNED_BOX>
+	    <ZONE_AXIS_ALIGNED_BOX out_name="cloud_plane_Pz4_temp11" cloud_ref="cloud_plane_Pz4_temp10" cloud_min_size="10" reverse_selection="true">
+            <AXIS_ALIGNED_BOX xmin="55" xmax="70" ymin="3" ymax="8" zmin="-999" zmax="999"/>
+        </ZONE_AXIS_ALIGNED_BOX>
+        <ZONE_CYLINDER out_name="cloud_plane_Pz4_temp12" cloud_ref="cloud_plane_Pz4_temp11" cloud_min_size="10"  reverse_selection="true">
+            <CYLINDER base_center="center_Pz4_ref" axis="axis_z" radius="0" height="0.0"/>
+            <INTERVAL target="distance" type="min_max" min="68" max="72"/>
+            <INTERVAL target="height" type="min_max" min="-1.0" max="1.0"/>
+		</ZONE_CYLINDER>	
+        <ZONE_CYLINDER out_name="cloud_plane_Pz4" cloud_ref="cloud_plane_Pz4_temp12" cloud_min_size="10"  reverse_selection="false">
+            <CYLINDER base_center="center_Pz4_ref" axis="axis_z" radius="0" height="0.0"/>
+            <INTERVAL target="distance" type="min_max" min="62" max="88"/>
+            <INTERVAL target="height" type="min_max" min="-1.0" max="1.0"/>
+		</ZONE_CYLINDER>		
+	</EXTRACTIONS>
+	<FIT>
+		<PLANE_FIT out_name="plane_Pz4" cloud_ref="cloud_plane_Pz4" return_filtered_cloud="true">
+			<FIT_FILTER reference="fit_filter_3sigma"/>   <!-- fit_filter_3sigma -->
+			<PLANE reference="plane_Pz4_ref"/>
+        </PLANE_FIT>
+	</FIT>
+	
+	 <!-- Pz5 -->
+    <EXTRACTIONS>
+		<ZONE_AXIS_ALIGNED_BOX out_name="cloud_plane_Pz5_temp1" cloud_ref="cloud_ref" cloud_min_size="10" reverse_selection="true">
+            <AXIS_ALIGNED_BOX xmin="80" xmax="999" ymin="-12" ymax="2" zmin="-999" zmax="5"/>
+        </ZONE_AXIS_ALIGNED_BOX>
+ 	    <ZONE_AXIS_ALIGNED_BOX out_name="cloud_plane_Pz5" cloud_ref="cloud_plane_Pz5_temp1" cloud_min_size="10" reverse_selection="false">
+            <AXIS_ALIGNED_BOX xmin="80" xmax="95" ymin="-20" ymax="20" zmin="-999" zmax="5"/>
+        </ZONE_AXIS_ALIGNED_BOX>
+    </EXTRACTIONS>
+    <FIT>
+        <PLANE_FIT out_name="plane_Pz5" cloud_ref="cloud_plane_Pz5" return_filtered_cloud="true">
+            <FIT_FILTER reference="fit_filter_3sigma"/>
+            <PLANE reference="plane_Pz5_ref"/>
+        </PLANE_FIT>
+    </FIT>
+	
+		 <!-- Pz6 -->
+    <EXTRACTIONS>
+  	    <ZONE_AXIS_ALIGNED_BOX out_name="cloud_plane_Pz6" cloud_ref="cloud_ref" cloud_min_size="10" reverse_selection="false">
+            <AXIS_ALIGNED_BOX xmin="-80" xmax="-95" ymin="-20" ymax="20" zmin="-999" zmax="5"/>
+        </ZONE_AXIS_ALIGNED_BOX>
+		
+    </EXTRACTIONS>
+    <FIT>
+        <PLANE_FIT out_name="plane_Pz6" cloud_ref="cloud_plane_Pz6" return_filtered_cloud="true">
+            <FIT_FILTER reference="fit_filter_3sigma"/>
+            <PLANE reference="plane_Pz6_ref"/>
+        </PLANE_FIT>
+    </FIT>
+	
+    
+	<!--********************FINAL "NEAT" PXZ PLANES*******************************-->
+	
+    <!-- Pxz1 -->
+     <EXTRACTIONS>
+        <ZONE_ORIENTED_BOX out_name="cloud_plane_Pxz1" cloud_ref="cloud_ref" cloud_min_size="10" reverse_selection="false">
+            <ORIENTED_BOX axis_u="axis_x" axis_v="axis_y" center="center_Pxz1_ref" width="10.0" half_length="20" height="4"/>
+        </ZONE_ORIENTED_BOX>
+    </EXTRACTIONS>
+    <FIT>
+        <PLANE_FIT out_name="plane_Pxz1" cloud_ref="cloud_plane_Pxz1" return_filtered_cloud="true">
+            <FIT_FILTER reference="fit_filter_3sigma"/>
+            <PLANE reference="plane_Pxz1_ref"/>
+        </PLANE_FIT>
+    </FIT>
+	
+	 <!-- Pxz2 -->
+    <EXTRACTIONS>
+        <ZONE_ORIENTED_BOX out_name="cloud_plane_Pxz2" cloud_ref="cloud_ref" cloud_min_size="10" reverse_selection="false">
+            <ORIENTED_BOX axis_u="axis_x" axis_v="axis_y" center="center_Pxz2_ref" half_width="10.0" half_length="20" half_height="7.0"/>
+        </ZONE_ORIENTED_BOX>
+    </EXTRACTIONS>
+    <FIT>
+        <PLANE_FIT out_name="plane_Pxz2" cloud_ref="cloud_plane_Pxz2" return_filtered_cloud="true">
+            <FIT_FILTER reference="fit_filter_3sigma"/>
+            <PLANE reference="plane_Pxz2_ref"/>
+        </PLANE_FIT>
+    </FIT>
+
+	<!-- Pxz3 -->
+      <EXTRACTIONS>
+        <ZONE_ORIENTED_BOX out_name="cloud_plane_Pxz3" cloud_ref="cloud_ref" cloud_min_size="10" reverse_selection="false">
+            <ORIENTED_BOX axis_u="axis_x" axis_v="axis_y" center="center_Pxz3_ref" half_width="10.0" half_length="20" half_height="7.0"/>
+        </ZONE_ORIENTED_BOX>
+    </EXTRACTIONS>
+    <FIT>
+        <PLANE_FIT out_name="plane_Pxz3" cloud_ref="cloud_plane_Pxz3" return_filtered_cloud="true">
+            <FIT_FILTER reference="fit_filter_3sigma"/>
+            <PLANE reference="plane_Pxz3_ref"/>
+        </PLANE_FIT>
+    </FIT>
+	
+	<!-- Pxz4 -->
+     <EXTRACTIONS>
+        <ZONE_ORIENTED_BOX out_name="cloud_plane_Pxz4" cloud_ref="cloud_ref" cloud_min_size="10" reverse_selection="false">
+            <ORIENTED_BOX axis_u="axis_x" axis_v="axis_y" center="center_Pxz4_ref" half_width="10.0" half_length="20" half_height="2.0"/>
+        </ZONE_ORIENTED_BOX>
+    </EXTRACTIONS>
+    <FIT>
+        <PLANE_FIT out_name="plane_Pxz4" cloud_ref="cloud_plane_Pxz4" return_filtered_cloud="true">
+            <FIT_FILTER reference="fit_filter_3sigma"/>
+            <PLANE reference="plane_Pxz4_ref"/>
+        </PLANE_FIT>
+    </FIT>
+	
+    <!-- Pxz5 -->
+     <EXTRACTIONS>
+        <ZONE_ORIENTED_BOX out_name="cloud_plane_Pxz5" cloud_ref="cloud_ref" cloud_min_size="10" reverse_selection="false">
+            <ORIENTED_BOX axis_u="axis_x" axis_v="axis_y" center="center_Pxz5_ref" half_width="10.0" half_length="20" half_height="7.0"/>
+        </ZONE_ORIENTED_BOX>
+    </EXTRACTIONS>
+    <FIT>
+        <PLANE_FIT out_name="plane_Pxz5" cloud_ref="cloud_plane_Pxz5" return_filtered_cloud="true">
+            <FIT_FILTER reference="fit_filter_3sigma"/>
+            <PLANE reference="plane_Pxz5_ref"/>
+        </PLANE_FIT>
+    </FIT>
+	
+    <!-- Pxz6 -->
+      <EXTRACTIONS>
+        <ZONE_ORIENTED_BOX out_name="cloud_plane_Pxz6" cloud_ref="cloud_ref" cloud_min_size="10" reverse_selection="false">
+            <ORIENTED_BOX axis_u="axis_x" axis_v="axis_y" center="center_Pxz6_ref" half_width="10.0" half_length="20" half_height="7.0"/>
+        </ZONE_ORIENTED_BOX>
+    </EXTRACTIONS>
+    <FIT>
+        <PLANE_FIT out_name="plane_Pxz6" cloud_ref="cloud_plane_Pxz6" return_filtered_cloud="true">
+            <FIT_FILTER reference="fit_filter_3sigma"/>
+            <PLANE reference="plane_Pxz6_ref"/>
+        </PLANE_FIT>
+    </FIT>
+    
+    <!-- Pxz7 -->
+     <EXTRACTIONS>
+        <ZONE_ORIENTED_BOX out_name="cloud_plane_Pxz7" cloud_ref="cloud_ref" cloud_min_size="10" reverse_selection="false">
+            <ORIENTED_BOX axis_u="axis_x" axis_v="axis_y" center="center_Pxz7_ref" half_width="10.0" half_length="20" half_height="7.0"/>
+        </ZONE_ORIENTED_BOX>
+    </EXTRACTIONS>
+    <FIT>
+        <PLANE_FIT out_name="plane_Pxz7" cloud_ref="cloud_plane_Pxz7" return_filtered_cloud="true">
+            <FIT_FILTER reference="fit_filter_3sigma"/>
+            <PLANE reference="plane_Pxz7_ref"/>
+        </PLANE_FIT>
+    </FIT>
+	
+	  <!-- Pxz8 -->
+     <EXTRACTIONS>
+        <ZONE_ORIENTED_BOX out_name="cloud_plane_Pxz8" cloud_ref="cloud_ref" cloud_min_size="10" reverse_selection="false">
+            <ORIENTED_BOX axis_u="axis_x" axis_v="axis_y" center="center_Pxz8_ref" half_width="10.0" half_length="20" half_height="7.0"/>
+        </ZONE_ORIENTED_BOX>
+    </EXTRACTIONS>
+    <FIT>
+        <PLANE_FIT out_name="plane_Pxz8" cloud_ref="cloud_plane_Pxz8" return_filtered_cloud="true">
+            <FIT_FILTER reference="fit_filter_3sigma"/>
+            <PLANE reference="plane_Pxz8_ref"/>
+        </PLANE_FIT>
+    </FIT>
+	
+	  <!-- Pxz9 -->
+      <EXTRACTIONS>
+        <ZONE_ORIENTED_BOX out_name="cloud_plane_Pxz9" cloud_ref="cloud_ref" cloud_min_size="10" reverse_selection="false">
+            <ORIENTED_BOX axis_u="axis_x" axis_v="axis_y" center="center_Pxz9_ref" half_width="10.0" half_length="20" half_height="7.0"/>
+        </ZONE_ORIENTED_BOX>
+    </EXTRACTIONS>
+    <FIT>
+        <PLANE_FIT out_name="plane_Pxz9" cloud_ref="cloud_plane_Pxz9" return_filtered_cloud="true">
+            <FIT_FILTER reference="fit_filter_3sigma"/>
+            <PLANE reference="plane_Pxz9_ref"/>
+        </PLANE_FIT>
+    </FIT>
+	
+	  <!-- Pxz10 -->
+     <EXTRACTIONS>
+        <ZONE_ORIENTED_BOX out_name="cloud_plane_Pxz10" cloud_ref="cloud_ref" cloud_min_size="10" reverse_selection="false">
+            <ORIENTED_BOX axis_u="axis_x" axis_v="axis_y" center="center_Pxz10_ref" width="-10.0" half_length="20" height="4.0"/>
+        </ZONE_ORIENTED_BOX>
+    </EXTRACTIONS>
+    <FIT>
+        <PLANE_FIT out_name="plane_Pxz10" cloud_ref="cloud_plane_Pxz10" return_filtered_cloud="true">
+            <FIT_FILTER reference="fit_filter_3sigma"/>
+            <PLANE reference="plane_Pxz10_ref"/>
+        </PLANE_FIT>
+    </FIT>
+	
+<!-- ********************************FINAL "NEAT" CYLINDERS******************************* -->
+    <!-- Cyl1 -->
+	  <EXTRACTIONS>
+	    <ZONE_AXIS_ALIGNED_BOX out_name="cloud_plane_Cyl1_temp" cloud_ref="cloud_ref" cloud_min_size="10" reverse_selection="true">
+            <AXIS_ALIGNED_BOX xmin="-999" xmax="999" ymin="-999" ymax="999" zmin="-5" zmax="+999"/>
+        </ZONE_AXIS_ALIGNED_BOX>
+	    <ZONE_AXIS_ALIGNED_BOX out_name="cloud_plane_Cyl1_temp2" cloud_ref="cloud_plane_Cyl1_temp" cloud_min_size="10" reverse_selection="false">
+            <AXIS_ALIGNED_BOX xmin="-999" xmax="999" ymin="-999" ymax="999" zmin="-190" zmax="+999"/>
+        </ZONE_AXIS_ALIGNED_BOX>
+	    <ZONE_ORIENTED_BOX out_name="cloud_plane_Cyl1_temp3" cloud_ref="cloud_plane_Cyl1_temp2" cloud_min_size="10" reverse_selection="false">
+            <ORIENTED_BOX axis_u="axis_x" axis_v="axis_y" center="base_center_Cyl1_ref" half_width="40" half_length="999" half_height="999"/>
+        </ZONE_ORIENTED_BOX>
+        <ZONE_CYLINDER out_name="cloud_cylinder_Cyl1" cloud_ref="cloud_plane_Cyl1_temp3" cloud_min_size="10">
+            <CYLINDER reference="cylinder_Cyl1_ref"/>
+            <INTERVAL target="distance"  type="min_max" min="-10.0" max="10.0"/>
+            <INTERVAL target="height" type="min_max" min="-999" max="999"/>
+        </ZONE_CYLINDER>
+    </EXTRACTIONS>
+    <FIT>
+        <CYLINDER_FIT out_name="cylinder_Cyl1" cloud_ref="cloud_cylinder_Cyl1" return_filtered_cloud="true">
+            <FIT_FILTER reference="fit_filter_gt_3"/>
+            <CYLINDER reference="cylinder_Cyl1_ref"/>
+        </CYLINDER_FIT>
+    </FIT> 
+	
+     <!-- Cyl2 -->
+	   <EXTRACTIONS>
+	    <ZONE_ORIENTED_BOX out_name="cloud_plane_Cyl2_temp" cloud_ref="cloud_ref" cloud_min_size="10" reverse_selection="false">
+            <ORIENTED_BOX axis_u="axis_x" axis_v="axis_y" center="base_center_Cyl2_ref" half_width="70" half_length="999" half_height="999"/>
+        </ZONE_ORIENTED_BOX>
+        <ZONE_CYLINDER out_name="cloud_cylinder_Cyl2" cloud_ref="cloud_plane_Cyl2_temp" cloud_min_size="10">
+            <CYLINDER reference="cylinder_Cyl2_ref"/>
+            <INTERVAL target="distance" type="it" it="10"/>
+            <INTERVAL target="height" type="min_max" min="-10.0" max="10.0"/>
+        </ZONE_CYLINDER>
+    </EXTRACTIONS>
+    <FIT>
+        <CYLINDER_FIT out_name="cylinder_Cyl2" cloud_ref="cloud_cylinder_Cyl2" return_filtered_cloud="true">
+            <FIT_FILTER reference="fit_filter_gt_3"/>
+            <CYLINDER reference="cylinder_Cyl2_ref"/>
+        </CYLINDER_FIT>
+    </FIT> 
+	
+    <!-- Cyl3 -->
+	 	   <EXTRACTIONS>
+	    <ZONE_ORIENTED_BOX out_name="cloud_plane_Cyl3_temp" cloud_ref="cloud_ref" cloud_min_size="10" reverse_selection="false">
+            <ORIENTED_BOX axis_u="axis_x" axis_v="axis_y" center="base_center_Cyl3_ref" half_width="70" half_length="999" half_height="999"/>
+        </ZONE_ORIENTED_BOX>
+        <ZONE_CYLINDER out_name="cloud_cylinder_Cyl3" cloud_ref="cloud_plane_Cyl3_temp" cloud_min_size="10">
+            <CYLINDER reference="cylinder_Cyl3_ref"/>
+            <INTERVAL target="distance" type="it" it="5"/>
+            <INTERVAL target="height" type="min_max" min="-10.0" max="10.0"/>
+        </ZONE_CYLINDER>
+    </EXTRACTIONS>
+    <FIT>
+        <CYLINDER_FIT out_name="cylinder_Cyl3" cloud_ref="cloud_cylinder_Cyl3" return_filtered_cloud="true">
+            <FIT_FILTER reference="fit_filter_gt_3"/>
+            <CYLINDER reference="cylinder_Cyl3_ref"/>
+        </CYLINDER_FIT>
+    </FIT> 
+	
+ <!-- Cyl4 -->
+	   <EXTRACTIONS>
+	    <ZONE_ORIENTED_BOX out_name="cloud_plane_Cyl4_temp" cloud_ref="cloud_ref" cloud_min_size="10" reverse_selection="false">
+            <ORIENTED_BOX axis_u="axis_x" axis_v="axis_y" center="base_center_Cyl4_ref" half_width="32" half_length="999" half_height="999"/>
+        </ZONE_ORIENTED_BOX>
+        <ZONE_CYLINDER out_name="cloud_cylinder_Cyl4" cloud_ref="cloud_plane_Cyl4_temp" cloud_min_size="10">
+            <CYLINDER reference="cylinder_Cyl4_ref"/>
+            <INTERVAL target="distance" type="it" it="10"/>
+            <INTERVAL target="height" type="min_max" min="-60.0" max="60.0"/>
+        </ZONE_CYLINDER>
+    </EXTRACTIONS>
+    <FIT>
+        <CYLINDER_FIT out_name="cylinder_Cyl4" cloud_ref="cloud_cylinder_Cyl4" return_filtered_cloud="true">
+            <FIT_FILTER reference="fit_filter_gt_3"/>
+            <CYLINDER reference="cylinder_Cyl4_ref"/>
+        </CYLINDER_FIT>
+    </FIT> 
+	
+
+</CONTROL>

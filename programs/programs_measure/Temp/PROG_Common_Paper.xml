@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CONTROL reference="" description="File made to regroup generic parameters often used in a process." process_dll=""  version="1.0.0">
+    <PARAMETERS>
+        <!-- Points -->
+        <POINT name="origin" x="0" y="0" z="0"/>
+
+        <!-- Axis -->
+        <AXIS name="axis_x" x="1" y="0" z="0"/>
+        <AXIS name="axis_y" x="0" y="1" z="0"/>
+        <AXIS name="axis_z" x="0" y="0" z="1"/>
+        <AXIS name="axis_x_inv" x="-1" y="0" z="0"/>
+        <AXIS name="axis_y_inv" x="0" y="-1" z="0"/>
+        <AXIS name="axis_z_inv" x="0" y="0" z="-1"/>
+		
+		<!-- Plane -->		
+        <PLANE name="plane_Z_ref" point="origin" normal="axis_z"/>
+
+        <!-- Calibration loop parameters -->
+        <PARAMETER name="nb_max_step" value="200"/>
+        <PARAMETER name="calib_limit_position" value="0.00001"/>
+        <PARAMETER name="calib_limit_rotation" value="0.00000872"/> <!-- 0.00000872 rad = 0.0005 ° -->
+        <PARAMETER name="calib_limit_theta"    value="0.000872"/> <!-- 0.000872 rad = 0.05 ° -->
+        
+        <PARAMETER name="bLogChrono" value="true"/>
+    </PARAMETERS>
+
+    <!-- Filters -->
+    <PARAMETERS>
+        <!-- default FIT_FILTER:
+            algorithm="bourdet" (geometric_tools|kieran|bourdet)
+            parameters_are_init="false"
+            threshold_normal="0.0001"
+            threshold_point="0.0001"
+            threshold_radius="0.0001"
+            threshold_angle="0.001"
+            nb_max_iterations="50"
+            fixed_normal="false"
+            fixed_point="false"
+            fixed_radius="false"
+            fixed_angle="false"
+            deviation_filter="no_filter" (no_filter|only_std|only_distance|std_and_distance)
+            nb_sigma="0.0"
+            dist_max="0.0"
+        -->
+        <FIT_FILTER name="fit_filter_3sigma" algorithm="bourdet" parameters_are_init="true" deviation_filter="only_std" nb_sigma="3"
+            threshold_normal="0.000001"
+            threshold_point="0.00001"
+            threshold_radius="0.00001"
+            threshold_angle="0.00001"
+            nb_max_iterations="100"/>
+        <FIT_FILTER name="fit_filter_1sigma" algorithm="bourdet" parameters_are_init="true" deviation_filter="only_std" nb_sigma="1"
+            threshold_normal="0.000001"
+            threshold_point="0.00001"
+            threshold_radius="0.00001"
+            threshold_angle="0.00001"
+            nb_max_iterations="100"/>
+        <FIT_FILTER name="fit_filter_3sigma_fixedAxis" algorithm="bourdet" parameters_are_init="true" deviation_filter="only_std" nb_sigma="3" fixed_normal="true"
+            threshold_normal="0.000001"
+            threshold_point="0.00001"
+            threshold_radius="0.00001"
+            threshold_angle="0.00001"
+            nb_max_iterations="100"/>
+        <FIT_FILTER name="fit_filter_1sigma_fixedAxis_fixedRadius" algorithm="bourdet" parameters_are_init="true" deviation_filter="only_std" nb_sigma="1" fixed_normal="true" fixed_radius="true"
+            threshold_normal="0.000001"
+            threshold_point="0.00001"
+            threshold_radius="0.00001"
+            threshold_angle="0.00001"
+            nb_max_iterations="100"/>
+        <FIT_FILTER name="fit_filter_3sigma_fixedAxis_fixedRadius" algorithm="bourdet" parameters_are_init="true" deviation_filter="only_std" nb_sigma="3" fixed_normal="true" fixed_radius="true"
+            threshold_normal="0.000001"
+            threshold_point="0.00001"
+            threshold_radius="0.00001"
+            threshold_angle="0.00001"
+            nb_max_iterations="100"/>
+        <FIT_FILTER name="fit_filter_1sigma_fixedAxis" algorithm="bourdet" parameters_are_init="true" deviation_filter="only_std" nb_sigma="1" fixed_normal="true"
+            threshold_normal="0.000001"
+            threshold_point="0.00001"
+            threshold_radius="0.00001"
+            threshold_angle="0.00001"
+            nb_max_iterations="100"/>
+        <FIT_FILTER name="fit_filter_3sigma_GT" algorithm="geometric_tools" parameters_are_init="true" deviation_filter="only_std" nb_sigma="3"
+            threshold_normal="0.000001"
+            threshold_point="0.00001"
+            threshold_radius="0.00001"
+            threshold_angle="0.00001"
+            nb_max_iterations="100"/>
+        <FIT_FILTER name="fit_filter_1sigma_GT" algorithm="geometric_tools" parameters_are_init="true" deviation_filter="only_std" nb_sigma="1"
+            threshold_normal="0.000001"
+            threshold_point="0.00001"
+            threshold_radius="0.00001"
+            threshold_angle="0.00001"
+            nb_max_iterations="100"/>
+        <FIT_FILTER name="fit_filter_1sigma_GT_fixedAxis" algorithm="geometric_tools" parameters_are_init="true" deviation_filter="only_std" nb_sigma="1" fixed_normal="true"
+            threshold_normal="0.000001"
+            threshold_point="0.00001"
+            threshold_radius="0.00001"
+            threshold_angle="0.00001"
+            nb_max_iterations="100"/>
+        <FIT_FILTER name="fit_filter_noFilter" algorithm="bourdet" parameters_are_init="true" deviation_filter="no_filter"
+            threshold_normal="0.000001"
+            threshold_point="0.00001"
+            threshold_radius="0.00001"
+            threshold_angle="0.00001"
+            nb_max_iterations="100"/>
+        <FIT_FILTER name="fit_filter_noFilter_GT" algorithm="geometric_tools" parameters_are_init="true" deviation_filter="no_filter"
+            threshold_normal="0.000001"
+            threshold_point="0.00001"
+            threshold_radius="0.00001"
+            threshold_angle="0.00001"
+            nb_max_iterations="100"/>            
+        <FIT_FILTER name="fit_filter_1sigma_MaxDist_100" algorithm="bourdet" parameters_are_init="true" deviation_filter="std_and_distance" nb_sigma="1" fixed_normal="false" fixed_radius="false" dist_max="0.100"
+            threshold_normal="0.000001"
+            threshold_point="0.00001"
+            threshold_radius="0.00001"
+            threshold_angle="0.00001"
+            nb_max_iterations="100"/>            
+        <FIT_FILTER name="fit_filter_MaxDist_100_fixedAxis" algorithm="bourdet" parameters_are_init="true" deviation_filter="only_distance" fixed_normal="true" fixed_radius="false" dist_max="0.100"
+            threshold_normal="0.000001"
+            threshold_point="0.00001"
+            threshold_radius="0.00001"
+            threshold_angle="0.00001"
+            nb_max_iterations="100"/>
+    </PARAMETERS>
+
+    <!-- Reference cloud -->
+    <EXTRACTIONS>
+        <ZONE_AXIS_ALIGNED_BOX name="zone_ref" out_name="cloud_ref" cloud_ref="xxx_automaticaly_updated_xxx" reverse_selection="true" axis_aligned_box=""/>
+    </EXTRACTIONS>
+</CONTROL>

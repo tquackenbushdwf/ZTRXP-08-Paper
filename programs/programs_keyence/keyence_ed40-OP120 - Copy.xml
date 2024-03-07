@@ -1,0 +1,164 @@
+<PROGRAM>
+    <SENSOR_PARAMETERS id="-1" name="common">
+        <BOOLEAN name="ParallelImaging" value="false"/>
+        <BOOLEAN name="BrightnessOutput" value="true"/>
+        <INTEGER name="TriggerMode" value="2"/>
+        <INTEGER name="SensorFrequency" value="100"/>
+        <INTEGER name="MutualInterferencePrevention" value="2"/>
+        <INTEGER name="MeasurementRangeX" value="0"/>
+        <INTEGER name="MeasurementRangeZ" value="0"/>
+        <DOUBLE name="MeasurementCenterX" value="50"/>
+        <DOUBLE name="MeasurementCenterZ" value="50"/>
+        <BOOLEAN name="BinningZ" value="true"/>
+        <INTEGER name="LightIntensityUpperLimit" value="99"/>
+        <INTEGER name="LightIntensityLowerLimit" value="99"/>
+        <INTEGER name="PeakDetectionSensitivity" value="5"/>
+        <INTEGER name="PeakSelection" value="0"/>
+        <BOOLEAN name="BlurredLightFilter" value="true"/>
+        <BOOLEAN name="IrregularReflectionFilter" value="true"/>
+        <INTEGER name="ExposureMode" value="0"/>
+        <INTEGER name="MultiEmissionLightIntensity" value="0"/>
+        <INTEGER name="MultiEmissionComposite" value="0"/>
+        <INTEGER name="SkippingX" value="0"/>
+        <INTEGER name="DeadZoneInterpolation" value="0"/>
+        <INTEGER name="MedianXAxis" value="0"/>
+        <INTEGER name="SmoothingXAxis" value="1"/>
+        <INTEGER name="MedianTimeAxis" value="0"/>
+        <INTEGER name="AveragingTimeAxis" value="1"/>
+    </SENSOR_PARAMETERS>
+    <SENSOR_PARAMETERS id="1" name="profiler_1">
+        <INTEGER name="SynchroMultipleControllers" value="1"/>
+        <INTEGER name="MutualInterferencePreventionGroup" value="0"/>
+        <BOOLEAN name="RangeExpansionZ" value="false"/>
+        <INTEGER name="CMOSDynamicRange" value="9"/>
+        <INTEGER name="ExposureTime" value="120"/>
+        <INTEGER name="LightIntensityControl" value="0"/>
+        <INTEGER name="BlurredLightFilterStrength" value="4"/>
+        <INTEGER name="IrregularReflectionFilterStrength" value="3"/>
+        <MASK_SET/>
+    </SENSOR_PARAMETERS>
+    <SENSOR_PARAMETERS id="2" name="profiler_2">
+        <INTEGER name="SynchroMultipleControllers" value="2"/>
+        <INTEGER name="MutualInterferencePreventionGroup" value="0"/>
+        <BOOLEAN name="RangeExpansionZ" value="false"/>
+        <INTEGER name="CMOSDynamicRange" value="9"/>
+        <INTEGER name="ExposureTime" value="5000"/>
+        <INTEGER name="LightIntensityControl" value="1"/>
+        <INTEGER name="BlurredLightFilterStrength" value="2"/>
+        <INTEGER name="IrregularReflectionFilterStrength" value="3"/>
+        <MASK_SET/>
+    </SENSOR_PARAMETERS>
+    <SENSOR_PARAMETERS id="3" name="profiler_3">
+        <INTEGER name="SynchroMultipleControllers" value="2"/>
+        <INTEGER name="MutualInterferencePreventionGroup" value="0"/>
+        <BOOLEAN name="RangeExpansionZ" value="false"/>
+        <INTEGER name="CMOSDynamicRange" value="9"/>
+        <INTEGER name="ExposureTime" value="5000"/>
+        <INTEGER name="LightIntensityControl" value="0"/>
+        <INTEGER name="BlurredLightFilterStrength" value="4"/>
+        <INTEGER name="IrregularReflectionFilterStrength" value="3"/>
+        <MASK_SET/>
+    </SENSOR_PARAMETERS>
+    <SENSOR_PARAMETERS id="4" name="profiler_4">
+        <INTEGER name="SynchroMultipleControllers" value="2"/>
+        <INTEGER name="MutualInterferencePreventionGroup" value="1"/>
+        <BOOLEAN name="RangeExpansionZ" value="false"/>
+        <INTEGER name="CMOSDynamicRange" value="9"/>
+        <INTEGER name="ExposureTime" value="480"/>
+        <INTEGER name="LightIntensityControl" value="0"/>
+        <INTEGER name="BlurredLightFilterStrength" value="4"/>
+        <INTEGER name="IrregularReflectionFilterStrength" value="3"/>
+        <MASK_SET/>
+    </SENSOR_PARAMETERS>
+    <SENSOR_PARAMETERS id="5" name="profiler_5">
+        <INTEGER name="SynchroMultipleControllers" value="2"/>
+        <INTEGER name="MutualInterferencePreventionGroup" value="0"/>
+        <BOOLEAN name="RangeExpansionZ" value="false"/>
+        <INTEGER name="CMOSDynamicRange" value="9"/>
+        <INTEGER name="ExposureTime" value="1920"/>
+        <INTEGER name="LightIntensityControl" value="0"/>
+        <INTEGER name="BlurredLightFilterStrength" value="2"/>
+        <INTEGER name="IrregularReflectionFilterStrength" value="2"/>
+        <MASK_SET/>
+    </SENSOR_PARAMETERS>
+    <SENSOR_PARAMETERS id="6" name="profiler_6">
+        <INTEGER name="SynchroMultipleControllers" value="2"/>
+        <INTEGER name="MutualInterferencePreventionGroup" value="0"/>
+        <BOOLEAN name="RangeExpansionZ" value="true"/>
+        <INTEGER name="CMOSDynamicRange" value="9"/>
+        <INTEGER name="ExposureTime" value="480"/>
+        <INTEGER name="LightIntensityControl" value="1"/>
+        <INTEGER name="BlurredLightFilterStrength" value="1"/>
+        <INTEGER name="IrregularReflectionFilterStrength" value="3"/>
+        <MASK_SET/>
+    </SENSOR_PARAMETERS>
+    <SENSOR_PARAMETERS id="7" name="profiler_7">
+        <INTEGER name="SynchroMultipleControllers" value="2"/>
+        <INTEGER name="MutualInterferencePreventionGroup" value="1"/>
+        <BOOLEAN name="RangeExpansionZ" value="false"/>
+        <INTEGER name="CMOSDynamicRange" value="9"/>
+        <INTEGER name="ExposureTime" value="1920"/>
+        <INTEGER name="LightIntensityControl" value="0"/>
+        <INTEGER name="BlurredLightFilterStrength" value="2"/>
+        <INTEGER name="IrregularReflectionFilterStrength" value="2"/>
+        <MASK_SET>
+            <MASK type="Rectangle" pos="Upper" pt1_X="68.1" pt1_Z="100" pt2_X="100"/>
+            <MASK type="Triangle" pos="Upper" pt1_X="0" pt1_Z="14.8" pt2_X="70.5" pt2_Z="56.5" pt3_X="68.6" pt3_Z="0"/>
+        </MASK_SET>
+    </SENSOR_PARAMETERS>
+    <SENSOR_PARAMETERS id="8" name="profiler_8">
+        <INTEGER name="SynchroMultipleControllers" value="2"/>
+        <INTEGER name="MutualInterferencePreventionGroup" value="1"/>
+        <BOOLEAN name="RangeExpansionZ" value="false"/>
+        <INTEGER name="CMOSDynamicRange" value="4"/>
+        <INTEGER name="ExposureTime" value="1920"/>
+        <INTEGER name="LightIntensityControl" value="1"/>
+        <INTEGER name="BlurredLightFilterStrength" value="4"/>
+        <INTEGER name="IrregularReflectionFilterStrength" value="2"/>
+        <MASK_SET/>
+    </SENSOR_PARAMETERS>
+    <SENSOR_PARAMETERS id="9" name="profiler_9">
+        <INTEGER name="SynchroMultipleControllers" value="2"/>
+        <INTEGER name="MutualInterferencePreventionGroup" value="2"/>
+        <BOOLEAN name="RangeExpansionZ" value="false"/>
+        <INTEGER name="CMOSDynamicRange" value="9"/>
+        <INTEGER name="ExposureTime" value="480"/>
+        <INTEGER name="LightIntensityControl" value="0"/>
+        <INTEGER name="BlurredLightFilterStrength" value="4"/>
+        <INTEGER name="IrregularReflectionFilterStrength" value="3"/>
+        <MASK_SET/>
+    </SENSOR_PARAMETERS>
+    <SENSOR_PARAMETERS id="10" name="profiler_10">
+        <INTEGER name="SynchroMultipleControllers" value="2"/>
+        <INTEGER name="MutualInterferencePreventionGroup" value="2"/>
+        <BOOLEAN name="RangeExpansionZ" value="false"/>
+        <INTEGER name="CMOSDynamicRange" value="9"/>
+        <INTEGER name="ExposureTime" value="480"/>
+        <INTEGER name="LightIntensityControl" value="1"/>
+        <INTEGER name="BlurredLightFilterStrength" value="2"/>
+        <INTEGER name="IrregularReflectionFilterStrength" value="3"/>
+        <MASK_SET/>
+    </SENSOR_PARAMETERS>
+    <SENSOR_PARAMETERS id="11" name="profiler_11">
+        <INTEGER name="SynchroMultipleControllers" value="2"/>
+        <INTEGER name="MutualInterferencePreventionGroup" value="2"/>
+        <BOOLEAN name="RangeExpansionZ" value="false"/>
+        <INTEGER name="CMOSDynamicRange" value="9"/>
+        <INTEGER name="ExposureTime" value="120"/>
+        <INTEGER name="LightIntensityControl" value="1"/>
+        <INTEGER name="BlurredLightFilterStrength" value="4"/>
+        <INTEGER name="IrregularReflectionFilterStrength" value="3"/>
+        <MASK_SET/>
+    </SENSOR_PARAMETERS>
+    <SENSOR_PARAMETERS id="12" name="profiler_12">
+        <INTEGER name="SynchroMultipleControllers" value="2"/>
+        <INTEGER name="MutualInterferencePreventionGroup" value="1"/>
+        <BOOLEAN name="RangeExpansionZ" value="false"/>
+        <INTEGER name="CMOSDynamicRange" value="9"/>
+        <INTEGER name="ExposureTime" value="5000"/>
+        <INTEGER name="LightIntensityControl" value="0"/>
+        <INTEGER name="BlurredLightFilterStrength" value="3"/>
+        <INTEGER name="IrregularReflectionFilterStrength" value="3"/>
+        <MASK_SET/>
+    </SENSOR_PARAMETERS>
+</PROGRAM>

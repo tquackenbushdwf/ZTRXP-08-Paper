@@ -1,0 +1,6 @@
+<PROGRAM description="Default program">
+    <PROGRAM_NAME type="recipe" name="001-Display"/>
+    <PROGRAM_NAME type="program_carac" name="001-Display"/>
+    <PROGRAM_NAME type="program_cycle" name="001-Acquisition"/>
+    <PROGRAM_NAME type="program_measure" name="001-Display"/>
+</PROGRAM>

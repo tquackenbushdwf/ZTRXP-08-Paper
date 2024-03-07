@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CONTROL reference="" description="File made to regroup generic parameters used in a process." process_dll=""  version="1.0.0">
+
+    <!-- PARAMETERS -->
+    <PARAMETERS>	
+		<!-- Delegate Helper -->
+        <PARAMETER name="bSaveClouds" value="true"/>
+        <PARAMETER name="bChronoClouds" value="false" /> 		<!-- Set to true to add computation time in cloud names -->
+        <PARAMETER name="bDetailPartResults" value="false"/>
+		
+		<!-- Global -->
+        <PARAMETER name="bActiveCleaning" value="true"/>		<!-- Parameters for cleaning are in the PROG_Extraction of the concerned part -->
+        <PARAMETER name="bActive3DFiltering" value="false"/>    <!-- Enable/disable 3D filtering, usefull if the part is very noisy but time consuming -->
+        <PARAMETER name="bAlign" value="true"/>                 <!-- Enable/disable alignement, should always be at true except during tests/debug -->
+		<PARAMETER name="bCompute" value="true"/>               <!-- Enable/disable computation, should always be at true except during tests/debug -->
+		
+		<!-- Save -->
+        <PARAMETER name="bSaveCleanedClouds" value="false"/>	<!-- To save clouds once their are cleaned -->
+        <PARAMETER name="bSaveRawClouds" value="false"/>		<!-- To save clouds before alignment -->
+		<PARAMETER name="bSaveAlignmentClouds" value="false"/>	<!-- To save clouds used for the computation of alignment parameters -->
+        <PARAMETER name="bSaveAlignedClouds" value="false"/>	<!-- To save clouds once their are aligned -->
+        <PARAMETER name="bSaveIntensityClouds" value="false"/>	<!-- To save clouds once after intensity filter -->
+        <PARAMETER name="bSaveFilteredClouds" value="false"/>	<!-- To save clouds once their are filtered -->
+        <PARAMETER name="bSaveSubClouds" value="false"/>		<!-- To save extracted sub-clouds -->
+        <PARAMETER name="bSaveSections" value="false"/>			<!-- Save sections for form computation -->
+        <PARAMETER name="bSave2DSignal" value="false"/>			<!-- Save 2D signal for computation -->
+        <PARAMETER name="bSaveE57SubClouds" value="false"/>		<!-- Save E57 subCloud -->
+        <PARAMETER name="bSaveProfileCSV" value="false"/>		<!-- Save CSV subCloud -->
+
+
+		<!-- Cloud Filtering -->
+        <PARAMETER name="bRemoveOutliers" value="true"/>	
+        <PARAMETER name="uiNbMinPoints" value="30"/>		
+        <PARAMETER name="dRadius" value="0.75"/>
+        <PARAMETER name="iType" value="3"/>						<!-- 0:NO_FILTER, 1:MEAN, 2:TRIANGULAR, 3:GAUSSIAN -->
+
+    </PARAMETERS>
+
+</CONTROL>

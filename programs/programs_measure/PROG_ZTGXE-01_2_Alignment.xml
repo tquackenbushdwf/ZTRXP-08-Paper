@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CONTROL reference="213-0021-CalibV3" description="Programme de dégauchissage" process_dll=""  version="0.1.0">
+
+    <PARAMETERS>
+
+        <PARAMETER name="align_c1_usedSensorName" value="c3"/> <!-- name of sensor alignment results used for alignment (computed if current sensor name) -->
+        <PARAMETER name="align_c2_usedSensorName" value="c3"/> 
+        <PARAMETER name="align_c3_usedSensorName" value="c3"/> 
+        <PARAMETER name="align_c4_usedSensorName" value="c3"/> 
+        <PARAMETER name="align_c5_usedSensorName" value="c3"/> 
+        <PARAMETER name="align_c6_usedSensorName" value="c3"/> 
+		<PARAMETER name="align_c7_usedSensorName" value="c3"/> 
+		<PARAMETER name="align_c8_usedSensorName" value="c3"/> 
+		<PARAMETER name="align_c9_usedSensorName" value="c3"/> 
+		<PARAMETER name="align_c10_usedSensorName" value="c3"/>
+		<PARAMETER name="align_c11_usedSensorName" value="c3"/>
+		<PARAMETER name="align_c12_usedSensorName" value="c3"/>
+        
+        
+          <!--INITIAL ADJUSTMENT OF POINT CLOUDS ORIGIN-->
+        <PARAMETER name="align_c3_initial_tx" value="0.0"/>
+        <PARAMETER name="align_c3_initial_ty" value="0.0"/>
+        <PARAMETER name="align_c3_initial_tz" value="-192.89"/>
+        <PARAMETER name="align_c3_initial_rx" value="0.0"/>
+        <PARAMETER name="align_c3_initial_ry" value="0.0"/>
+        <PARAMETER name="align_c3_initial_rz" value="272"/>  	<!--  "0.62" --> 
+
+		
+        <PARAMETER name="align_c3_cloud"                         value="cloud_c3"/> <!-- indiquer "full_cloud" pour debug avec cloud CAO -->
+		
+		<PARAMETER name="align_c3_inclinaison"                   value="false"/>
+        <PARAMETER name="align_c3_excentration"                  value="false"/>
+        <PARAMETER name="align_c3_altitude"                      value="false"/>
+								
+        <PARAMETER name="align_c3_orientation"               value="true"/> <!-- Rz -->
+        <PARAMETER name="align_c3_orientation_cloud"         value="cloud_c3"/> <!-- indiquer "full_cloud" pour debug avec cloud CAO -->
+        <PARAMETER name="align_c3_orientation_method"        value="use_interCiclePlane_method"/> <!-- use_RTZ_method | use_XYZ_method | use_inter3planes_method | use_interLinePlane_method | use_interCiclePlane_method -->
+        <!-- use_interCiclePlane_method -->
+        <PLANE     name="align_c3_orientation_plane"         reference="plane_Py8_coarse"/>
+        <PLANE     name="align_c3_orientation_plane_ref"     reference="plane_Py8_ref"/>
+        <CIRCLE    name="align_c3_orientation_circle_ref"    reference="circle_align_theta_ref"/>
+        <!-- use_RTZ_method --><!--
+        <PARAMETER name="align_c5_orientation_theta_0"       value=""/>
+        <PARAMETER name="align_c5_orientation_theta_span"    value=""/>
+        <PARAMETER name="align_c5_orientation_r_ref"         value=""/>
+        <POINT     name="align_c5_orientation_point_ref"     reference=""/>-->
+        <!-- use_XYZ_method --><!--
+        <PARAMETER name="align_c5_orientation_theta_0"       value="0"/>
+        <PARAMETER name="align_c5_orientation_theta_span"    value="90"/>
+        <PARAMETER name="align_c5_orientation_r_ref"         value="14.78986"/>
+        <POINT     name="align_c5_orientation_point_ref"     reference="center_Py5_ref"/>
+        <LINE      name="align_c5_orientation_line_ref"      reference="innerLine_planeIntersection_theta_ref"/>-->
+        <!-- use_inter3planes_method --><!--
+        <PLANE     name="align_c5_orientation_plane1"        reference=""/>
+        <PLANE     name="align_c5_orientation_plane1_ref"    reference=""/>
+        <PLANE     name="align_c5_orientation_plane2"        reference=""/>
+        <PLANE     name="align_c5_orientation_plane2_ref"    reference=""/>
+        <PLANE     name="align_c5_orientation_plane3"        reference=""/>
+        <PLANE     name="align_c5_orientation_plane3_ref"    reference=""/>-->
+        <!-- use_interLinePlane_method --><!--
+        <PLANE     name="align_c5_orientation_plane"         reference="plane_Py5_align_orientation"/>
+        <PLANE     name="align_c5_orientation_plane_ref"     reference="plane_Py5_ref"/>
+        <LINE      name="align_c5_orientation_line_ref"      reference="innerLine_planeIntersection_theta_ref"/>-->
+		
+		
+		<PARAMETER name="align_neat_c3_inclinaison"               value="true"/> <!-- Rx/Ry -->
+        <PLANE     name="align_neat_c3_plane_rotation"            reference="plane_Pz1_coarse"/>
+        <AXIS      name="align_neat_c3_axis_ref"                  reference="plane_Pz1_ref"/>
+								
+        <PARAMETER name="align_neat_c3_excentration"              value="true"/> <!-- Tx/Ty -->
+        <CYLINDER  name="align_neat_c3_translations_cylinder"     reference="cylinder_Cyl2_coarse"/>
+        <CYLINDER  name="align_neat_c3_translations_cylinder_ref" reference="cylinder_Cyl2_ref"/>
+								
+        <PARAMETER name="align_neat_c3_altitude"                  value="true"/> <!-- Tz -->
+        <PLANE     name="align_neat_c3_translations_plane"        reference="plane_Pz1_coarse"/>
+        <PLANE     name="align_neat_c3_translations_plane_ref"    reference="plane_Pz1_ref"/>
+		
+        <PARAMETER name="align_neat_c3_orientation"               value="true"/>
+        <PARAMETER name="align_neat_c3_orientation_cloud"         value="cloud_c3"/> <!-- Please refer here the reference point cloud sensor -->
+        <PARAMETER name="align_neat_c3_orientation_method"        value="use_interCiclePlane_method"/> <!-- use_RTZ_method | use_XYZ_method | use_inter3planes_method | use_interLinePlane_method | use_interCiclePlane_method -->
+        <PLANE     name="align_neat_c3_orientation_plane"         reference="plane_Py8_coarse"/>
+        <PLANE     name="align_neat_c3_orientation_plane_ref"     reference="plane_Py8_ref"/>
+        <CIRCLE    name="align_neat_c3_orientation_circle_ref"    reference="circle_align_theta_ref"/>
+
+    </PARAMETERS>
+</CONTROL>
